@@ -1,0 +1,50 @@
+.membership {
+    font-family: 'MuseoSans-300';
+    .nav-tabs {
+        .uib-tab {
+            width: 25%;
+            font-family: 'MuseoSlab-500';
+            background: $off-grey;
+            a {
+                color: $darkest-grey;
+                border-radius: 0px;   
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: $text-md;
+            }
+            &.active > a {
+                border-top: solid 2px $brand-green;
+            }
+        }
+    }
+    .tab-content {
+        padding: 25px;
+        background: $white;
+        border-right: solid 1px $off-grey;
+        border-left: solid 1px $off-grey;
+        border-bottom: solid 1px $off-grey;
+        table {
+            table-layout: fixed;
+            margin-bottom: 0px;
+            a {
+                margin-top: 5px;
+                margin-bottom: 25px;
+            }
+        }
+        li {
+            font-family: 'MuseoSans-300';
+            text-align: left;
+            padding: 5px 0 5px 0;
+        }
+        .currency-sign {
+            font-family: 'MuseoSlab-500';
+            font-size: $text-title-md;
+            color: $lightest-grey;
+            padding-right:3px;
+        }
+        .currency-amount {
+            font-family: 'MuseoSlab-500';
+            font-size: $text-title-lg;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+// ---------- Colors ----------
+$brand-blue: #00adee;
+$brand-blue-hover: #0087ba;
+$brand-purple: #d271e4;
+$brand-green: #a8d644;
+$brand-red: #ff3530;
+$brand-orange: #ffdd00;
+$darkest-grey: #4a4a4a;
+$dark-grey: #7a7a7a;
+$grey: rgba(74, 74, 74, 0.6);
+$light-grey: #9b9b9b;
+$lightest-grey: #a5a5a5;
+$off-grey: #e7e7e7;
+$off-white: #f7f7f7;
+$white: #ffffff;
+
+$border-grey: rgba(231, 231, 231, 1);
+
+.brand-blue {color: $brand-blue !important;}
+.brand-purple {color: $brand-purple !important;}
+.brand-green {color: $brand-green !important;}
+.brand-red {color: $brand-red !important;}
+.brand-orange {color: $brand-orange !important;}
+.darkest-grey {color: $darkest-grey !important;}
+.dark-grey {color: $dark-grey !important;}
+.grey {color: $grey !important;}
+.light-grey {color: $light-grey !important;}
+.lightest-grey {color: $lightest-grey !important;}
+.off-grey {color: $off-grey !important;}
+.off-white {color: $off-white !important;}
+.white {color: $white !important;}
+
+.bg-brand-blue {background-color: $brand-blue !important;}
+.bg-brand-purple {background-color: $brand-purple !important;}
+.bg-brand-green {background-color: $brand-green !important;}
+.bg-brand-red {background-color: $brand-red !important;}
+.bg-brand-orange {background-color: $brand-orange !important;}
+.bg-darkest-grey {background-color: $darkest-grey !important;}
+.bg-dark-grey {background-color: $dark-grey !important;}
+.bg-grey {background-color: $grey !important;}
+.bg-light-grey {background-color: $light-grey !important;}
+.bg-lightest-grey {background-color: $lightest-grey !important;}
+.bg-off-grey {background-color: $off-grey !important;}
+.bg-off-white {background-color: $off-white !important;}
+.bg-white {background-color: $white !important;}
+
+.bg-blue-gradient {
+    background: $brand-blue;
+    background: -webkit-linear-gradient(to right, #0072b9, #00b2eb);
+    background: -o-linear-gradient(to right, #0072b9, #00b2eb);
+    background: -moz-linear-gradient(to right, #0072b9, #00b2eb);
+    background: linear-gradient(to right, #0072b9, #00b2eb);
+}
+
+// ---------- Text ----------
+$text-title-lg: 48px;
+$text-title-md: 38px;
+$text-title-sm: 28px;
+$text-xl: 24px;
+$text-lg: 22px;
+$text-md: 18px;
+$text-sm: 16px;
+$text-xs: 14px;
+$text-xxs: 12px;
+
+.text-title-lg {font-size: $text-title-lg !important;}
+.text-title-md {font-size: $text-title-md !important;}
+.text-title-sm {font-size: $text-title-sm !important;}
+.text-xl {font-size: $text-xl !important;}
+.text-lg {font-size: $text-lg !important;}
+.text-md {font-size: $text-md !important;}
+.text-sm {font-size: $text-sm !important;}
+.text-xs {font-size: $text-xs !important;}
+.text-xxs {font-size: $text-xxs !important;}
+
+$semi-bold: 500;
+$bold: 700;
+
+.semi-bold {font-weight: $semi-bold;}
+.bold {font-weight: $bold;}
+
+.text-center{text-align: center;}

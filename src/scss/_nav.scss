@@ -1,0 +1,151 @@
+header {
+    height: 130px;
+    background-color: $light-grey;
+}
+
+.nav-wrapper {
+    min-height: 52px;
+}
+
+nav {
+    font-family: 'MuseoSans-300';
+    z-index: 10;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-default {
+    background: $white;
+}
+
+.navbar-right {
+    margin-right: 0px;
+    div {
+        border: solid 1px $light-grey;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .glyphicon-search {
+        color: $light-grey;
+    }
+    input {
+        border: none;
+        padding: 5px;
+        color: $light-grey;
+        &:focus {
+            outline: none;
+        }
+    }
+    #profile-picture{
+        max-width: 40px;
+    }
+    .img-circle {
+        float: right;
+        max-width: 95%;
+    }
+}
+
+.dropdown-menu {
+    box-shadow: none;
+}
+
+footer {
+    font-family: 'MuseoSans-300';
+    padding-top: 19px;
+    border-top: solid 5px $brand-green;
+}
+
+.copyright {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-category {
+    font-family: 'MuseoSans-700';
+}
+
+@media (min-width: 1200px) {
+    .navbar-nav > li {
+        margin-left: 40px;
+    }
+    .footer-logo {
+        text-align: left;
+    }
+}
+
+// Medium Screen
+@media (max-width: 1200px) {
+    #profile-picture {
+        margin-left: 15px;
+    }
+    nav > .container {
+        width: 100%;
+    }
+    .footer-logo {
+        text-align: left;
+    }
+}
+
+// Small Screen
+@media (max-width: 992px) { 
+    .navbar-right {
+        input {
+            width: 100px;
+        }
+    }
+}
+
+// Extra Small Screen
+@media (max-width: 768px) {
+    #navbar hr {
+        margin: 0px;
+        border-top: solid 1px $border-grey;
+    }
+    .icon-bar {
+        background-color: $light-grey;
+    }
+    .navbar-header > button {
+         &#hamburger {
+            border: none;
+            float: left;
+        }
+        &#search-btn {
+            border: none;
+            float: right;
+        }
+    }
+    .nav > li > input {
+        border: none;
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        line-height: 20px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    .navbar-brand {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        display: block;
+    }
+    .navbar-nav > li { 
+        &.collapse-button {
+            background: $brand-blue; 
+            > a { 
+                color: $white;
+            }
+        }
+    }
+    .footer-logo {
+        text-align: center;
+        padding-bottom: 25px;
+        img {
+            display: inline;
+        }
+    }
+}

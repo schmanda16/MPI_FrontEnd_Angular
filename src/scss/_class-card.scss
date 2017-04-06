@@ -1,0 +1,66 @@
+.class-card {
+  background-size: cover;
+  width: 262px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  border-top: solid 5px $brand-blue; 
+}
+
+.class-contents {
+    padding-top: 50px;
+}
+
+.mid h2 {
+  a {
+    font-family: 'MuseoSlab-500';
+    color: $white;
+  }
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  font-size: $text-md;
+}
+
+.mid p {
+  a {
+    font-family: 'MuseoSans-500';
+    font-size: 12px;
+    color: $white;
+  }
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  margin: 0;
+}
+
+@media (max-width: 1230px) {
+  .class-card {
+    width: 220px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .class-card {
+    width: 170px;
+  }
+}
+
+@media (max-width: 767px) {
+  .class-card {
+    width: 230px;
+  }
+  .mid h2 {
+    font-size: $text-sm;
+  }
+}
+
+@media (max-width: 600px) {
+  .class-card {
+    width: 175px;
+  }
+  .mid h2 {
+    font-size: $text-sm;
+  }
+}

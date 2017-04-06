@@ -1,0 +1,84 @@
+.newsfeed-card {
+    border: solid 1px $off-grey;
+    border-top: solid 5px $brand-blue;
+    margin-bottom: 15px;
+    background: $white;
+
+    .tag-alert {
+        font-family: 'MuseoSans-300';
+        color: $dark-grey;
+        padding-left: 20px;
+    }
+    .tag-category {
+        font-family: 'MuseoSans-700';
+        color: $dark-grey;
+    }
+    .tag-share {
+        font-family: 'MuseoSans-300';
+        color: $dark-grey;
+        padding-right: 20px;
+        font-size: $text-xxs;
+    }
+    hr {
+        margin: 5px 0 0 0;
+    }
+    p {
+        font-family: 'MuseoSans-300';
+    }
+    .icon {
+        color: $dark-grey;
+    }
+}
+
+.newsfeed-card-sm .newsfeed-image {
+    padding: 20px;
+}
+
+.newsfeed-card-sm .img-circle {
+    width: 30px;
+}
+
+.newsfeed-card-lg .img-circle {
+    width: 30px;
+}
+
+@media (min-width: 992px) {
+    .newsfeed-card {
+        p {
+            font-size: $text-sm;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width: 992px) { 
+    .tag-alert {
+        font-size: $text-xxs;
+    }
+    .tag-category {
+        font-size: $text-xxs;
+    }
+    h4 {
+        padding-right: 5px;
+    }
+    p {
+        font-size: $text-xs;
+        padding-bottom: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .tag-alert {
+        font-size: $text-xs;
+    }
+    .tag-category {
+        font-size: $text-xs;
+    }
+    p {
+        font-size: $text-sm;
+    }
+    .newsfeed-card-lg .newsfeed-image {
+        padding-top: 10px;
+    }
+}

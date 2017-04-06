@@ -1,0 +1,106 @@
+<header class="masthead">
+    <div class="container">
+        <div class="row margin-md-top">
+            <div class="col-sm-6 col-sm-offset-3 text-center">
+                <h1>AD GOES HERE</h1>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="nav-wrapper">
+    <nav id="nav" class="navbar navbar-default margin-none-bottom" data-spy="affix" data-offset-top="130">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="hamburger" type="button" class="navbar-toggle collapsed margin-sm-left" ng-click="isNavbarCollapsed = !isNavbarCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <button id="search-btn" type="button" class="navbar-toggle collapsed" ng-click="isSearchCollapsed = !isSearchCollapsed">
+        <span class="sr-only">Toggle search</span>
+        <span class="glyphicon glyphicon-search light-grey"></span>
+        </button>
+                <a ui-sref="home" class="navbar-brand padding-sm-top"><img src="images/MPI-logo-small.png"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse" uib-collapse="!isNavbarCollapsed">
+                <ul class="nav navbar-nav margin-none-top margin-none-bottom">
+                    <li uib-dropdown>
+                        <a type="button" uib-dropdown-toggle>Learn <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a ui-sref="learn.articles">Articles</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="learn.academy">MPI Academy</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="learn.certifications">Certifications</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="learn.magazine">The Meeting Professional</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="learn.tools">Research & Tools</a></li>
+                        </ul>
+                    </li>
+                    <hr class="visible-xs" />
+                    <li uib-dropdown>
+                        <a type="button" uib-dropdown-toggle>Connect <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a ui-sref="connect.membership">Membership</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">Chapters</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">Events</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">My MPI</a></li>
+                        </ul>
+                    </li>
+                    <hr class="visible-xs" />
+                    <li uib-dropdown>
+                        <a type="button" uib-dropdown-toggle>About Us <span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a ui-sref="#">About MPI</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">MPI Foundation</a></li>
+                        </ul>
+                    </li>
+                    <hr class="visible-xs" />
+                    <li><a ui-sref="#">Careers</a></li>
+                    <hr class="visible-xs" />
+                    <li class="visible-xs"><a ui-sref="#">Log In</a></li>
+                    <hr class="visible-xs" />
+                    <li class="visible-xs collapse-button"><a ui-sref="#">Sign Up</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-xs">
+                    <li class="padding-sm-top">
+                        <div>
+                            <span class="padding-xs-left glyphicon glyphicon-search"></span>
+                            <input placeholder="Search"></input>
+                        </div>
+                    </li>
+                    <li id="profile-picture" class="padding-xs-top" ng-if="vm.loggedIn">
+                        <img class="img-circle" src="http://placecage.com/g/100/100">
+                    </li>
+                    <li uib-dropdown class="padding-sm-left margin-none-left" ng-if="vm.loggedIn">
+                        <a type="button" uib-dropdown-toggle><span class="hidden-sm">Amanda Dunham </span><span class="caret"></span></a>
+                        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a ui-sref="#">Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">Settings</a></li>
+                        </ul>
+                    </li>
+                    <li class="margin-sm-left" ng-if="!vm.loggedIn"><a ui-sref="#">Log In</a></li>
+                    <li class="padding-xs-top margin-sm-left" ng-if="!vm.loggedIn">
+                        <button type="button" class="btn btn-transparent">
+                            Sign Up
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div id="search" class="navbar-collapse collapse" uib-collapse="!isSearchCollapsed">
+                <ul class="nav navbar-nav margin-none-top margin-none-bottom">
+                    <li class="visible-xs"><input placeholder="Search MPI..."></input>
+                    </li>
+                    <li class="visible-xs collapse-button text-center"><a ui-sref="#">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

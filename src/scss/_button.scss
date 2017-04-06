@@ -1,0 +1,233 @@
+.btn-transparent {
+    font-family: 'MuseoSans-700';
+    color: $brand-blue;
+    background-color: transparent;
+    border: solid 1px $brand-blue;
+    font-weight: 800;
+
+    &:hover {
+        background: $brand-blue;
+        color: $white;
+    }
+}
+
+.btn-primary {
+    font-family: 'MuseoSans-700';
+    color: $white;
+    background-color: $brand-blue;
+    border-color: $brand-blue;
+    font-weight: 500;
+
+    &:hover {
+        background: $brand-blue-hover;
+        border-color: $brand-blue-hover;
+    }
+}
+
+.btn-white {
+    font-family: 'MuseoSans-700';
+    color: $brand-blue;
+    background-color: $white;
+    border-color: $white;
+    font-weight: 500;
+
+    &:hover {
+        color: $brand-blue-hover;
+    }
+}
+
+.btn-facebook {
+    background-color: #3b5998;
+    font-family: 'MuseoSans-300';
+    color: $white;
+    border-radius: 2px;
+    padding: 10px;
+    // width: 330px;
+    width: 100%;
+    &:hover {
+        color: $white;
+        background-color: #26427E;
+    }
+}
+
+.btn-google {
+    background-color: #db5656;
+    font-family: 'MuseoSans-300';
+    color: $white;
+    border-radius: 2px;
+    padding: 10px;
+    // width: 330px;
+    width: 100%;
+    &:hover {
+        color: $white;
+        background-color: #e33333;
+    }
+}
+
+.btn-linkedin {
+    background-color: #007bb5;
+    font-family: 'MuseoSans-300';
+    color: $white;
+    border-radius: 2px;
+    padding: 10px;
+    // width: 330px;
+    width: 100%;
+    &:hover {
+        color: $white;
+        background-color: #006DA0;
+    }
+}
+
+.btn-login {
+    background-color: $off-grey;
+    font-family: 'MuseoSans-300';
+    color: $white;
+    border-radius: 2px;
+    width: 100%;
+    padding: 10px;
+    &:hover {
+        color: $white;
+        background-color: $lightest-grey;
+    }
+}
+
+.btn-rsvp {
+    border-radius: 50px;
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-top: 5px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+// -------------- Custom Checkboxes and Radio Buttons ----------------
+
+label {
+	display: inline;
+}
+
+.regular-checkbox {
+	display: none;
+}
+
+.regular-checkbox + label {
+	background-color: $white;
+	border: 1px solid $light-grey;
+	padding: 9px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-checkbox:checked + label {
+	background-color: $white;
+	border: 1px solid $light-grey;
+	color: $brand-blue;
+}
+
+.regular-checkbox:checked + label:after {
+	content: "\2713";
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: $brand-blue;
+}
+
+.tag {
+	font-family: 'MuseoSans-300';
+	width: 200px;
+	position: relative;
+	top: 5px;
+	display: block;
+	float: left;
+}
+
+.regular-radio {
+	display: none;
+}
+
+.regular-radio + label {
+	-webkit-appearance: none;
+	background-color: $white;
+	border: 1px solid $light-grey;
+	padding: 9px;
+	border-radius: 50px;
+	display: inline-block;
+	position: relative;
+}
+
+.regular-radio:checked + label:after {
+	content: ' ';
+	width: 12px;
+	height: 12px;
+	border-radius: 50px;
+	position: absolute;
+	top: 3px;
+	background: $brand-blue;
+	left: 3px;
+	font-size: 28px;
+}
+
+.regular-radio:checked + label {
+	background-color: $white;
+	color: $brand-blue;
+	border: 1px solid $light-grey;
+}
+
+// -------------- Custom Toggle/Switch ----------------
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $off-grey;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 1px;
+  bottom: 1px;
+  background-color: $white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $brand-blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $brand-blue;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

@@ -1,0 +1,12 @@
+.table {
+    font-family: 'MuseoSans-300';
+
+    th {
+        background: $off-grey;
+    }
+    td {
+        .link {
+            color: $brand-blue;
+        }
+    }
+}
