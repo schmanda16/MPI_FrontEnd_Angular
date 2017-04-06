@@ -36,6 +36,19 @@
             text-align: left;
             padding: 5px 0 5px 0;
         }
+    }
+    .panel-group {
+        li {
+            font-family: 'MuseoSans-300';
+            text-align: left;
+            padding: 5px 0 5px 0;
+        }     
+    }
+}
+
+
+@media (min-width: 768px) { 
+    .membership {
         .currency-sign {
             font-family: 'MuseoSlab-500';
             font-size: $text-title-md;
@@ -45,6 +58,21 @@
         .currency-amount {
             font-family: 'MuseoSlab-500';
             font-size: $text-title-lg;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .membership {
+        .currency-sign {
+            font-family: 'MuseoSlab-500';
+            font-size: $text-xl;
+            color: $lightest-grey;
+            padding-right:3px;
+        }
+        .currency-amount {
+            font-family: 'MuseoSlab-500';
+            font-size: $text-title-sm;
         }
     }
 }

@@ -106,6 +106,7 @@
                 },
                 'content@connect.membership': {
                     templateUrl: 'app/components/membership.html',
+                    controller: 'MembershipController',
                     controllerAs: 'vm'
                 }
             }
