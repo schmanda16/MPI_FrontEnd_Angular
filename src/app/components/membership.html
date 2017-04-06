@@ -176,7 +176,7 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <h6>Basic includes</h6>
+                                    <h6>Faculty includes</h6>
                                     <p>All of these great features:</p>
                                     <ul>
                                         <li>MyMPI Online Community</li>
@@ -224,7 +224,7 @@
                             <tr>
                                 <td></td>
                                 <td>
-                                    <h6>Basic includes</h6>
+                                    <h6>Student includes</h6>
                                     <p>All of these great features:</p>
                                     <ul>
                                         <li>MyMPI Online Community</li>
@@ -258,106 +258,273 @@
                 </uib-tabset>
             </div>
         </div>
-
-<div class="row margin-lg-top margin-lg-bottom visible-xs">
-    <div class="col-xs-12">
-        <uib-accordion>
-            <div uib-accordion-group class="panel-default" heading="Supplier">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>Basic</h4>
-                        <p><span class="currency-sign">$</span><span class="currency-amount">399</span></p>
-                        <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
-                        <uib-accordion>
-                            <div uib-accordion-group class="panel-default" is-open="vm.supplierBasicIsOpen">
-                                <uib-accordion-heading>
-                                    Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierBasicIsOpen, 'glyphicon-chevron-right': !vm.supplierBasicIsOpen}"></i>
-                                </uib-accordion-heading>
-                                <h4>Basic includes</h4>
-                                <p>All of these great features:</p>
-                                <ul>
-                                    <li>MyMPI Online Community</li>
-                                    <li>Professional Development on Demand</li>
-                                    <li>Ability to Track Clock Hours</li>
-                                    <li>Member Connect Advisor</li>
-                                    <li>MPIPulse weekly newsletter</li>
-                                    <li>MPI NewsBrief e-newsletter</li>
-                                    <li>MPI Industry Research</li>
-                                    <li>The Meeting Professional</li>
-                                    <li>Member Rate for MPI Global Events</li>
-                                    <li>Free Education Webinars</li>
-                                    <li>Access to Post Event Materials</li>
-                                    <li>Access to Recorded Event Sessions</li>
-                                    <li>Advance Job Board</li>
-                                    <li>Full Access to MPI Foundation Scholarships</li>
-                                    <li>Member Rate for MPI Bookstore</li>
-                                    <li>Global Supplier Marketplace</li>
-                                    <li>Rise Award Consideration</li>
-                                    <li>Culture Active Tool</li>
-                                    <li>Member Certificate</li>
-                                </ul>
+        <div class="row margin-lg-top margin-lg-bottom visible-xs">
+            <div class="col-xs-12">
+                <uib-accordion>
+                    <div uib-accordion-group class="panel-default" is-open="vm.isSupplierOpen">
+                        <uib-accordion-heading>
+                            Supplier <span ng-if="vm.isSupplierOpen" class="brand-blue text-xs icon icon-info" tooltip-append-to-body="true" tooltip-placement="top" uib-tooltip-template="vm.supplierTooltip"></span>
+                        </uib-accordion-heading>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Basic</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">399</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.supplierBasicIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierBasicIsOpen, 'glyphicon-chevron-right': !vm.supplierBasicIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Basic includes</h4>
+                                        <p>All of these great features:</p>
+                                        <ul>
+                                            <li>MyMPI Online Community</li>
+                                            <li>Professional Development on Demand</li>
+                                            <li>Ability to Track Clock Hours</li>
+                                            <li>Member Connect Advisor</li>
+                                            <li>MPIPulse weekly newsletter</li>
+                                            <li>MPI NewsBrief e-newsletter</li>
+                                            <li>MPI Industry Research</li>
+                                            <li>The Meeting Professional</li>
+                                            <li>Member Rate for MPI Global Events</li>
+                                            <li>Free Education Webinars</li>
+                                            <li>Access to Post Event Materials</li>
+                                            <li>Access to Recorded Event Sessions</li>
+                                            <li>Advance Job Board</li>
+                                            <li>Full Access to MPI Foundation Scholarships</li>
+                                            <li>Member Rate for MPI Bookstore</li>
+                                            <li>Global Supplier Marketplace</li>
+                                            <li>Rise Award Consideration</li>
+                                            <li>Culture Active Tool</li>
+                                            <li>Member Certificate</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
                             </div>
-                        </uib-accordion>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>Advanced</h4>
-                        <p><span class="currency-sign">$</span><span class="currency-amount">475</span></p>
-                        <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
-                        <uib-accordion>
-                            <div uib-accordion-group class="panel-default" is-open="vm.supplierAdvancedIsOpen">
-                                <uib-accordion-heading>
-                                    Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierAdvancedIsOpen, 'glyphicon-chevron-right': !vm.supplierAdvancedIsOpen}"></i>
-                                </uib-accordion-heading>
-                                <h4>Advanced includes</h4>
-                                <p>Everything in <span class="slab-500">Basic</span>, and:</p>
-                                <ul>
-                                    <li>Chapter Affiliation & Discounts at Chapter Events</li>
-                                    <li>CMP Application Assistance</li>
-                                    <li>Chapter Volunteering</li>
-                                </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Advanced</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">475</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.supplierAdvancedIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierAdvancedIsOpen, 'glyphicon-chevron-right': !vm.supplierAdvancedIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Advanced includes</h4>
+                                        <p>Everything in <span class="slab-500">Basic</span>, and:</p>
+                                        <ul>
+                                            <li>Chapter Affiliation & Discounts at Chapter Events</li>
+                                            <li>CMP Application Assistance</li>
+                                            <li>Chapter Volunteering</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
                             </div>
-                        </uib-accordion>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4>Premium</h4>
-                        <p><span class="currency-sign">$</span><span class="currency-amount">569</span></p>
-                        <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
-                        <uib-accordion>
-                            <div uib-accordion-group class="panel-default" is-open="vm.supplierPremiumIsOpen">
-                                <uib-accordion-heading>
-                                    Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierPremiumIsOpen, 'glyphicon-chevron-right': !vm.supplierPremiumIsOpen}"></i>
-                                </uib-accordion-heading>
-                                <h4>Premium includes</h4>
-                                <p>Everything in <span class="slab-500">Advanced</span>, and:</p>
-                                <ul>
-                                    <li>VIP Pass at Global Events</li>
-                                    <li>Career and Academic Counseling 1:1</li>
-                                    <li>Advance access to Meetings Outlook</li>
-                                    <li>Concierge Line</li>
-                                    <li>Access to Direct Marketing Lists</li>
-                                </ul>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Premium</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">569</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.supplierPremiumIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.supplierPremiumIsOpen, 'glyphicon-chevron-right': !vm.supplierPremiumIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Premium includes</h4>
+                                        <p>Everything in <span class="slab-500">Advanced</span>, and:</p>
+                                        <ul>
+                                            <li>VIP Pass at Global Events</li>
+                                            <li>Career and Academic Counseling 1:1</li>
+                                            <li>Advance access to Meetings Outlook</li>
+                                            <li>Concierge Line</li>
+                                            <li>Access to Direct Marketing Lists</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
                             </div>
-                        </uib-accordion>
+                        </div>
                     </div>
-                </div>
+                    <div uib-accordion-group class="panel-default" is-open="vm.isPlannerOpen">
+                        <uib-accordion-heading>
+                            Planner <span ng-if="vm.isPlannerOpen" class="brand-blue text-xs icon icon-info" tooltip-append-to-body="true" tooltip-placement="top" uib-tooltip-template="vm.plannerTooltip"></span>
+                        </uib-accordion-heading>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Basic</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">279</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.plannerBasicIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.plannerBasicIsOpen, 'glyphicon-chevron-right': !vm.plannerBasicIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Basic includes</h4>
+                                        <p>All of these great features:</p>
+                                        <ul>
+                                            <li>MyMPI Online Community</li>
+                                            <li>Professional Development on Demand</li>
+                                            <li>Ability to Track Clock Hours</li>
+                                            <li>Member Connect Advisor</li>
+                                            <li>MPIPulse weekly newsletter</li>
+                                            <li>MPI NewsBrief e-newsletter</li>
+                                            <li>MPI Industry Research</li>
+                                            <li>The Meeting Professional</li>
+                                            <li>Member Rate for MPI Global Events</li>
+                                            <li>Free Education Webinars</li>
+                                            <li>Access to Post Event Materials</li>
+                                            <li>Access to Recorded Event Sessions</li>
+                                            <li>Advance Job Board</li>
+                                            <li>Full Access to MPI Foundation Scholarships</li>
+                                            <li>Member Rate for MPI Bookstore</li>
+                                            <li>Global Supplier Marketplace</li>
+                                            <li>Rise Award Consideration</li>
+                                            <li>Culture Active Tool</li>
+                                            <li>Member Certificate</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Advanced</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">355</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.plannerAdvancedIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.plannerAdvancedIsOpen, 'glyphicon-chevron-right': !vm.plannerAdvancedIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Advanced includes</h4>
+                                        <p>Everything in <span class="slab-500">Basic</span>, and:</p>
+                                        <ul>
+                                            <li>Chapter Affiliation & Discounts at Chapter Events</li>
+                                            <li>CMP Application Assistance</li>
+                                            <li>Chapter Volunteering</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Premium</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">449</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.plannerPremiumIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.plannerPremiumIsOpen, 'glyphicon-chevron-right': !vm.plannerPremiumIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Premium includes</h4>
+                                        <p>Everything in <span class="slab-500">Advanced</span>, and:</p>
+                                        <ul>
+                                            <li>VIP Pass at Global Events</li>
+                                            <li>Career and Academic Counseling 1:1</li>
+                                            <li>Advance access to Meetings Outlook</li>
+                                            <li>Concierge Line</li>
+                                            <li>Access to Direct Marketing Lists</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                    </div>
+                    <div uib-accordion-group class="panel-default" is-open="vm.isFacultyOpen">
+                        <uib-accordion-heading>
+                            Faculty <span ng-if="vm.isFacultyOpen" class="brand-blue text-xs icon icon-info" tooltip-append-to-body="true" tooltip-placement="top" uib-tooltip-template="vm.facultyTooltip"></span>
+                        </uib-accordion-heading>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Faculty</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">199</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.facultyFeaturesIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.facultyFeaturesIsOpen, 'glyphicon-chevron-right': !vm.facultyFeaturesIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Faculty includes</h4>
+                                        <p>All of these great features:</p>
+                                        <ul>
+                                            <li>MyMPI Online Community</li>
+                                            <li>Professional Development on Demand</li>
+                                            <li>Ability to Track Clock Hours</li>
+                                            <li>Member Connect Advisor</li>
+                                            <li>MPIPulse weekly newsletter</li>
+                                            <li>MPI NewsBrief e-newsletter</li>
+                                            <li>MPI Industry Research</li>
+                                            <li>The Meeting Professional</li>
+                                            <li>Member Rate for MPI Global Events</li>
+                                            <li>Free Education Webinars</li>
+                                            <li>Access to Post Event Materials</li>
+                                            <li>Access to Recorded Event Sessions</li>
+                                            <li>Advance Job Board</li>
+                                            <li>Full Access to MPI Foundation Scholarships</li>
+                                            <li>Member Rate for MPI Bookstore</li>
+                                            <li>Global Supplier Marketplace</li>
+                                            <li>Rise Award Consideration</li>
+                                            <li>Culture Active Tool</li>
+                                            <li>Member Certificate</li>
+                                            <li>Chapter Affiliation & Discounts at Chapter Events</li>
+                                            <li>CMP Application Assistance</li>
+                                            <li>Chapter Volunteering</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                    </div>
+                    <div uib-accordion-group class="panel-default" is-open="vm.isStudentOpen">
+                        <uib-accordion-heading>
+                            Student <span ng-if="vm.isStudentOpen" class="brand-blue text-xs icon icon-info" tooltip-append-to-body="true" tooltip-placement="top" uib-tooltip-template="vm.studentTooltip"></span>
+                        </uib-accordion-heading>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h4>Student</h4>
+                                <p><span class="currency-sign">$</span><span class="currency-amount">40</span></p>
+                                <a href="" class="btn btn-primary btn-sm margin-sm-bottom">Select this plan</a>
+                                <uib-accordion>
+                                    <div uib-accordion-group class="panel-default" is-open="vm.studentFeaturesIsOpen">
+                                        <uib-accordion-heading>
+                                            Features <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': vm.studentFeaturesIsOpen, 'glyphicon-chevron-right': !vm.studentFeaturesIsOpen}"></i>
+                                        </uib-accordion-heading>
+                                        <h4>Student includes</h4>
+                                        <p>All of these great features:</p>
+                                        <ul>
+                                            <li>MyMPI Online Community</li>
+                                            <li>Professional Development on Demand</li>
+                                            <li>Ability to Track Clock Hours</li>
+                                            <li>Member Connect Advisor</li>
+                                            <li>MPIPulse weekly newsletter</li>
+                                            <li>MPI NewsBrief e-newsletter</li>
+                                            <li>MPI Industry Research</li>
+                                            <li>The Meeting Professional</li>
+                                            <li>Member Rate for MPI Global Events</li>
+                                            <li>Free Education Webinars</li>
+                                            <li>Access to Post Event Materials</li>
+                                            <li>Access to Recorded Event Sessions</li>
+                                            <li>Advance Job Board</li>
+                                            <li>Full Access to MPI Foundation Scholarships</li>
+                                            <li>Member Rate for MPI Bookstore</li>
+                                            <li>Global Supplier Marketplace</li>
+                                            <li>Rise Award Consideration</li>
+                                            <li>Culture Active Tool</li>
+                                            <li>Member Certificate</li>
+                                            <li>Chapter Affiliation & Discounts at Chapter Events</li>
+                                            <li>CMP Application Assistance</li>
+                                            <li>Chapter Volunteering</li>
+                                        </ul>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                    </div>
+                </uib-accordion>
             </div>
-            <div uib-accordion-group class="panel-default" heading="Planner">
-                This content is straight in the template.
-            </div>
-            <div uib-accordion-group class="panel-default" heading="Faculty">
-                This content is straight in the template.
-            </div>
-            <div uib-accordion-group class="panel-default" heading="Student">
-                This content is straight in the template.
-            </div>
-        </uib-accordion>
-    </div>
-</div>
-
-
+        </div>
     </div>
 </div>
