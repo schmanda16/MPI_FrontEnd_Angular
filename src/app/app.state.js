@@ -48,6 +48,9 @@
                 'academy@home': {
                     templateUrl: 'app/components/academy.html'
                 },
+                'testimonial@home': {
+                    templateUrl: 'app/components/testimonial.html'
+                },
                 'call-to-action@home': {
                     templateUrl: 'app/components/call-to-action.html'
                 }

@@ -1,6 +1,14 @@
 .testimonial {
     position: relative;
     z-index: 1;
+    .vertical-center {
+        vertical-align: middle;
+        padding: 0;
+    }
+    .table {
+        table-layout: fixed;
+        margin-bottom: 0px;
+    }
 }
 
 .testimonial-quote {
