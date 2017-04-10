@@ -10,7 +10,6 @@
                 border-radius: 0px;   
                 padding-top: 15px;
                 padding-bottom: 15px;
-                // font-size: $text-md;
             }
             &.active > a {
                 border-top: solid 2px $brand-green;
@@ -78,7 +77,7 @@
                     padding-left: 0px;
                 }
                 a { 
-                    font-size: $text-xxs;
+                    font-size: $text-xs;
                 }
             }
         }
