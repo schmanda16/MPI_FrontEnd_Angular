@@ -30,6 +30,9 @@
                 'main@': {
                     templateUrl: 'app/pages/main/home.html'
                 },
+                'renewal@home': {
+                    templateUrl: 'app/components/renewal.html'
+                },
                 'hero@home': {
                     templateUrl: 'app/components/hero.html'
                 },
@@ -129,6 +132,17 @@
             views: {
                 'content@': {
                     templateUrl: 'app/components/academy.html'
+                }
+            }
+        }).state('profile', {
+            parent: 'app',
+            url: '/profile',
+            views: {
+                'main@': {
+                    templateUrl: 'app/pages/main/dashboard.html'
+                },
+                'content@profile': {
+                    templateUrl: 'app/components/dashboard.html'
                 }
             }
         });
