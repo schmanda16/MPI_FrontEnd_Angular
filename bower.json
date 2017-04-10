@@ -6,7 +6,8 @@
     "angular-ui-router": "1.0.0-beta.3",
     "bootstrap": "^3.3.7",
     "angular-bootstrap": "^2.5.0",
-	  "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "angular-bootstrap-affix": "^0.2.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.6.2"
@@ -14,8 +15,13 @@
   "overrides": {
     "bootstrap": {
       "main": [
-      "dist/css/bootstrap.css",
-      "less/bootstrap.less"
+        "dist/css/bootstrap.css",
+        "less/bootstrap.less"
+      ]
+    },
+    "angular-jquery": {
+      "main": [
+        "dist/angular-jquery.js"
       ]
     }
   }
