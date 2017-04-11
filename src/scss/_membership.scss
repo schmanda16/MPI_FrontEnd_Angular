@@ -43,8 +43,16 @@
             padding: 5px 0 5px 0;
         }     
     }
+    .info-badge{
+        font-family: 'MuseoSlab-500';
+        background: $brand-green;
+        text-align: center;
+        border-radius: 1px;
+        color: $white;
+        padding: 5px 10px;
+        font-size: $text-xs;
+    }
 }
-
 
 @media (min-width: 768px) { 
     .membership {
@@ -68,6 +76,13 @@
     }
 }
 
+@media (min-width: 1325px) { 
+        .info-badge{
+        position: relative;
+        left: -35%
+    }
+}
+
 @media (max-width: 768px) {
     .membership {
         .nav-tabs {
@@ -87,6 +102,11 @@
             .panel-heading {
                 background: transparent;
                 color: $brand-blue;
+            }
+        }
+        .bg-green-transparent{
+            .panel-heading{
+                background-color: rgba(168, 214, 68, 0.4);
             }
         }
         .currency-sign {

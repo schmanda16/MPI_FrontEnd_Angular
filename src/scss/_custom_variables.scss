@@ -52,6 +52,10 @@ $border-grey: rgba(231, 231, 231, 1);
     background: linear-gradient(to right, #0072b9, #00b2eb);
 }
 
+.bg-green-transparent {
+    background-color: rgba(168, 214, 68, 0.4) !important;
+}
+
 // ---------- Text ----------
 $text-title-lg: 48px;
 $text-title-md: 38px;
