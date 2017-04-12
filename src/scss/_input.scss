@@ -3,21 +3,20 @@ input {
     border: solid 1px $light-grey;
     border-radius: 2px;
     overflow: hidden;
-    padding: 10px;
+    padding: 5px;
     color: $light-grey;
     &:focus {
         outline: none;
     }
 }
 
-.login-email {
-    //width: 330px;
+.login-input {
     width: 100%;
+    padding: 10px;
 }
 
 .login-password {
     margin: 0 auto;
-    // width: 330px;
     width: 100%;
     border: solid 1px $light-grey;
     border-radius: 2px;
@@ -28,7 +27,7 @@ input {
     input {
         border: none;
         box-shadow: none;
-        padding-left: 08px;
+        padding-left: 8px;
         &:focus {
             outline: none;
             box-shadow: none;
@@ -37,5 +36,12 @@ input {
     .input-group-addon {
         background: $white;
         border: none;
+    }
+}
+select {
+    background: $white;
+    width: 100%;
+    .styled-select {
+        padding: 5px;
     }
 }

@@ -70,11 +70,7 @@
     }
 }
 
-// Removing since it would override even child elements
-// * {
-//     color: $darkest-grey;
-// }
-
 body {
     color: $darkest-grey !important;
+    font-family: 'MuseoSans-300';
 }

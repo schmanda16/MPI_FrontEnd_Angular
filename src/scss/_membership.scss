@@ -53,6 +53,13 @@
         font-size: $text-xs;
     }
 }
+.registration {
+    background: $off-white;
+    border-radius: 5px;
+    input {
+        width: 100%;
+    }
+}
 
 @media (min-width: 768px) { 
     .membership {
@@ -106,7 +113,7 @@
         }
         .bg-green-transparent{
             .panel-heading{
-                background-color: rgba(168, 214, 68, 0.4);
+                background-color: rgba(0, 173, 238, 0.1);
             }
         }
         .currency-sign {

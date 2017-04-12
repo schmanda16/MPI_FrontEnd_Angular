@@ -100,6 +100,13 @@
     text-transform: uppercase;
 }
 
+.btn .btn-lg {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 // -------------- Custom Checkboxes and Radio Buttons ----------------
 
 label {
@@ -116,17 +123,22 @@ label {
 	padding: 9px;
 	display: inline-block;
 	position: relative;
+    margin-bottom: 0;
+    vertical-align: middle;
 }
 
 .regular-checkbox:checked + label {
 	background-color: $white;
 	border: 1px solid $light-grey;
 	color: $brand-blue;
+    margin-bottom: 0;
+    vertical-align: middle;
 }
 
 .regular-checkbox:checked + label:after {
-	content: "\2713";
-	font-size: 14px;
+    font-family: 'icomoon';
+    content: "\ea10";
+	font-size: 12px;
 	position: absolute;
 	top: 0px;
 	left: 3px;

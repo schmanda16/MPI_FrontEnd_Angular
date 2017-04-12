@@ -4,6 +4,10 @@
         border-bottom-color: $brand-green;
         border-radius: 1px;
     }
+    .panel-body {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
     .panel-category {
         font-family: 'MuseoSans-700';
         font-weight: $bold;
@@ -12,6 +16,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        padding-top: 30px;
     }
     .panel-title {
         font-family: 'MuseoSlab-500';
@@ -29,6 +34,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        padding-bottom: 30px;
     }
     .info-badge{
         font-family: 'MuseoSlab-500';
