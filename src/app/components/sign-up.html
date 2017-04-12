@@ -1,0 +1,183 @@
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+        <h1 class="text-center">Finish Creating Your Account</h1>
+        <div class="row">
+            <div class="col-xs-8 registration">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <h4>Mailing Address</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Country</span>
+                    </div>
+                    <div class="col-xs-5">
+                        <input>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Address</span>
+                    </div>
+                    <div class="col-xs-5">
+                        <input>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>City / Province</span>
+                    </div>
+                    <div class="col-xs-5">
+                        <input>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>State</span>
+                    </div>
+                    <div class="col-xs-5">
+                        <input>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Zip</span>
+                    </div>
+                    <div class="col-xs-5">
+                        <input>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-4">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <h4>Membership Options</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <input type="checkbox" id="sign-up-checkbox" class="regular-checkbox"/><label for="sign-up-checkbox"></label>
+                        <span>I am a student or faculty member.</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <label> Category: </label><br>
+                        <select ng-model="vm.category">
+                            <option ng-repeat="option in vm.membershipOptions" value="{{option}}">{{option.category}}</option>
+                        </select>
+
+
+
+<!--<label> Category: </label><br>
+  <ui-select ng-model="vm.category"
+             theme="bootstrap"
+             reset-search-input="false">
+    <ui-select-match>{{$select.selected}}</ui-select-match>
+    <ui-select-choices repeat="option in vm.membershipOptions track by $index">
+      <div ng-bind-html="option.category | highlight: $select.search"></div>
+    </ui-select-choices>
+  </ui-select>-->
+
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <label> Plan: </label><br>
+                        <select ng-model="vm.plan" ng-disabled="!vm.category">
+                            <option ng-repeat="option in vm.category.plans" value="{{option}}">{{option}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<!--<div class="row padding-md-bottom">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+        <div class="center-contents max-width-sm">
+            <div class="row text-center padding-md-bottom">
+                <div class="col-xs-12">
+                    <h4>Sign up to join MPI</h4>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <a href="" class="btn btn-large btn-facebook"><span class="white icon icon-facebook2"></span> Sign in with Facebook</a>
+                </div>
+            </div>
+             <div class="row padding-md-bottom">
+                <div class="col-xs-12">
+                    <a href="" class="btn btn-large btn-linkedin"><span class="white icon icon-linkedin"></span> Sign in with LinkedIn</a>
+                </div>
+            </div>
+            <div class="row padding-md-bottom">
+                <div class="col-xs-12">
+                    <span class="grey-line"></span>
+                    <p class="grey-line">
+                        <span class="light-grey">or</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-6">
+                    <input class="login-input" placeholder="First name"></input>
+                </div>
+                <div class="col-xs-6">
+                    <input class="login-input" placeholder="Last name"></input>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <input class="login-input" placeholder="Email address"></input>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <input class="login-input" placeholder="Password (at least 6 characters)"></input>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <input class="login-input" placeholder="Confirm password"></input>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom text-center">
+                <div class="col-xs-12">
+                    <span ng-if="vm.passwordCofirmation && vm.passwordMatch" class="text-xs brand-green"><span class="icon icon-checkmark"></span> Passwords match!</span>
+                    <span ng-if="vm.passwordCofirmation && !vm.passwordMatch" class="text-xs brand-red"><span class="icon icon-cross"></span> Not a match</span>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <input type="checkbox" id="sign-up-checkbox" class="regular-checkbox"/><label for="sign-up-checkbox"></label>
+                    <span>By checking this, I have agreed to the <a ng-click="vm.openModal()">Terms and Conditions.</a></span>
+                </div>
+            </div>
+             <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <a href="" class="btn btn-large btn-login">Sign up</a>
+                </div>
+            </div>
+            <div class="row padding-sm-bottom">
+                <div class="col-xs-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-xs-12">
+                    <span class="dashboard light-grey">Already have an account? <a ui-sref="login" class="brand-blue">Log in</a></span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>-->

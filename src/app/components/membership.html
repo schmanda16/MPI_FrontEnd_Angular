@@ -27,18 +27,18 @@
                                     <td>
                                         <h4 class="padding-md-top">Basic</h4>
                                         <p><span class="currency-sign">$</span><span class="currency-amount">399</span><span class="text-xs">USD</span><br><span>$399 CAD / €369</span></p>
-                                        <a href="" class="btn btn-primary">Select this plan</a>
+                                        <button type="button" ng-click="vm.selectMembership('supplier', 'basic')" class="btn btn-primary">Select this plan</button>
                                     </td>
-                                    <td class="bg-green-transparent">
+                                    <td class="bg-blue-transparent">
                                         <span class="info-badge">Most popular</span>
                                         <h4 class="margin-xs-top">Advanced</h4>
                                         <p><span class="currency-sign">$</span><span class="currency-amount">475</span><span class="text-xs">USD</span><br><span>$475 CAD / €450</span></p>
-                                        <a href="" class="btn btn-primary">Select this plan</a>
+                                        <button type="button" ng-click="vm.selectMembership('supplier', 'advanced')" class="btn btn-primary">Select this plan</button>
                                     </td>
                                     <td>
                                         <h4 class="padding-md-top">Premium</h4>
                                         <p><span class="currency-sign">$</span><span class="currency-amount">569</span><span class="text-xs">USD</span><br><span>$569 CAD / €519</span></p>
-                                        <a href="" class="btn btn-primary">Select this plan</a>
+                                        <button type="button" ng-click="vm.selectMembership('supplier', 'premium')" class="btn btn-primary">Select this plan</button>
                                     </td>
                                 </tr>
                             </thead>
@@ -69,7 +69,7 @@
                                             <li>Member Certificate</li>
                                         </ul>
                                     </td>
-                                    <td class="bg-green-transparent">
+                                    <td class="bg-blue-transparent">
                                         <h6>Advanced includes</h6>
                                         <p>Everything in <span class="slab-500">Basic</span>, and:</p>
                                         <ul>
@@ -117,7 +117,7 @@
                                         <br>
                                         <span class="text-xs">$399 CAD / €369</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership('supplier', 'basic')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierBasicIsOpen">
                                             <uib-accordion-heading>
@@ -150,7 +150,7 @@
                                     </uib-accordion>
                                 </div>
                             </div>
-                            <div class="row off-grey-border bg-green-transparent margin-md-bottom">
+                            <div class="row off-grey-border bg-blue-transparent margin-md-bottom">
                                 <div class="col-xs-12 padding-md-top">
                                     <span class="info-badge">Most popular</span>
                                     <h4>Advanced</h4>
@@ -159,7 +159,7 @@
                                         <br>
                                         <span class="text-xs">$475 CAD / €450</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership('supplier', 'advanced')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierAdvancedIsOpen">
                                             <uib-accordion-heading>
@@ -184,7 +184,7 @@
                                         <br>
                                         <span class="text-xs">$569 CAD / €519</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership('supplier', 'premium')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierPremiumIsOpen">
                                             <uib-accordion-heading>
@@ -216,7 +216,7 @@
                                     <p><span class="currency-sign">$</span><span class="currency-amount">279</span><span class="text-xs">USD</span><br><span>$279 CAD / €259</span></p>
                                     <a href="" class="btn btn-primary">Select this plan</a>
                                 </td>
-                                <td class="bg-green-transparent">
+                                <td class="bg-blue-transparent">
                                     <span class="info-badge">Most popular</span>
                                     <h4>Advanced</h4>
                                     <p><span class="currency-sign">$</span><span class="currency-amount">355</span><span class="text-xs">USD</span><br><span>$355 CAD / €325</span></p>
@@ -254,7 +254,7 @@
                                         <li>Member Certificate</li>
                                     </ul>
                                 </td>
-                                <td class="bg-green-transparent">
+                                <td class="bg-blue-transparent">
                                     <h6>Advanced includes</h6>
                                     <p>Everything in <span class="slab-500">Basic</span>, and:</p>
                                     <ul>
@@ -337,7 +337,7 @@
                                 </div>
                             </div>
                             <div class="row off-grey-border margin-md-bottom">
-                                <div class="col-xs-12 padding-md-top bg-green-transparent">
+                                <div class="col-xs-12 padding-md-top bg-blue-transparent">
                                     <span class="info-badge">Most popular</span>
                                     <h4>Advanced</h4>
                                     <p>

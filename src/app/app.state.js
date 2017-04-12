@@ -48,9 +48,9 @@
                 'academy@home': {
                     templateUrl: 'app/components/academy.html'
                 },
-                'testimonial@home': {
-                    templateUrl: 'app/components/testimonial.html'
-                },
+                // 'testimonial@home': {
+                //     templateUrl: 'app/components/testimonial.html'
+                // },
                 'call-to-action@home': {
                     templateUrl: 'app/components/call-to-action.html'
                 }
@@ -131,7 +131,7 @@
                 }
             }
         }).state('connect.my-mpi', {
-            url: '/tools',
+            url: '/research-tools',
             views: {
                 'content@': {
                     templateUrl: 'app/components/academy.html'
@@ -146,6 +146,35 @@
                 },
                 'content@profile': {
                     templateUrl: 'app/components/dashboard.html'
+                }
+            }
+        }).state('sign-up', {
+            parent: 'app',
+            url: '/sign-up',
+            views: {
+                'main@': {
+                    templateUrl: 'app/components/sign-up.html',
+                    controller: 'SignUpController',
+                    controllerAs: 'vm'
+                }
+            },
+            params: {
+                selectedPlan: {
+                    category: null,
+                    level: null
+                }
+            },
+            resolve: {
+                membershipParams: ['$stateParams', function ($stateParams) {
+                    return $stateParams.selectedPlan;
+                }]
+            }
+        }).state('login', {
+            parent: 'app',
+            url: '/login',
+            views: {
+                'main@': {
+                    templateUrl: 'app/components/login.html'
                 }
             }
         });
