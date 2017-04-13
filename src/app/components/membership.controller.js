@@ -113,7 +113,6 @@
             var plan = _.find(vm.membershipOptions, function (option) {
                 return option.id === planId;
             });
-            // console.log(plan);
             $state.go('sign-up', {selectedPlan: plan});
         }
     }

@@ -1,107 +1,4 @@
-<div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
-        <h1 class="text-center">Finish Creating Your Account</h1>
-        <div class="row">
-            <div class="col-xs-8 registration">
-                <div class="row padding-md-top padding-md-bottom">
-                    <div class="col-xs-11 col-xs-offset-1">
-                        <h4>Mailing Address</h4>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <span>Country</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <input>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <span>Address</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <input>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <span>City / Province</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <input>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <span>State</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <input>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-2 col-xs-offset-1">
-                        <span>Zip</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <input>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-xs-4">
-                <div class="row padding-md-top padding-md-bottom">
-                    <div class="col-xs-11 col-xs-offset-1">
-                        <h4>Membership Options</h4>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-11 col-xs-offset-1">
-                        <input type="checkbox" id="sign-up-checkbox" class="regular-checkbox"/><label for="sign-up-checkbox"></label>
-                        <span>I am a student or faculty member.</span>
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-11 col-xs-offset-1">
-                        <label> Category: </label><br>
-                        <select ng-model="vm.category">
-                            <option ng-repeat="option in vm.membershipOptions" value="{{option}}">{{option.category}}</option>
-                        </select>
-
-
-
-<!--<label> Category: </label><br>
-  <ui-select ng-model="vm.category"
-             theme="bootstrap"
-             reset-search-input="false">
-    <ui-select-match>{{$select.selected}}</ui-select-match>
-    <ui-select-choices repeat="option in vm.membershipOptions track by $index">
-      <div ng-bind-html="option.category | highlight: $select.search"></div>
-    </ui-select-choices>
-  </ui-select>-->
-
-                    </div>
-                </div>
-                <div class="row padding-md-bottom">
-                    <div class="col-xs-11 col-xs-offset-1">
-                        <label> Plan: </label><br>
-                        <select ng-model="vm.plan" ng-disabled="!vm.category">
-                            <option ng-repeat="option in vm.category.plans" value="{{option}}">{{option}}</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-</div>
-
-<!--<div class="row padding-md-bottom">
+<div class="row padding-lg-top padding-lg-bottom" ng-if="!vm.loggedIn">
     <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
         <div class="center-contents max-width-sm">
             <div class="row text-center padding-md-bottom">
@@ -129,42 +26,42 @@
             </div>
             <div class="row padding-sm-bottom">
                 <div class="col-xs-6">
-                    <input class="login-input" placeholder="First name"></input>
+                    <input class="login-input" placeholder="First name" ng-model="vm.firstName"></input>
                 </div>
                 <div class="col-xs-6">
-                    <input class="login-input" placeholder="Last name"></input>
+                    <input class="login-input" placeholder="Last name" ng-model="vm.lastName"></input>
                 </div>
             </div>
             <div class="row padding-sm-bottom">
                 <div class="col-xs-12">
-                    <input class="login-input" placeholder="Email address"></input>
+                    <input class="login-input" placeholder="Email address" ng-model="vm.emailAddress"></input>
                 </div>
             </div>
             <div class="row padding-sm-bottom">
                 <div class="col-xs-12">
-                    <input class="login-input" placeholder="Password (at least 6 characters)"></input>
+                    <input ng-model="vm.password" type="password" class="login-input" placeholder="Password (at least 6 characters)"></input>
                 </div>
             </div>
             <div class="row padding-sm-bottom">
                 <div class="col-xs-12">
-                    <input class="login-input" placeholder="Confirm password"></input>
+                    <input ng-model="vm.confirmPassword" type="password" class="login-input" placeholder="Confirm password"></input>
                 </div>
             </div>
             <div class="row padding-sm-bottom text-center">
                 <div class="col-xs-12">
-                    <span ng-if="vm.passwordCofirmation && vm.passwordMatch" class="text-xs brand-green"><span class="icon icon-checkmark"></span> Passwords match!</span>
-                    <span ng-if="vm.passwordCofirmation && !vm.passwordMatch" class="text-xs brand-red"><span class="icon icon-cross"></span> Not a match</span>
+                    <span ng-if="vm.password && vm.confirmPassword && (vm.password === vm.confirmPassword)" class="text-xs brand-green"><span class="icon icon-checkmark"></span> Passwords match!</span>
+                    <span ng-if="vm.password && vm.confirmPassword && (vm.password !== vm.confirmPassword)" class="text-xs brand-red"><span class="icon icon-cross"></span> Not a match</span>
                 </div>
             </div>
             <div class="row padding-sm-bottom">
                 <div class="col-xs-12">
-                    <input type="checkbox" id="sign-up-checkbox" class="regular-checkbox"/><label for="sign-up-checkbox"></label>
+                    <input ng-model="vm.acceptTerms" type="checkbox" id="sign-up-checkbox" class="regular-checkbox"/><label for="sign-up-checkbox"></label>
                     <span>By checking this, I have agreed to the <a ng-click="vm.openModal()">Terms and Conditions.</a></span>
                 </div>
             </div>
              <div class="row padding-sm-bottom">
                 <div class="col-xs-12">
-                    <a href="" class="btn btn-large btn-login">Sign up</a>
+                    <button type="button" ng-click="vm.signUp()" class="btn btn-large btn-login">Sign up</a>
                 </div>
             </div>
             <div class="row padding-sm-bottom">
@@ -180,4 +77,389 @@
             
         </div>
     </div>
-</div>-->
+</div>
+
+<div class="row padding-lg-top padding-lg-bottom" ng-if="vm.loggedIn && !vm.confirmInfo">
+    <div class="col-xs-10 col-xs-offset-1">
+        <h5 class="text-center">Welcome to MPI!</h5>
+        <h1 class="text-center">Complete Your Registration</h1>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-12">
+                        <h4>Membership Selection</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 text-md padding-xs-left">
+                        <span>
+                            <span class="brand-blue">{{vm.selectedPlan.category}} </span>
+                            with 
+                            <span class="brand-blue">{{vm.selectedPlan.plan}} </span>
+                            membership.
+                        </span>
+                        <span ng-if="!vm.selectedPlan.monthlyPayments">
+                            <p class="text-xxs">${{vm.selectedPlan.costUsd}} USD / ${{vm.selectedPlan.costCad}} CAD / €{{vm.selectedPlan.costEu}} per year</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <a ui-sref="connect.membership">Change selection</a>
+                    </div>
+                </div>
+                <div class="row padding-md-top padding-md-bottom" ng-if="vm.selectedPlan.monthlyPayments">
+                    <div class="col-xs-12">
+                        <h4>Billing Options</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom" ng-if="vm.selectedPlan.monthlyPayments">
+                    <div class="row padding-md-bottom button-holder">
+                        <div class="col-xs-5 col-xs-offset-1">
+                            <input type="radio" id="radio-yearly" name="radio-1-set" class="regular-radio" ng-model="vm.pricingRadio" value="Yearly"/><label for="radio-yearly"></label>
+                            <span>Yearly</span>
+                            <p class="text-xxs">${{vm.selectedPlan.costUsd}} USD / ${{vm.selectedPlan.costCad}} CAD / €{{vm.selectedPlan.costEu}}</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="radio" id="radio-monthly" name="radio-1-set" class="regular-radio" ng-model="vm.pricingRadio" value="Monthly"/><label for="radio-monthly"></label>
+                            <span>Monthly</span>
+                            <p class="text-xxs">${{vm.selectedPlan.monthlyUsd}} USD / ${{vm.selectedPlan.monthlyCad}} CAD / €{{vm.selectedPlan.monthlyEu}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 registration">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <h4>Billing Information</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Credit Card #</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <input ng-model="vm.creditCardNumber">
+                    </div>
+                    <div class="col-xs-1">
+                        <span>CV#</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <input ng-model="vm.creditCardCv">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Expiration Date</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Month</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <input ng-model="vm.creditCardExpMonth">
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Year</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <input ng-model="vm.creditCardExpYear">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Billing Address</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <input ng-model="vm.billingAddressNumber">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>City / Province</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <input ng-model="vm.billingAddressCity">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>State</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <input ng-model="vm.billingAddressState">
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Zip</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <input ng-model="vm.billingAddressZip">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Country</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <input ng-model="vm.billingAddressCountry">
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-12 col-xs-offset-1">
+                        <input type="checkbox" id="address-checkbox" class="regular-checkbox" ng-model="vm.addressFlag"/><label for="address-checkbox"></label>
+                        <span>&nbsp;My mailing address is the same as my billing address</span>
+                    </div>
+                </div>
+                <div class="padding-md-top padding-md-bottom" ng-if="!vm.addressFlag">
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>Mailing Address</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <input ng-model="vm.mailingAddressNumber">
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>City / Province</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <input ng-model="vm.mailingAddressCity">
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>State</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <input ng-model="vm.mailingAddressState">
+                        </div>
+                        <div class="col-xs-1">
+                            <span>Zip</span>
+                        </div>
+                        <div class="col-xs-4">
+                            <input ng-model="vm.mailingAddressZip">
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>Country</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <input ng-model="vm.mailingAddressCountry">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-md-top">
+            <div class="col-xs-3 col-xs-offset-9">
+                <a class="btn btn-lg btn-primary pull-right" ng-click="vm.continueCheckout()">Continue</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row padding-lg-top padding-lg-bottom" ng-if="vm.confirmInfo && vm.loggedIn">
+    <div class="col-xs-10 col-xs-offset-1">
+        <h1 class="text-center">Confirm Your Information</h1>
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-12">
+                        <h4>Membership Selection</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1 text-md padding-xs-left">
+                        <span>
+                            <span class="brand-blue">{{vm.selectedPlan.category}} </span>
+                            with 
+                            <span class="brand-blue">{{vm.selectedPlan.plan}} </span>
+                            membership.
+                        </span>
+                        <span ng-if="!vm.selectedPlan.monthlyPayments">
+                            <p class="text-xxs">${{vm.selectedPlan.costUsd}} USD / ${{vm.selectedPlan.costCad}} CAD / €{{vm.selectedPlan.costEu}} per year</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="row padding-md-top padding-md-bottom" ng-if="vm.selectedPlan.monthlyPayments">
+                    <div class="col-xs-12">
+                        <h4>Billing Selection</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom" ng-if="vm.selectedPlan.monthlyPayments">
+                    <div class="row padding-md-bottom button-holder">
+                        <div class="col-xs-10 col-xs-offset-1">
+                            <span class="text-md brand-blue">{{vm.pricingRadio}}</span>
+                            <p class="text-xxs" ng-if="vm.pricingRadio === 'Yearly'">${{vm.selectedPlan.costUsd}} USD / ${{vm.selectedPlan.costCad}} CAD / €{{vm.selectedPlan.costEu}}</p>
+                            <p class="text-xxs" ng-if="vm.selectedPlan.monthlyPayments && vm.pricingRadio === 'Monthly'">${{vm.selectedPlan.monthlyUsd}} USD / ${{vm.selectedPlan.monthlyCad}} CAD / €{{vm.selectedPlan.monthlyEu}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 registration">
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <h4>Personal Information</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>First Name</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.firstName}}</span>
+                    </div>
+                    <div class="col-xs-2">
+                        <span>Last Name</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.lastName}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Email Address</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <span class="brand-blue">{{vm.emailAddress}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-top padding-md-bottom">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <h4>Billing Information</h4>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Credit Card #</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="brand-blue">{{vm.creditCardNumber}}</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span>CV#</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.creditCardCv}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Expiration Date</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Month</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.creditCardExpMonth}}</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Year</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.creditCardExpYear}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Billing Address</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <span class="brand-blue">{{vm.billingAddressNumber}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>City / Province</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <span class="brand-blue">{{vm.billingAddressCity}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>State</span>
+                    </div>
+                    <div class="col-xs-3">
+                        <span class="brand-blue">{{vm.billingAddressState}}</span>
+                    </div>
+                    <div class="col-xs-1">
+                        <span>Zip</span>
+                    </div>
+                    <div class="col-xs-4">
+                        <span class="brand-blue">{{vm.billingAddressZip}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom">
+                    <div class="col-xs-2 col-xs-offset-1">
+                        <span>Country</span>
+                    </div>
+                    <div class="col-xs-8">
+                        <span class="brand-blue">{{vm.billingAddressCountry}}</span>
+                    </div>
+                </div>
+                <div class="row padding-md-bottom" ng-if="vm.addressFlag">
+                    <div class="col-xs-12 col-xs-offset-1">
+                        <span>My mailing address is the same as my billing address</span>
+                    </div>
+                </div>
+                <div class="padding-md-top padding-md-bottom" ng-if="!vm.addressFlag">
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>Mailing Address</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <span class="brand-blue">{{vm.mailingAddressNumber}}</span>
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>City / Province</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <span class="brand-blue">{{vm.mailingAddressCity}}</span>
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>State</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="brand-blue">{{vm.mailingAddressState}}</span>
+                        </div>
+                        <div class="col-xs-1">
+                            <span>Zip</span>
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="brand-blue">{{vm.mailingAddressZip}}</span>
+                        </div>
+                    </div>
+                    <div class="row padding-md-bottom">
+                        <div class="col-xs-2 col-xs-offset-1">
+                            <span>Country</span>
+                        </div>
+                        <div class="col-xs-8">
+                            <span class="brand-blue">{{vm.mailingAddressCountry}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-md-top">
+            <div class="col-xs-3 col-xs-offset-9">
+                <a class="btn btn-lg btn-primary pull-right" ng-click="vm.confirmCheckout()">Confirm and Purchase</a>
+            </div>
+        </div>
+    </div>
+</div>
