@@ -146,6 +146,9 @@
                 },
                 'content@profile': {
                     templateUrl: 'app/components/dashboard.html'
+                },
+                'renewal@profile': {
+                    templateUrl: 'app/components/renewal.html'
                 }
             }
         }).state('sign-up', {
@@ -159,10 +162,7 @@
                 }
             },
             params: {
-                selectedPlan: {
-                    category: null,
-                    level: null
-                }
+                selectedPlan: null
             },
             resolve: {
                 membershipParams: ['$stateParams', function ($stateParams) {
@@ -175,6 +175,14 @@
             views: {
                 'main@': {
                     templateUrl: 'app/components/login.html'
+                }
+            }
+        }).state('event-history', {
+            parent: 'app',
+            url: '/event-history',
+            views: {
+                'main@': {
+                    templateUrl: 'app/components/event-history.html'
                 }
             }
         });

@@ -1,6 +1,7 @@
 // ---------- Colors ----------
 $brand-blue: #00adee;
 $brand-blue-hover: #0087ba;
+$blue-transparent: rgba(0, 173, 238, 0.1);
 $brand-purple: #d271e4;
 $brand-green: #a8d644;
 $brand-red: #ff3530;
@@ -31,6 +32,7 @@ $border-grey: rgba(231, 231, 231, 1);
 .white {color: $white !important;}
 
 .bg-brand-blue {background-color: $brand-blue !important;}
+.bg-blue-transparent { background-color: $blue-transparent !important; }
 .bg-brand-purple {background-color: $brand-purple !important;}
 .bg-brand-green {background-color: $brand-green !important;}
 .bg-brand-red {background-color: $brand-red !important;}
@@ -50,10 +52,6 @@ $border-grey: rgba(231, 231, 231, 1);
     background: -o-linear-gradient(to right, #0072b9, #00b2eb);
     background: -moz-linear-gradient(to right, #0072b9, #00b2eb);
     background: linear-gradient(to right, #0072b9, #00b2eb);
-}
-
-.bg-blue-transparent {
-    background-color: rgba(0, 173, 238, 0.1) !important;
 }
 
 // ---------- Text ----------

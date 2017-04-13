@@ -26,19 +26,19 @@
                                 <tr>
                                     <td>
                                         <h4 class="padding-md-top">Basic</h4>
-                                        <p><span class="currency-sign">$</span><span class="currency-amount">399</span><span class="text-xs">USD</span><br><span>$399 CAD / €369</span></p>
-                                        <button type="button" ng-click="vm.selectMembership('supplier', 'basic')" class="btn btn-primary">Select this plan</button>
+                                        <p><span class="currency-sign">$</span><span class="currency-amount">399</span><span class="text-xs">USD/yr</span><br><span>$399 CAD / €369</span></p>
+                                        <button type="button" ng-click="vm.selectMembership(0)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                     </td>
                                     <td class="bg-blue-transparent">
                                         <span class="info-badge">Most popular</span>
                                         <h4 class="margin-xs-top">Advanced</h4>
-                                        <p><span class="currency-sign">$</span><span class="currency-amount">475</span><span class="text-xs">USD</span><br><span>$475 CAD / €450</span></p>
-                                        <button type="button" ng-click="vm.selectMembership('supplier', 'advanced')" class="btn btn-primary">Select this plan</button>
+                                        <p><span class="currency-sign">$</span><span class="currency-amount">475</span><span class="text-xs">USD/yr</span><br><span>$475 CAD / €450</span></p>
+                                        <button type="button" ng-click="vm.selectMembership(1)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                     </td>
                                     <td>
                                         <h4 class="padding-md-top">Premium</h4>
-                                        <p><span class="currency-sign">$</span><span class="currency-amount">569</span><span class="text-xs">USD</span><br><span>$569 CAD / €519</span></p>
-                                        <button type="button" ng-click="vm.selectMembership('supplier', 'premium')" class="btn btn-primary">Select this plan</button>
+                                        <p><span class="currency-sign">$</span><span class="currency-amount">569</span><span class="text-xs">USD/yr</span><br><span>$569 CAD / €519</span></p>
+                                        <button type="button" ng-click="vm.selectMembership(2)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                     </td>
                                 </tr>
                             </thead>
@@ -113,11 +113,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Basic</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">399</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">399</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$399 CAD / €369</span>
                                     </p>
-                                    <button type="button" ng-click="vm.selectMembership('supplier', 'basic')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
+                                    <button type="button" ng-click="vm.selectMembership(0)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierBasicIsOpen">
                                             <uib-accordion-heading>
@@ -155,11 +155,11 @@
                                     <span class="info-badge">Most popular</span>
                                     <h4>Advanced</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">475</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">475</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$475 CAD / €450</span>
                                     </p>
-                                    <button type="button" ng-click="vm.selectMembership('supplier', 'advanced')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
+                                    <button type="button" ng-click="vm.selectMembership(1)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierAdvancedIsOpen">
                                             <uib-accordion-heading>
@@ -180,11 +180,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Premium</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">569</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">569</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$569 CAD / €519</span>
                                     </p>
-                                    <button type="button" ng-click="vm.selectMembership('supplier', 'premium')" class="btn btn-primary margin-sm-bottom">Select this plan</button>
+                                    <button type="button" ng-click="vm.selectMembership(2)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.supplierPremiumIsOpen">
                                             <uib-accordion-heading>
@@ -212,20 +212,20 @@
                         <table class="table table-bordered hidden-xs">
                             <tr>
                                 <td>
-                                    <h4>Basic</h4>
-                                    <p><span class="currency-sign">$</span><span class="currency-amount">279</span><span class="text-xs">USD</span><br><span>$279 CAD / €259</span></p>
-                                    <a href="" class="btn btn-primary">Select this plan</a>
+                                    <h4 class="padding-md-top">Basic</h4>
+                                    <p><span class="currency-sign">$</span><span class="currency-amount">279</span><span class="text-xs">USD/yr</span><br><span>$279 CAD / €259</span></p>
+                                    <button type="button" ng-click="vm.selectMembership(3)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                 </td>
                                 <td class="bg-blue-transparent">
                                     <span class="info-badge">Most popular</span>
-                                    <h4>Advanced</h4>
-                                    <p><span class="currency-sign">$</span><span class="currency-amount">355</span><span class="text-xs">USD</span><br><span>$355 CAD / €325</span></p>
-                                    <a href="" class="btn btn-primary">Select this plan</a>
+                                    <h4 class="margin-xs-top">Advanced</h4>
+                                    <p><span class="currency-sign">$</span><span class="currency-amount">355</span><span class="text-xs">USD/yr</span><br><span>$355 CAD / €325</span></p>
+                                    <button type="button" ng-click="vm.selectMembership(4)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                 </td>
                                 <td>
-                                    <h4>Premium</h4>
-                                    <p><span class="currency-sign">$</span><span class="currency-amount">449</span><span class="text-xs">USD</span><br><span>$449 CAD / €399</span></p>
-                                    <a href="" class="btn btn-primary">Select this plan</a>
+                                    <h4 class="padding-md-top">Premium</h4>
+                                    <p><span class="currency-sign">$</span><span class="currency-amount">449</span><span class="text-xs">USD/yr</span><br><span>$449 CAD / €399</span></p>
+                                    <button type="button" ng-click="vm.selectMembership(5)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                 </td>
                             </tr>
                             <tr>
@@ -299,11 +299,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Basic</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">279</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">279</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$279 CAD / €259</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership(3)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.plannerBasicIsOpen">
                                             <uib-accordion-heading>
@@ -341,11 +341,11 @@
                                     <span class="info-badge">Most popular</span>
                                     <h4>Advanced</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">355</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">355</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$355 CAD / €325</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership(4)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.plannerAdvancedIsOpen">
                                             <uib-accordion-heading>
@@ -366,11 +366,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Premium</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">449</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">449</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$449 CAD / €399</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                   <button type="button" ng-click="vm.selectMembership(5)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.plannerPremiumIsOpen">
                                             <uib-accordion-heading>
@@ -398,9 +398,9 @@
                         <table class="table table-bordered hidden-xs">
                             <tr>
                                 <td colspan="3">
-                                    <h4>Faculty</h4>
-                                    <p><span class="currency-sign">$</span><span class="currency-amount">199</span><span class="text-xs">USD</span><br><span>$199 CAD / €199</span></p>
-                                    <a href="" class="btn btn-primary">Select this plan</a>
+                                    <h4 class="padding-md-top">Faculty</h4>
+                                    <p><span class="currency-sign">$</span><span class="currency-amount">199</span><span class="text-xs">USD/yr</span><br><span>$199 CAD / €199</span></p>
+                                    <button type="button" ng-click="vm.selectMembership(6)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                 </td>
                             </tr>
                             <tr>
@@ -458,11 +458,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Faculty</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">199</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">199</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$199 CAD / €199</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership(6)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.facultyFeaturesIsOpen">
                                             <uib-accordion-heading>
@@ -507,9 +507,9 @@
                         <table class="table table-bordered hidden-xs">
                             <tr>
                                 <td colspan="3">
-                                    <h4>Student</h4>
-                                    <p><span class="currency-sign">$</span><span class="currency-amount">40</span><span class="text-xs">USD</span><br><span>$40 CAD / €40</span></p>
-                                    <a href="" class="btn btn-primary">Select this plan</a>
+                                    <h4 class="padding-md-top">Student</h4>
+                                    <p><span class="currency-sign">$</span><span class="currency-amount">40</span><span class="text-xs">USD/yr</span><br><span>$40 CAD / €40</span></p>
+                                    <button type="button" ng-click="vm.selectMembership(7)" class="btn btn-primary margin-md-bottom">Select this plan</button>
                                 </td>
                             </tr>
                             <tr>
@@ -557,7 +557,7 @@
                                             </uib-accordion-heading>
                                             <div> 
                                                 <h5>You are a student if you are:</h5>
-                                                <p class="sans-300">Enrolled in a post-secondary academic program. You must be enrolled in a certificate, undergraduate or graduate program unless the academic institution defines it otherwise. Students enrolled in a certificate program will be eligible for student membership for one year but will not be eligible for the transition dues rate upon completion of their program. Proof of enrollment must be received at MPI before a student can be accepted into membership and upon renewal.</p>
+                                                <p class="sans-300">Enrolled in a post-secondary academic program. You must be enrolled in a certificate, undergraduate or graduate program unless the academic institution defines it otherwise. Students enrolled in a certificate program will be eligible for student membership for one yr but will not be eligible for the transition dues rate upon completion of their program. Proof of enrollment must be received at MPI before a student can be accepted into membership and upon renewal.</p>
                                             </div>
                                         </div>
                                     </uib-accordion>
@@ -567,11 +567,11 @@
                                 <div class="col-xs-12 padding-md-top">
                                     <h4>Student</h4>
                                     <p>
-                                        <span class="currency-sign">$</span><span class="currency-amount">40</span><span class="text-xs">USD</span>
+                                        <span class="currency-sign">$</span><span class="currency-amount">40</span><span class="text-xs">USD/yr</span>
                                         <br>
                                         <span class="text-xs">$40 CAD / €40</span>
                                     </p>
-                                    <a href="" class="btn btn-primary margin-sm-bottom">Select this plan</a>
+                                    <button type="button" ng-click="vm.selectMembership(7)" class="btn btn-primary margin-sm-bottom">Select this plan</button>
                                     <uib-accordion>
                                         <div uib-accordion-group class="panel-default" is-open="vm.studentFeaturesIsOpen">
                                             <uib-accordion-heading>
