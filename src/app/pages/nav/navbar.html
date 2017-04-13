@@ -79,12 +79,14 @@
                     <li id="profile-picture" class="padding-xs-top" ng-if="vm.loggedIn">
                         <img class="img-circle" src="http://placecage.com/g/100/100">
                     </li>
-                    <li uib-dropdown class="padding-sm-left margin-none-left" ng-if="vm.loggedIn">
+                    <li uib-dropdown class="margin-none-left" ng-if="vm.loggedIn">
                         <a type="button" uib-dropdown-toggle><span class="hidden-sm">Amanda Dunham </span><span class="caret"></span></a>
                         <ul class="dropdown-menu" uib-dropdown-menu role="menu">
                             <li><a ui-sref="profile">Profile</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a ui-sref="#">Settings</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a ui-sref="#">Log Out</a></li>
                         </ul>
                     </li>
                     <li class="margin-sm-left" ng-if="!vm.loggedIn"><a ui-sref="#">Log In</a></li>
