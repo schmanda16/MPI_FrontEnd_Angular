@@ -117,10 +117,10 @@
                 }
             }
         }).state('connect.chapters', {
-            url: '/academy',
+            url: '/chapters',
             views: {
-                'content@': {
-                    templateUrl: 'app/components/academy.html'
+                'main@': {
+                    templateUrl: 'app/components/directory.html'
                 }
             }
         }).state('connect.events', {

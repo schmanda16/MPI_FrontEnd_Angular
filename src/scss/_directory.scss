@@ -1,0 +1,90 @@
+.directory {
+    .picture-column {
+        width: 25%;
+    }
+    .info-column{
+        width: 75%;
+    }
+
+    .member-card {
+        border: 1px solid $off-grey;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .member-photo {
+        border-radius: 50%;
+        width: 70px;
+        border: 2px solid $off-grey;
+    }
+    .member-name {
+        font-family: 'MuseoSans-700';
+        font-size: $text-md;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    $line-height: 16px;
+    $lines-to-show: 2;
+    .member-role {
+        font-family: 'MuseoSans-300';
+        font-size: $text-xs;
+        // display: flex;
+        // align-items: center;
+        
+        // Truncate text after second line
+        display: block; 
+        display: -webkit-box;
+        height: $line-height*$lines-to-show;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .member-location {
+        font-family: 'MuseoSans-300';
+        font-size: $text-xxs;
+        color: $dark-grey;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .search {
+        border: solid 1px $light-grey;
+        border-radius: 4px;
+        overflow: hidden;
+        .glyphicon-search {
+            color: $light-grey;
+        }
+        input {
+            border: none;
+            padding: 5px;
+            color: $dark-grey;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+
+
+// Large Screen
+@media (min-width: 1200px) {
+    .directory {
+        .member-photo {
+            width: 70px;
+        }
+    }
+}
+
+// Medium Screen
+@media (max-width: 1200px) {
+    .directory {
+        .member-photo {
+            width: 60px;
+        }
+    }
+}
