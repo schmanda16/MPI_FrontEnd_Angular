@@ -67,6 +67,15 @@
             }
         }
     }
+    .pagination-sm {
+        a {
+            border: none;
+        }
+        .active a {
+            background: none;
+            color: $brand-blue;
+        }
+    }
 }
 
 
