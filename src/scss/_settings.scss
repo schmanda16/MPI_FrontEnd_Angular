@@ -1,0 +1,19 @@
+.profile-settings {
+    .nav {
+        li > a {
+            border-radius: 0px;
+        }
+    }
+    .uib-tab {
+        a {
+            color: $dark-grey;
+        }
+    }
+    .nav-pills > li.active > a {
+        background-color: $brand-blue;
+    }
+    input {
+        width: 100%;
+        padding-left: 12px;
+    }
+}

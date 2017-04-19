@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h4>Personal Information</h4>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Name</span>
+    </div>
+    <div class="col-xs-4">
+        <input placeholder="First">
+    </div>
+    <div class="col-xs-5">
+        <input placeholder="Last">
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Gender</span>
+    </div>
+    <div class="col-xs-9">
+        <!--<input>-->
+        <styled-dropdown value="vm.selectedGender" menu-options="[{name:'Male'},{name:'Female'}]" item-display-key="name"></styled-dropdown>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Designations</span>
+    </div>
+    <div class="col-xs-9">
+        <!--<input>-->
+        <styled-dropdown value="vm.selectedDesignation" menu-options="[{name:'CMP'},{name:'CMM'},{name:'Other'}]" item-display-key="name"></styled-dropdown>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Years in Meetings Industry</span>
+    </div>
+    <div class="col-xs-9">
+        <input maxlength="3">
+    </div>
+</div>
+<div class="row margin-lg-top">
+    <div class="col-xs-12">
+        <h4>Employement Information</h4>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Job Title</span>
+    </div>
+    <div class="col-xs-9">
+        <input>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Job Classification</span>
+    </div>
+    <div class="col-xs-9">
+        <input>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Company</span>
+    </div>
+    <div class="col-xs-9">
+        <input>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Industry</span>
+    </div>
+    <div class="col-xs-9">
+        <!--<input>-->
+        <!--<styled-dropdown value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-dropdown>-->
+        <styled-typeahead value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-typeahead>
+    </div>
+</div>
+<div class="row padding-md-top">
+    <div class="col-xs-3">
+        <span>Company Website</span>
+    </div>
+    <div class="col-xs-9">
+        <!--<input>-->
+        <styled-dropdown value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-dropdown>
+    </div>
+</div>

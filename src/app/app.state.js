@@ -137,18 +137,36 @@
                     templateUrl: 'app/components/academy.html'
                 }
             }
-        }).state('profile', {
+        }).state('user', {
+            abstract: true,
             parent: 'app',
+            url: '/user'
+        }).state('user.profile', {
             url: '/profile',
             views: {
                 'main@': {
                     templateUrl: 'app/pages/main/dashboard.html'
                 },
-                'content@profile': {
+                'content@user.profile': {
                     templateUrl: 'app/components/dashboard.html'
                 },
-                'renewal@profile': {
+                'renewal@user.profile': {
                     templateUrl: 'app/components/renewal.html'
+                }
+            }
+        }).state('user.settings', {
+            url: '/settings',
+            views: {
+                'main@': {
+                    templateUrl: 'app/components/settings.html',
+                    controller: 'SettingsController',
+                    controllerAs: 'vm'
+                },
+                'personal-info@user.settings': {
+                    templateUrl: 'app/components/settings-info.html'
+                },
+                'contact@user.settings': {
+                    templateUrl: 'app/components/settings-contact.html'
                 }
             }
         }).state('sign-up', {

@@ -5,6 +5,8 @@
 		.module('app', [
 			'ui.router',
 			'ui.bootstrap',
-			'mgcrea.bootstrap.affix'
+			'mgcrea.bootstrap.affix',
+			'ngSanitize',
+			'ui.select'
 	]);
 })();
