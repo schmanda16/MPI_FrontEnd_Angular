@@ -1,0 +1,14 @@
+<div class="styled-typeahead-container">
+    <div class="styled-typeahead">
+        <input type="text" class="form-control"
+            uib-typeahead="item as item[vm.itemDisplayKey] + '' for item in vm.menuOptions | filter:$viewValue | limitTo:10"
+            ng-model="vm.value"
+            typeahead-min-length="0"
+            typeahead-show-hint="false"
+            typeahead-on-select="vm.selectOption({item: $item})"
+            typeahead-editable="false"
+            ng-focus="vm.hasFocus()"
+            ng-blur="vm.lostFocus()">
+        <span class="styled-typeahead-icon input-no-highlight"><i class="caret"></i></span>
+    </div>
+</div>

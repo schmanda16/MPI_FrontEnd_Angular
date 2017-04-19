@@ -1,0 +1,33 @@
+.styled-typeahead-container {
+    width: 100%;
+    .styled-typeahead {
+        display: table;
+        table-layout: fixed;
+        border: 1px solid $light-grey;
+        width: 100%;
+        border-radius: 2px;
+        height: 32px;
+        input {
+            border: none;
+            box-shadow: none;
+            color: $light-grey;
+        }
+        .styled-typeahead-icon {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            color: $light-grey;
+            width: 40px;
+        }
+    }
+    .dropdown-menu {
+        width: 95%;
+        li a {
+            color: $light-grey;
+        }
+        .active a {
+            background-color: $off-white;
+            color: $light-grey;
+        }
+    }
+}
