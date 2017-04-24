@@ -78,7 +78,9 @@ body {
         padding-right: 0px;
     }
 }
-
 ::placeholder {
     color: $light-grey;
+}
+a {
+    cursor: pointer !important;
 }
