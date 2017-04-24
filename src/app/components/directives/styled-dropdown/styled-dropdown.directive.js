@@ -16,7 +16,8 @@
                 value: '=',
                 menuOptions: '=',
                 itemDisplayKey: '@',
-                changeCallback: '&'
+                changeCallback: '&',
+                hasError: "="
             }
         };
         return directive;

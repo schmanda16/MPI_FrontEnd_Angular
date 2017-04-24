@@ -1,90 +1,112 @@
-<div class="row">
-    <div class="col-xs-12">
-        <h4>Personal Information</h4>
+<form name="vm.generalInformationForm" ng-submit="vm.saveGeneralInformation()" novalidate>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Personal Information</h4>
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Name</span>
+    <div class="row" ng-if="vm.generalInformationForm.$submitted && vm.generalInformationForm.$invalid">
+        <div class="col-xs-12">
+            <span class="brand-red">Please fill out the required fields</span>
+        </div>
     </div>
-    <div class="col-xs-4">
-        <input placeholder="First">
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Name</span>
+        </div>
+        <div class="col-xs-4">
+            <input ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.firstName.$error.required}" type="text" name="firstName" placeholder="First" ng-model="vm.generalInformation.firstName" required>
+        </div>
+        <div class="col-xs-5">
+            <input ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.lastName.$error.required}" type="text" name="lastName" placeholder="Last" ng-model="vm.generalInformation.lastName" required>
+        </div>
     </div>
-    <div class="col-xs-5">
-        <input placeholder="Last">
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Gender</span>
+        </div>
+        <div class="col-xs-9">
+            <!--<styled-dropdown value="vm.generalInformation.gender" menu-options="['Male','Female', 'Prefer not to answer']"></styled-dropdown>-->
+            <styled-ui-select value="vm.generalInformation.gender" menu-options="[{name:'Male'},{name:'Female'}, {name:'Prefer not to answer'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Gender</span>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Designations</span>
+        </div>
+        <div class="col-xs-9">
+            <input ng-model="vm.generalInformation.designations.cmm" type="checkbox" id="cmm-designation-checkbox" class="regular-checkbox"/><label for="cmm-designation-checkbox"></label>
+            <span>CMM</span>
+            &nbsp;&nbsp;
+            <input ng-model="vm.generalInformation.designations.cmp" type="checkbox" id="cmp-designation-checkbox" class="regular-checkbox"/><label for="cmp-designation-checkbox"></label>
+            <span>CMP</span>
+            &nbsp;&nbsp;
+            <input ng-model="vm.generalInformation.designations.other" type="checkbox" id="other-designation-checkbox" class="regular-checkbox"/><label for="other-designation-checkbox"></label>
+            <span>Other</span>
+        </div>
     </div>
-    <div class="col-xs-9">
-        <!--<input>-->
-        <styled-dropdown value="vm.selectedGender" menu-options="[{name:'Male'},{name:'Female'}]" item-display-key="name"></styled-dropdown>
+    <div class="row padding-md-top" ng-if="vm.generalInformation.designations.other">
+        <div class="col-xs-9 col-xs-offset-3">
+            <input ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.designationOther.$error.required}" type="text" name="designationOther" placeholder="Please specify" ng-model="vm.generalInformation.designation.specificName" required>
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Designations</span>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Years in Meetings Industry</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="number" name="yearsInIndustry" min="0" max="100" ng-model="vm.generalInformation.yearsInIndustry">
+        </div>
     </div>
-    <div class="col-xs-9">
-        <!--<input>-->
-        <styled-dropdown value="vm.selectedDesignation" menu-options="[{name:'CMP'},{name:'CMM'},{name:'Other'}]" item-display-key="name"></styled-dropdown>
+    <div class="row margin-lg-top">
+        <div class="col-xs-12">
+            <h4>Employement Information</h4>
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Years in Meetings Industry</span>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Job Title</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="text" ng-model="vm.generalInformation.jobTitle">
+        </div>
     </div>
-    <div class="col-xs-9">
-        <input maxlength="3">
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Job Classification</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="text" ng-model="vm.generalInformation.jobClassification">
+        </div>
     </div>
-</div>
-<div class="row margin-lg-top">
-    <div class="col-xs-12">
-        <h4>Employement Information</h4>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Company</span>
+        </div>
+        <div class="col-xs-9">
+            <!--<styled-typeahead value="vm.generalInformation.company" menu-options="['Credera', 'MPI', 'PepsiCo', 'PwC', 'Will Reed Jobs', 'Baylor Scott & White']" enter-value="true"></styled-typeahead>-->
+            <styled-ui-select value="vm.generalInformation.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Job Title</span>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Industry</span>
+        </div>
+        <div class="col-xs-9">
+            <!--<styled-dropdown value="vm.generalInformation.industry" menu-options="vm.industries" item-display-key="name"></styled-dropdown>-->
+            <styled-ui-select value="vm.generalInformation.industry" menu-options="vm.industries" item-display-key="name" search-enabled="false"></styled-ui-select>
+        </div>
     </div>
-    <div class="col-xs-9">
-        <input>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Company Website</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="text" ng-model="vm.generalInformation.companyWebsite">
+        </div>
     </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Job Classification</span>
+    <div class="row padding-md-top">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.generalInformationForm.$pristine}">Save changes</button>
+        </div>
     </div>
-    <div class="col-xs-9">
-        <input>
-    </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Company</span>
-    </div>
-    <div class="col-xs-9">
-        <input>
-    </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Industry</span>
-    </div>
-    <div class="col-xs-9">
-        <!--<input>-->
-        <!--<styled-dropdown value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-dropdown>-->
-        <styled-typeahead value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-typeahead>
-    </div>
-</div>
-<div class="row padding-md-top">
-    <div class="col-xs-3">
-        <span>Company Website</span>
-    </div>
-    <div class="col-xs-9">
-        <!--<input>-->
-        <styled-dropdown value="vm.selectedIndustry" menu-options="vm.industries" item-display-key="name" change-callback="vm.industryChanged(item)"></styled-dropdown>
-    </div>
-</div>
+</form>

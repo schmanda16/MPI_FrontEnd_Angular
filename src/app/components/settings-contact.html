@@ -9,3 +9,69 @@
         <p>Work Address</p>
     </div>
 </div>
+
+
+
+<form name="vm.contactInformationForm" ng-submit="vm.saveContactInformation()" novalidate>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Contact Information</h4>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Email Address</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="email" ng-model="vm.contactInformation.email" required>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Cell Phone Number</span>
+        </div>
+        <div class="col-xs-9">
+            <input ng-model="vm.contactInformation.cellPhoneNumber">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Work Phone Number</span>
+        </div>
+        <div class="col-xs-9">
+            <input ng-model="vm.contactInformation.workPhoneNumber">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Home Phone Number</span>
+        </div>
+        <div class="col-xs-9">
+            <input ng-model="vm.contactInformation.homePhoneNumber">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Home Address</span>
+        </div>
+        <div class="col-xs-9">
+            <input ng-model="vm.contactInformation.address.streetAddress" placeholder="Street Address">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input ng-model="vm.contactInformation.address.city" placeholder="City">
+        </div>
+        <div class="col-xs-2">
+            <input ng-model="vm.contactInformation.address.state" placeholder="State">
+        </div>
+        <div class="col-xs-2">
+            <input ng-model="vm.contactInformation.address.zip" placeholder="Zip">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.contactInformationForm.$pristine}">Save changes</button>
+        </div>
+    </div>
+</form>

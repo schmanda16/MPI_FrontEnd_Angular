@@ -4,10 +4,19 @@
     background-color: transparent;
     border: solid 1px $brand-blue;
     font-weight: 800;
-
     &:hover {
         background: $brand-blue;
         color: $white;
+        &.disabled {
+            background: $off-grey;
+            border-color: $off-grey;
+        }
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $off-grey;
+        border-color: $off-grey;
+        color: $grey;
     }
 }
 
@@ -17,10 +26,19 @@
     background-color: $brand-blue;
     border-color: $brand-blue;
     font-weight: 500;
-
     &:hover {
         background: $brand-blue-hover;
         border-color: $brand-blue-hover;
+        &.disabled {
+            background: $off-grey;
+            border-color: $off-grey;
+        }
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $off-grey;
+        border-color: $off-grey;
+        color: $grey;
     }
 }
 
@@ -30,9 +48,18 @@
     background-color: $white;
     border-color: $white;
     font-weight: 500;
-
     &:hover {
         color: $brand-blue-hover;
+        &.disabled {
+            background: $off-grey;
+            border-color: $off-grey;
+        }
+    }
+    &.disabled {
+        cursor: not-allowed;
+        background-color: $off-grey;
+        border-color: $off-grey;
+        color: $grey;
     }
 }
 

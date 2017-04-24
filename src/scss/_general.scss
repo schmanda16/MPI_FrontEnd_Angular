@@ -78,3 +78,7 @@ body {
         padding-right: 0px;
     }
 }
+
+::placeholder {
+    color: $light-grey;
+}

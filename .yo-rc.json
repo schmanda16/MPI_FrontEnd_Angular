@@ -7,7 +7,7 @@
       "js": "js",
       "ci": "",
       "css": "scss",
-      "resolved": "/Users/aschlaudt/.nvm/versions/node/v6.3.0/lib/node_modules/generator-fountain-webapp/node_modules/generator-fountain-angular1/generators/app/index.js",
+      "resolved": "/Users/adunham/.nvm/versions/node/v6.3.0/lib/node_modules/generator-fountain-webapp/node_modules/generator-fountain-angular1/generators/app/index.js",
       "namespace": "fountain-angular1:app",
       "_": [],
       "sample": "hello",

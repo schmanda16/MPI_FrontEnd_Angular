@@ -10,7 +10,8 @@
     function SettingsController() {
         var vm = this;
         vm.selectedTabIndex = 0;
-        vm.industryChanged = industryChanged;
+        vm.saveGeneralInformation = saveGeneralInformation;
+        vm.saveContactInformation = saveContactInformation;
 
         vm.industries = [
             {
@@ -48,7 +49,45 @@
             }
         ];
 
-        function industryChanged(item) {
+        vm.companies = [
+            {
+                name: 'Credera'
+            },
+            {
+                name: 'MPI'
+            },
+            {
+                name: 'PepsiCo'
+            },
+            {
+                name: 'Sysco'
+            },
+            {
+                name: 'PwC'
+            },
+            {
+                name: 'Will Reed Jobs'
+            },
+            {
+                name: 'Baylor Scott & White'
+            },
+            {
+                name: 'Pappas Restaurants'
+            },
+            {
+                name: 'Remax'
+            },
+            {
+                name: 'San Antonio Spurs'
+            }
+        ];
+
+        function saveGeneralInformation() {
+            console.log('general information saved');
+        }
+
+        function saveContactInformation() {
+            console.log('contact information saved');
         }
     }
 })();

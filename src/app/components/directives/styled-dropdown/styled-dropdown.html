@@ -1,5 +1,5 @@
-<div class="styled-dropdown-container" uib-dropdown>
-    <div class="styled-dropdown" uib-dropdown-toggle>
+<div class="styled-dropdown-container" ng-if="vm.itemDisplayKey" uib-dropdown>
+    <div class="styled-dropdown" ng-class="{'has-error': vm.hasError}" uib-dropdown-toggle>
         <div class="styled-dropdown-content">
             <div class="styled-dropdown-value">{{vm.value[vm.itemDisplayKey]}}</div>
         </div>
@@ -9,5 +9,18 @@
     </div>
     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
         <li role="menuitem" ng-repeat="option in vm.menuOptions" ng-click="vm.selectOption(option)"><a href="">{{option[vm.itemDisplayKey]}}</a></li>
+    </ul>
+</div>
+<div class="styled-dropdown-container" ng-if="!vm.itemDisplayKey" uib-dropdown>
+    <div class="styled-dropdown" ng-class="{'has-error': vm.hasError}" uib-dropdown-toggle>
+        <div class="styled-dropdown-content">
+            <div class="styled-dropdown-value">{{vm.value}}</div>
+        </div>
+        <div class="styled-dropdown-icon">
+            <span class="caret"></span>
+        </div>
+    </div>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+        <li role="menuitem" ng-repeat="option in vm.menuOptions" ng-click="vm.selectOption(option)"><a href="">{{option}}</a></li>
     </ul>
 </div>

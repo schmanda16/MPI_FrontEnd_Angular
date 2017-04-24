@@ -7,13 +7,16 @@
         width: 100%;
         border-radius: 2px;
         height: 32px;
+        &.error {
+            border-color: $brand-red; 
+        }
         .styled-dropdown-content {
             display: table-cell;
             vertical-align: top;
             padding: 4px;
             padding-left: 12px;
             .styled-dropdown-value {
-                color: $light-grey;
+                color: $darkest-grey;
                 width: 100%;
                 white-space: nowrap;
                 overflow: hidden;
@@ -34,11 +37,7 @@
         max-height: 200px;
         overflow-y: scroll;
         li a {
-            color: $light-grey;
-        }
-        .active a {
-            background-color: $brand-blue;
-            color: $white;
+            color: $darkest-grey;
         }
     }
 }

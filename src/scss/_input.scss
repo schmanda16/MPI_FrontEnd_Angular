@@ -4,9 +4,12 @@ input {
     border-radius: 2px;
     overflow: hidden;
     padding: 5px;
-    color: $light-grey;
+    color: $darkest-grey;
     &:focus {
         outline: none;
+    }
+    &.error {
+        border-color: $brand-red;
     }
 }
 

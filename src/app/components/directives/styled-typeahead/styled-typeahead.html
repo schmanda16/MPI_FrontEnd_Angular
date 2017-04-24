@@ -1,12 +1,24 @@
 <div class="styled-typeahead-container">
-    <div class="styled-typeahead">
-        <input type="text" class="form-control"
+    <div class="styled-typeahead" ng-class="{'has-error': vm.hasError}">
+        <input type="text" class="form-control" ng-if="vm.itemDisplayKey"
             uib-typeahead="item as item[vm.itemDisplayKey] + '' for item in vm.menuOptions | filter:$viewValue | limitTo:10"
             ng-model="vm.value"
+            ng-required="vm.required"
+            typeahead-editable="vm.enterOwnValue"
             typeahead-min-length="0"
             typeahead-show-hint="false"
             typeahead-on-select="vm.selectOption({item: $item})"
-            typeahead-editable="false"
+            ng-focus="vm.hasFocus()"
+            ng-blur="vm.lostFocus()">
+
+            <input type="text" class="form-control" ng-if="!vm.itemDisplayKey"
+            uib-typeahead="item for item in vm.menuOptions | filter:$viewValue | limitTo:10"
+            ng-model="vm.value"
+            ng-required="vm.required"
+            typeahead-editable="vm.enterValue"
+            typeahead-min-length="0"
+            typeahead-show-hint="false"
+            typeahead-on-select="vm.selectOption({item: $item})"
             ng-focus="vm.hasFocus()"
             ng-blur="vm.lostFocus()">
         <span class="styled-typeahead-icon input-no-highlight"><i class="caret"></i></span>

@@ -7,10 +7,13 @@
         width: 100%;
         border-radius: 2px;
         height: 32px;
+        &.error {
+            border-color: $brand-red; 
+        }
         input {
             border: none;
             box-shadow: none;
-            color: $light-grey;
+            color: $darkest-grey;
         }
         .styled-typeahead-icon {
             display: table-cell;
@@ -23,11 +26,11 @@
     .dropdown-menu {
         width: 95%;
         li a {
-            color: $light-grey;
+            color: $darkest-grey;
         }
         .active a {
             background-color: $off-white;
-            color: $light-grey;
+            color: $darkest-grey;
         }
     }
 }

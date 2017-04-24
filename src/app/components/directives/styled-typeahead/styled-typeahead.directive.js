@@ -16,7 +16,10 @@
                 value: '=',
                 menuOptions: '=',
                 itemDisplayKey: '@',
-                changeCallback: '&'
+                changeCallback: '&',
+                hasError: "=",
+                required: '@',
+                enterValue: '@'
             }
         };
         return directive;
