@@ -167,6 +167,9 @@
                 },
                 'contact@user.settings': {
                     templateUrl: 'app/components/settings-contact.html'
+                },
+                'email-preferences@user.settings': {
+                    templateUrl: 'app/components/settings-email-preferences.html'
                 }
             }
         }).state('sign-up', {

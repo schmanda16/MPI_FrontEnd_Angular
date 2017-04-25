@@ -32,6 +32,11 @@
                             <span class="icon icon-cog">&nbsp;</span>Settings
                         </uib-tab-heading>
                     </uib-tab>
+                    <uib-tab index="4" select="vm.selectedTabIndex = 4">
+                        <uib-tab-heading>
+                            <span class="icon icon-bubbles3">&nbsp;</span>Manage Email Preferences
+                        </uib-tab-heading>
+                    </uib-tab>
                 </uib-tabset>
             </div>
             <div class="col-md-8 col-md-offset-1">
@@ -48,6 +53,10 @@
                 </div>
                 <div ng-show="vm.selectedTabIndex == 3">
                     <h4>Settings</h4>
+                </div>
+                <div ng-show="vm.selectedTabIndex == 4">
+                    <!--<h4>Manage Email Preferences</h4>-->
+                    <div ui-view="email-preferences"></div>
                 </div>
             </div>
         </div>
