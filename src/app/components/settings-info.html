@@ -25,7 +25,6 @@
             <span>Gender</span>
         </div>
         <div class="col-xs-9">
-            <!--<styled-dropdown value="vm.generalInformation.gender" menu-options="['Male','Female', 'Prefer not to answer']"></styled-dropdown>-->
             <styled-ui-select value="vm.generalInformationForm.gender" menu-options="[{name:'Male'},{name:'Female'}, {name:'Prefer not to answer'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
         </div>
     </div>
@@ -51,10 +50,10 @@
     </div>
     <div class="row padding-md-top">
         <div class="col-xs-3">
-            <span>Years in Meetings Industry</span>
+            <span>Year You Joined Meetings Industry</span>
         </div>
         <div class="col-xs-9">
-            <input type="number" name="years" min="0" max="100" ng-model="vm.generalInformationForm.yearsInIndustry">
+            <input type="text" name="years" ng-model="vm.generalInformationForm.yearsJoinedIndustry">
         </div>
     </div>
     <div class="row margin-lg-top">
@@ -75,7 +74,8 @@
             <span>Job Classification</span>
         </div>
         <div class="col-xs-9">
-            <input type="text" name="classification" ng-model="vm.generalInformationForm.jobClassification">
+            <!--<input type="text" name="classification" ng-model="vm.generalInformationForm.jobClassification">-->
+            <styled-ui-select value="vm.generalInformationForm.jobClassification" menu-options="[{name:'Manager'},{name:'Executive'}, {name:'Staff'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">

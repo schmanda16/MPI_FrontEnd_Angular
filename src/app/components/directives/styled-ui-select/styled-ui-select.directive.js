@@ -19,9 +19,10 @@
                 menuOptions:"=",
                 itemDisplayKey:"@",
                 changeCallback:"&",
-                hasError: "=",
-                required: '@',
-                searchEnabled: '@'
+                hasError:"=",
+                required:"@",
+                searchEnabled:"@",
+                placeholderText:"@"
             }
         };
         return directive;
