@@ -83,8 +83,9 @@
             <span>Company</span>
         </div>
         <div class="col-xs-9">
-            <styled-typeahead value="vm.generalInformationForm.company" menu-options="['Credera', 'MPI', 'PepsiCo', 'PwC', 'Will Reed Jobs', 'Baylor Scott & White']" enter-value="true"></styled-typeahead>
+            <!--<styled-typeahead value="vm.generalInformationForm.company" menu-options="['Credera', 'MPI', 'PepsiCo', 'PwC', 'Will Reed Jobs', 'Baylor Scott & White']" enter-value="true"></styled-typeahead>-->
             <!--<styled-ui-select value="vm.generalInformation.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>-->
+            <styled-typeahead value="vm.generalInformationForm.company" menu-options="vm.companies" item-display-key="name" enter-value="true"></styled-typeahead>
             <span class="text-xxs">If your company is not listed in the dropdown, just type in the name.</span>
         </div>
     </div>

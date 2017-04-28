@@ -7,6 +7,7 @@
 			'ui.bootstrap',
 			'mgcrea.bootstrap.affix',
 			'ngSanitize',
-			'ui.select'
+			'ui.select',
+			'ngResource'
 	]);
 })();

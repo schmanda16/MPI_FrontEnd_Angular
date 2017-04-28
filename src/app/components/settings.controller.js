@@ -5,13 +5,22 @@
         .module('app')
         .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = [];
+    SettingsController.$inject = ['$q', 'SettingsService'];
 
-    function SettingsController() {
+    function SettingsController($q, SettingsService) {
         var vm = this;
         vm.selectedTabIndex = 0;
         vm.saveGeneralInformation = saveGeneralInformation;
         vm.saveContactInformation = saveContactInformation;
+
+        activate() ;
+        function activate() {
+            SettingsService.getCompanyList().then(function(companyList) {
+                if(companyList) {
+                    vm.companies = companyList;
+                }
+            })
+        }
 
         vm.industries = [
             {
@@ -49,7 +58,7 @@
             }
         ];
 
-        vm.companies = [
+        /*vm.companies = [
             {
                 name: 'Credera'
             },
@@ -80,7 +89,7 @@
             {
                 name: 'San Antonio Spurs'
             }
-        ];
+        ];*/
 
         function saveGeneralInformation() {
             console.log('general information saved');
