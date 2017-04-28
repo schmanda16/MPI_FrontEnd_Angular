@@ -9,7 +9,8 @@
             typeahead-show-hint="false"
             typeahead-on-select="vm.selectOption({item: $item})"
             ng-focus="vm.hasFocus()"
-            ng-blur="vm.lostFocus()">
+            ng-blur="vm.lostFocus()"
+            typeahead-min-length="1">
 
             <input type="text" class="form-control" ng-if="!vm.itemDisplayKey"
             uib-typeahead="item for item in vm.menuOptions | filter:$viewValue | limitTo:10"

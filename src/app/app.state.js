@@ -171,6 +171,35 @@
                 'email-preferences@user.settings': {
                     templateUrl: 'app/components/settings-email-preferences.html'
                 }
+            },
+            resolve: {
+                profile: ['$q', 'SettingsService', function($q, SettingsService) {
+                    // Web User ID will be provided by the cookie, but right now I'm using a hardcoded value for test
+                    var webUserId = 1763;
+                    
+                    var profileObj = {
+                        person: {},
+                        companies: []
+                    };
+                    var promises = [];
+
+                    var personPromise =  SettingsService.getPersonByUserId(webUserId);
+                    promises.push(personPromise);
+                    personPromise = personPromise.then(function(person) {
+                        profileObj.person = person;
+                    });
+
+
+                    var companiesPromise =  SettingsService.getCompanyList();
+                    promises.push(companiesPromise);
+                    companiesPromise = companiesPromise.then(function(companyList) {
+                        profileObj.companies = companyList;
+                    });
+
+                    return $q.all(promises).then(function() {
+                        return profileObj;
+                    });
+                }]
             }
         }).state('sign-up', {
             parent: 'app',

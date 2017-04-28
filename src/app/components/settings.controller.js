@@ -5,22 +5,16 @@
         .module('app')
         .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['$q', 'SettingsService'];
+    SettingsController.$inject = ['$q', 'SettingsService', 'profile'];
 
-    function SettingsController($q, SettingsService) {
+    function SettingsController($q, SettingsService, profile) {
         var vm = this;
         vm.selectedTabIndex = 0;
         vm.saveGeneralInformation = saveGeneralInformation;
         vm.saveContactInformation = saveContactInformation;
 
-        activate() ;
-        function activate() {
-            SettingsService.getCompanyList().then(function(companyList) {
-                if(companyList) {
-                    vm.companies = companyList;
-                }
-            })
-        }
+        vm.person = profile.person;
+        vm.companies = profile.companies;
 
         vm.industries = [
             {
@@ -100,3 +94,5 @@
         }
     }
 })();
+
+// FunctionRole = Job Classification
