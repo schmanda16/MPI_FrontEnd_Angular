@@ -10,80 +10,48 @@
     function SettingsController($q, SettingsService, profile) {
         var vm = this;
         vm.selectedTabIndex = 0;
+        vm.changeGender = changeGender;
         vm.saveGeneralInformation = saveGeneralInformation;
         vm.saveContactInformation = saveContactInformation;
 
         vm.person = profile.person;
+        vm.functionRoles = profile.functionRoles;
         vm.companies = profile.companies;
-
-        vm.industries = [
+        vm.industries = profile.industries;
+        vm.countries = profile.countries;
+        vm.genders = [
             {
-                name: 'Accounting'
+                id: 0,
+                name: 'Male'
             },
             {
-                name: 'Construction'
+                id: 1,
+                name: 'Female'
             },
             {
-                name: 'Defense'
-            },
-            {
-                name: 'Education'
-            },
-            {
-                name: 'Energy'
-            },
-            {
-                name: 'Food & Beverage'
-            },
-            {
-                name: 'Law'
-            },
-            {
-                name: 'Oil & Gas'
-            },
-            {
-                name: 'Real Estate'
-            },
-            {
-                name: 'Sports'
-            },
-            {
-                name: 'Technology'
+                id: 2,
+                name: 'Unknown'
             }
         ];
 
-        /*vm.companies = [
-            {
-                name: 'Credera'
-            },
-            {
-                name: 'MPI'
-            },
-            {
-                name: 'PepsiCo'
-            },
-            {
-                name: 'Sysco'
-            },
-            {
-                name: 'PwC'
-            },
-            {
-                name: 'Will Reed Jobs'
-            },
-            {
-                name: 'Baylor Scott & White'
-            },
-            {
-                name: 'Pappas Restaurants'
-            },
-            {
-                name: 'Remax'
-            },
-            {
-                name: 'San Antonio Spurs'
+        vm.person.hasOtherDesignation = false;
+
+        activate();
+
+        function activate() {
+            if(vm.person && vm.person.other) {
+                vm.person.hasOtherDesignation = true;
             }
-        ];*/
+            if(vm.person && vm.person.gender) {
+                vm.person.genderObject = _.find(vm.genders, function(gender) {
+                    return gender.id === vm.person.gender;
+                });
+            }
+        }
+
+        function changeGender(item) {
+            vm.person.gender = item.id;
+        }
 
         function saveGeneralInformation() {
             console.log('general information saved');
@@ -94,5 +62,3 @@
         }
     }
 })();
-
-// FunctionRole = Job Classification

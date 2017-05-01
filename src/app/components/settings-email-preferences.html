@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="print-magazine-checkbox" ng-model="vm.emailPreferencesForm.printMeetingProfessional" class="regular-checkbox"/><label for="print-magazine-checkbox"></label>
+                <input type="checkbox" id="print-magazine-checkbox" ng-model="vm.person.tmpPrint" ng-checked="!vm.person.tmpPrint" class="regular-checkbox"/><label for="print-magazine-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm"><i>The Meeting Professional</i> - Print</span>
             </p>
@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="digital-magazine-checkbox" ng-model="vm.emailPreferencesForm.digitalMeetingProfessional" class="regular-checkbox"/><label for="digital-magazine-checkbox"></label>
+                <input type="checkbox" id="digital-magazine-checkbox" ng-model="vm.person.tmpDigital" ng-checked="!vm.person.tmpDigital" class="regular-checkbox"/><label for="digital-magazine-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm"><i>The Meeting Professional</i> - Digital</span>
             </p>
@@ -54,7 +54,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="spotlight-checkbox" ng-model="vm.emailPreferencesForm.mpiSpotlight" class="regular-checkbox"/><label for="spotlight-checkbox"></label>
+                <input type="checkbox" id="spotlight-checkbox" ng-model="vm.person.mpipersonDemographics.spotlightExclude" ng-checked="!vm.person.mpiPersonDemographics.spotlightExclude" class="regular-checkbox"/><label for="spotlight-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm"><i>MPIspotlight</i></span>
             </p>
@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="pulse-checkbox" ng-model="vm.emailPreferencesForm.mpiPulse" class="regular-checkbox"/><label for="pulse-checkbox"></label>
+                <input type="checkbox" id="pulse-checkbox" ng-model="vm.person.newsletterExclude" ng-checked="!vm.person.newsletterExclude" class="regular-checkbox"/><label for="pulse-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm"><i>MPIpulse</i></span>
             </p>
@@ -92,7 +92,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="news-brief-checkbox" ng-model="vm.emailPreferencesForm.mpiNewsBrief" class="regular-checkbox"/><label for="news-brief-checkbox"></label>
+                <input type="checkbox" id="news-brief-checkbox" ng-model="vm.person.newsBriefExclude" ng-checked="!vm.person.newsBriefExclude" class="regular-checkbox"/><label for="news-brief-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">MPINewsBrief</span>
             </p>
@@ -108,7 +108,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="events-checkbox" ng-model="vm.emailPreferencesForm.conferencesEvents" class="regular-checkbox"/><label for="events-checkbox"></label>
+                <input type="checkbox" id="events-checkbox" ng-model="vm.person.confEmailExclude" ng-checked="!vm.person.confEmailExclude" class="regular-checkbox"/><label for="events-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Conferences &amp; Events</span>
             </p>
@@ -124,7 +124,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="development-checkbox" ng-model="vm.emailPreferencesForm.professionalDevelopment" class="regular-checkbox"/><label for="development-checkbox"></label>
+                <input type="checkbox" id="development-checkbox" ng-model="vm.person.mpipersonDemographics.mpiAccessExclude" ng-checked="!vm.person.mpipersonDemographics.mpiAccessExclude" class="regular-checkbox"/><label for="development-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Professional Development</span>
             </p>
@@ -140,7 +140,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="foundation-checkbox" ng-model="vm.emailPreferencesForm.mpiFoundation" class="regular-checkbox"/><label for="foundation-checkbox"></label>
+                <input type="checkbox" id="foundation-checkbox" ng-model="vm.person.mpipersonDemographics.foundationEmailExclude" ng-checked="!vm.person.mpipersonDemographics.foundationEmailExclude" class="regular-checkbox"/><label for="foundation-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">MPI Foundation</span>
             </p>
@@ -156,7 +156,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="marketplace-checkbox" ng-model="vm.emailPreferencesForm.globalMarketplace" class="regular-checkbox"/><label for="marketplace-checkbox"></label>
+                <input type="checkbox" id="marketplace-checkbox" ng-model="vm.person.mktEmailExclude" ng-checked="!vm.person.mktEmailExclude" class="regular-checkbox"/><label for="marketplace-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Global MarketPlace</span>
             </p>
@@ -172,7 +172,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="third-party-checkbox" ng-model="vm.emailPreferencesForm.thirdPartyOffers" class="regular-checkbox"/><label for="third-party-checkbox"></label>
+                <input type="checkbox" id="third-party-checkbox" ng-model="vm.person.listRentalExclude" ng-checked="!vm.person.listRentalExclude" class="regular-checkbox"/><label for="third-party-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Third Party Offers</span>
             </p>
@@ -188,7 +188,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                <input type="checkbox" id="survey-checkbox" ng-model="vm.emailPreferencesForm.researchSurveys" class="regular-checkbox"/><label for="survey-checkbox"></label>
+                <input type="checkbox" id="survey-checkbox" ng-model="vm.person.mpipersonDemographics.surveyExclude" ng-checked="!vm.person.mpipersonDemographics.surveyExclude" class="regular-checkbox"/><label for="survey-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Research/Surveys</span>
             </p>
@@ -204,7 +204,7 @@
     <div class="row">
         <div class="col-xs-12">
             <p>
-                 <input type="checkbox" id="directory-checkbox" ng-model="vm.emailPreferencesForm.directory" class="regular-checkbox"/><label for="directory-checkbox"></label>
+                 <input type="checkbox" id="directory-checkbox" ng-model="vm.person.dirEmailExclude" ng-checked="!vm.person.dirEmailExclude" class="regular-checkbox"/><label for="directory-checkbox"></label>
                 &nbsp;
                 <span class="sans-500 text-sm">Directory</span>
             </p>

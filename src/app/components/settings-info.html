@@ -25,7 +25,7 @@
             <span>Gender</span>
         </div>
         <div class="col-xs-9">
-            <styled-ui-select value="vm.generalInformationForm.gender" menu-options="[{name:'Male'},{name:'Female'}, {name:'Prefer not to answer'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+            <styled-ui-select value="vm.person.genderObject" menu-options="vm.genders" item-display-key="name" search-enabled="false" change-callback="vm.changeGender(item)"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">
@@ -39,13 +39,13 @@
             <input type="checkbox" id="cmp-designation-checkbox" ng-model="vm.person.cmp" class="regular-checkbox"/><label for="cmp-designation-checkbox"></label>
             <span>CMP</span>
             &nbsp;&nbsp;
-            <input type="checkbox" id="other-designation-checkbox" ng-model="vm.generalInformationForm.designations.other" class="regular-checkbox"/><label for="other-designation-checkbox"></label>
+            <input type="checkbox" id="other-designation-checkbox" ng-model="vm.person.hasOtherDesignation" class="regular-checkbox"/><label for="other-designation-checkbox"></label>
             <span>Other</span>
         </div>
     </div>
-    <div class="row padding-md-top" ng-if="vm.generalInformationForm.designations.other">
+    <div class="row padding-md-top" ng-if="vm.person.hasOtherDesignation">
         <div class="col-xs-9 col-xs-offset-3">
-            <input type="text" name="designationOther" ng-model="vm.generalInformationForm.designation.specificName" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.designationOther.$error.required}" placeholder="Please specify" required>
+            <input type="text" name="designationOther" ng-model="vm.person.other" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.designationOther.$error.required}" placeholder="Please specify" required>
         </div>
     </div>
     <div class="row padding-md-top">
@@ -74,8 +74,7 @@
             <span>Job Classification</span>
         </div>
         <div class="col-xs-9">
-            <!--<input type="text" name="classification" ng-model="vm.generalInformationForm.jobClassification">-->
-            <styled-ui-select value="vm.generalInformationForm.jobClassification" menu-options="[{name:'Manager'},{name:'Executive'}, {name:'Staff'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+            <styled-ui-select value="vm.person.primaryFunction" menu-options="vm.functionRoles" item-display-key="name" search-enabled="false"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">
@@ -83,8 +82,7 @@
             <span>Company</span>
         </div>
         <div class="col-xs-9">
-            <!--<styled-typeahead value="vm.generalInformationForm.company" menu-options="['Credera', 'MPI', 'PepsiCo', 'PwC', 'Will Reed Jobs', 'Baylor Scott & White']" enter-value="true"></styled-typeahead>-->
-            <!--<styled-ui-select value="vm.generalInformation.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>-->
+            <!--<styled-ui-select value="vm.person.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>-->
             <styled-typeahead value="vm.person.company" menu-options="vm.companies" item-display-key="name" enter-value="true"></styled-typeahead>
             <span class="text-xxs">If your company is not listed in the dropdown, just type in the name.</span>
         </div>
@@ -94,8 +92,7 @@
             <span>Industry</span>
         </div>
         <div class="col-xs-9">
-            <!--<styled-dropdown value="vm.generalInformation.industry" menu-options="vm.industries" item-display-key="name"></styled-dropdown>-->
-            <styled-ui-select value="vm.generalInformationForm.industry" menu-options="vm.industries" item-display-key="name" search-enabled="false"></styled-ui-select>
+            <styled-ui-select value="vm.person.mpipersonDemographics.primaryIndustryNavigation" menu-options="vm.industries" item-display-key="description" search-enabled="false"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">

@@ -84,7 +84,7 @@
     <div class="row padding-md-top">
         <div class="col-xs-9 col-xs-offset-3">
             <!--<input type="text" name="homeAddressCountry" ng-model="vm.contactInformationForm.homeAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.homeAddress.streetAddress">-->
-            <styled-ui-select value="vm.contactInformationForm.homeAddress.country" menu-options="[{name:'USA'},{name:'UK'}, {name:'France'}]" item-display-key="name" search-enabled="true" placeholder-text="Country"></styled-ui-select>
+            <styled-ui-select value="vm.contactInformationForm.homeAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">
@@ -109,7 +109,7 @@
     <div class="row padding-md-top">
         <div class="col-xs-9 col-xs-offset-3">
             <!--<input type="text" name="workAddressCountry" ng-model="vm.contactInformationForm.workAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.workAddress.streetAddress">-->
-            <styled-ui-select value="vm.contactInformationForm.workAddress.country" menu-options="[{name:'USA'},{name:'UK'}, {name:'France'}]" item-display-key="name" search-enabled="true" placeholder-text="Country"></styled-ui-select>
+            <styled-ui-select value="vm.contactInformationForm.workAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">

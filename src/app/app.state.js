@@ -173,9 +173,10 @@
                 }
             },
             resolve: {
-                profile: ['$q', 'SettingsService', function($q, SettingsService) {
+                profile: ['$q', 'SettingsService', 'DataRetrievalService', function($q, SettingsService, DataRetrievalService) {
                     // Web User ID will be provided by the cookie, but right now I'm using a hardcoded value for test
-                    var webUserId = 1763;
+                    // var webUserId = 921, 236, 4871;
+                    var webUserId = 236;
                     
                     var profileObj = {
                         person: {},
@@ -189,11 +190,28 @@
                         profileObj.person = person;
                     });
 
+                    var functionsPromise = DataRetrievalService.findAll('FunctionRole');
+                    promises.push(functionsPromise);
+                    functionsPromise = functionsPromise.then(function(functionList) {
+                        profileObj.functionRoles = functionList;
+                    });
 
-                    var companiesPromise =  SettingsService.getCompanyList();
+                    var companiesPromise =  DataRetrievalService.findAll('Company');
                     promises.push(companiesPromise);
                     companiesPromise = companiesPromise.then(function(companyList) {
                         profileObj.companies = companyList;
+                    });
+
+                    var industriesPromise =  DataRetrievalService.findAll('MpidemographicsPrimaryIndustry');
+                    promises.push(industriesPromise);
+                    industriesPromise = industriesPromise.then(function(industryList) {
+                        profileObj.industries = industryList;
+                    });
+
+                    var countriesPromise = DataRetrievalService.findAll('Country');
+                    promises.push(countriesPromise);
+                    countriesPromise = countriesPromise.then(function(countryList) {
+                        profileObj.countries = countryList;
                     });
 
                     return $q.all(promises).then(function() {
