@@ -1,11 +1,19 @@
 .directory {
+    .advanced-search {
+        &.well {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        input {
+            width: 100%;
+        }
+    }
     .picture-column {
         width: 25%;
     }
     .info-column{
         width: 75%;
     }
-
     .member-card {
         border: 1px solid $off-grey;
         padding-top: 20px;
@@ -64,6 +72,7 @@
             border: none;
             padding: 5px;
             color: $dark-grey;
+            font-family: 'MuseoSans-500';
             &:focus {
                 outline: none;
             }
@@ -90,7 +99,6 @@
         }
     }
 }
-
 // Medium Screen
 @media (max-width: 1200px) {
     .directory {

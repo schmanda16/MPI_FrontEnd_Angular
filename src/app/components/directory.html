@@ -54,191 +54,297 @@
 <div class="row padding-xl-top directory">
     <div class="col-sm-10 col-sm-offset-1 padding-lg-left padding-lg-right">
         <div class="row">
-            <div class="col-xs-9">
+            <div class="col-sm-9 col-xs-8">
                 <h4>Dallas-Fort Worth Chapter Members</h4>
             </div>
-            <div class="col-xs-3">
+            <div class="col-sm-3 col-xs-4">
                 <div class="search">
-                    <span class="padding-xs-left glyphicon glyphicon-search"></span>
-                    <input placeholder="Search members"></input>
+                    <span class="padding-xs-left glyphicon glyphicon-search"><input placeholder="Search"></input></span>
                 </div>
             </div>
         </div>
+        <div class="row margin-md-bottom" ng-if="!vm.advancedSearchOpen">
+            <div class="col-xs-12">
+                <a ng-click="vm.advancedSearchOpen = true" class="text-xs pull-right">Advanced Search</a>
+            </div>
+        </div>
+
+
+        <div class="row advanced-search well margin-xs-left margin-xs-right" ng-if="vm.advancedSearchOpen">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <h5>Advanced Search</h5>
+                    </div>
+                    <div class="col-xs-2">
+                        <a ng-click="vm.advancedSearchOpen = false" class="text-xs pull-right padding-sm-top"><span class="icon icon-cross"></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 padding-md-top">
+                        <div class="row margin-md-bottom">
+                            <div class="col-xs-3">
+                                <span>Name</span>
+                            </div>
+                            <div class="col-xs-9">
+                                <input type="text" ng-model="vm.advancedSearch.name">
+                            </div>
+                        </div>
+                        <div class="row margin-md-bottom">
+                            <div class="col-xs-3">
+                                <span>Company</span>
+                            </div>
+                            <div class="col-xs-9">
+                                <input type="text" ng-model="vm.advancedSearch.company">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <span>City</span>
+                            </div>
+                            <div class="col-xs-9">
+                                <input type="text" ng-model="vm.advancedSearch.city">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12 padding-md-top">
+                        <div class="row margin-md-bottom">
+                            <div class="col-xs-3">
+                                <span>Chapter</span>
+                            </div>
+                            <div class="col-xs-9">
+                                <styled-ui-select value="vm.advancedSearch.chapter" menu-options="[{name: 'Dallas-Fort Worth'}, {name: 'Orange County'}, {name: 'New York City'}]" item-display-key="name" search-enabled="true"></styled-ui-select>
+                            </div>
+                        </div>
+                        <div class="row margin-md-bottom">
+                            <div class="col-xs-3">
+                                <span>Country</span>
+                            </div>
+                            <div class="col-xs-9">
+                                <styled-ui-select value="vm.advancedSearch.country" menu-options="[{country1: 'United Kingdom'}, {country1: 'France'}, {country1: 'United States'}]" item-display-key="country1" search-enabled="true"></styled-ui-select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <span>User Types</span>
+                            </div>
+                            <div class="col-sm-3 col-xs-4 padding-none-right">
+                                <div>
+                                    <input type="checkbox" id="filter-planner-checkbox" ng-model="vm.advancedSearch.planner" class="regular-checkbox"/><label for="filter-planner-checkbox"></label>
+                                    <span>Planner</span>
+                                </div>
+                                <div class="padding-sm-top">
+                                    <input type="checkbox" id="filter-supplier-checkbox" ng-model="vm.advancedSearch.supplier" class="regular-checkbox"/><label for="filter-supplier-checkbox"></label>
+                                    <span>Supplier</span>
+                                </div>
+                                <div class="padding-sm-top visible-xs">
+                                    <input type="checkbox" id="filter-other-checkbox" ng-model="vm.advancedSearch.other" class="regular-checkbox"/><label for="filter-other-checkbox"></label>
+                                    <span>Other</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-4 padding-none-right padding-none-left">
+                                <div>
+                                    <input type="checkbox" id="filter-faculty-checkbox" ng-model="vm.advancedSearch.faculty" class="regular-checkbox"/><label for="filter-faculty-checkbox"></label>
+                                    <span>Faculty</span>
+                                </div>
+                                <div class="padding-sm-top">
+                                    <input type="checkbox" id="filter-student-checkbox" ng-model="vm.advancedSearch.student" class="regular-checkbox"/><label for="filter-student-checkbox"></label>
+                                    <span>Student</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 padding-none-right padding-none-left hidden-xs">
+                                <div>
+                                    <input type="checkbox" id="filter-other-checkbox" ng-model="vm.advancedSearch.other" class="regular-checkbox"/><label for="filter-other-checkbox"></label>
+                                    <span>Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a ng-click="vm.advancedSearchOpen = false" class="pull-right btn btn-primary">Apply</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="row margin-md-top margin-md-bottom">
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=1005" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Ryan Chen</span>
                         <span class="member-role">Senior Event Planner at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Dallas, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=1083" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Eliza Alvarado</span>
                         <span class="member-role">International Event Coordinator at Hilton</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Addison, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=1027" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Margaret Sharp</span>
                         <span class="member-role">Technical Conference Manager at PwC</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Dallas, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=996" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Katharine Williams</span>
                         <span class="member-role">Educational Conference Coordinator at Richardson ISD</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Richardson, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=978" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Lucile Meyer</span>
                         <span class="member-role">Senior Event Planner at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Arlington, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=1001" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Jared Cohen</span>
                         <span class="member-role">Senior Event Planner at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Dallas, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=839" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Rosalie Higgins</span>
                         <span class="member-role">Hospitality Consultant at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Carrollton, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=883" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Raymond Cunningham</span>
                         <span class="member-role">Associate Event Planner at Perot Museum of Nature and Science</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Dallas, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=838" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Edna McKinney</span>
                         <span class="member-role">Student at SMU Plano Campus</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Plano, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=685" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Samuel Goodman</span>
                         <span class="member-role">Hospitality Consultant at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Fort Worth, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=661" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Lucas Brock</span>
                         <span class="member-role">Associate Event Planner at Perot Museum of Nature and Science</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> McKinney, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=832" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Maggie Doyle</span>
                         <span class="member-role">Student at SMU Plano Campus</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Plano, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=823" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Ruth Cortez</span>
                         <span class="member-role">Hospitality Consultant at Credera</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Garland, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=822" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Polly Blair</span>
                         <span class="member-role">Associate Event Planner at Perot Museum of Nature and Science</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Dallas, TX</span></span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-lg-right">
+            <div class="col-md-4 col-sm-6 col-xs-12 padding-md-bottom padding-ml-left padding-ml-right">
                 <div class="row member-card">
                     <div class="col-xs-3">
                         <img src="https://unsplash.it/100/100?image=770" class="member-photo">
                     </div>
-                    <div class="col-lg-7 col-md-9">
+                    <div class="col-lg-7 col-xs-9">
                         <span class="member-name">Jeffery McCarthy</span>
                         <span class="member-role">Student at SMU Plano Campus</span>
                         <span class="member-location"><span class="glyphicon glyphicon-map-marker"></span><span> Plano, TX</span></span>

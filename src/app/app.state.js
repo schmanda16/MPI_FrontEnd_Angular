@@ -120,7 +120,9 @@
             url: '/chapters',
             views: {
                 'main@': {
-                    templateUrl: 'app/components/directory.html'
+                    templateUrl: 'app/components/directory.html',
+                    controller: 'DirectoryController',
+                    controllerAs: 'vm'
                 }
             }
         }).state('connect.events', {
