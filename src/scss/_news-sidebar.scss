@@ -27,5 +27,8 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        a {
+            color: $darkest-grey !important;
+        }
     }
 }
