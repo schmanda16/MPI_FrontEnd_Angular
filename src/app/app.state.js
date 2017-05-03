@@ -124,6 +124,25 @@
                     controller: 'DirectoryController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                directory: ['$q', 'DirectoryService', function($q, DirectoryService) {
+                    var directoryObj ={};
+
+                    var promises = [];
+                    
+                    var directoryCountPromise = DirectoryService.getDirectoryCount();
+                    promises.push(directoryCountPromise);
+                    directoryCountPromise = directoryCountPromise.then(function(memberCount){
+                        directoryObj.memberCount = memberCount;
+                    }).catch(function(error){
+                        directoryObj.memberCount = 0;
+                    });
+
+                    return $q.all(promises).then(function() {
+                        return directoryObj;
+                    });
+                }]
             }
         }).state('connect.events', {
             url: '/certifications',
@@ -190,30 +209,40 @@
                     promises.push(personPromise);
                     personPromise = personPromise.then(function(person) {
                         profileObj.person = person;
+                    }).catch(function (error) {
+                        //error
                     });
 
                     var functionsPromise = DataRetrievalService.findAll('FunctionRole');
                     promises.push(functionsPromise);
                     functionsPromise = functionsPromise.then(function(functionList) {
                         profileObj.functionRoles = functionList;
+                    }).catch(function (error) {
+                        //error
                     });
 
-                    var companiesPromise =  DataRetrievalService.findAll('Company');
+                    /*var companiesPromise =  DataRetrievalService.findAll('Company');
                     promises.push(companiesPromise);
                     companiesPromise = companiesPromise.then(function(companyList) {
                         profileObj.companies = companyList;
-                    });
+                    }).catch(function (error) {
+                        //error
+                    });*/
 
                     var industriesPromise =  DataRetrievalService.findAll('MpidemographicsPrimaryIndustry');
                     promises.push(industriesPromise);
                     industriesPromise = industriesPromise.then(function(industryList) {
                         profileObj.industries = industryList;
+                    }).catch(function (error) {
+                        //error
                     });
 
                     var countriesPromise = DataRetrievalService.findAll('Country');
                     promises.push(countriesPromise);
                     countriesPromise = countriesPromise.then(function(countryList) {
                         profileObj.countries = countryList;
+                    }).catch(function (error) {
+                        //error
                     });
 
                     return $q.all(promises).then(function() {

@@ -21,7 +21,13 @@
                 background: transparent;
             }
         }
+        .ui-select-no-choice {
+            padding: 3px 20px;
+        }
         i {
+            color: $light-grey;
+        }
+        .ui-select-placeholder {
             color: $light-grey;
         }
     }

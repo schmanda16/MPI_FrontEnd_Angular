@@ -5,9 +5,9 @@
         .module('app')
         .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['$q', 'SettingsService', 'profile'];
+    SettingsController.$inject = ['$q', 'SettingsService', 'profile', 'DataRetrievalService'];
 
-    function SettingsController($q, SettingsService, profile) {
+    function SettingsController($q, SettingsService, profile, DataRetrievalService) {
         var vm = this;
         vm.selectedTabIndex = 0;
         vm.changeGender = changeGender;
@@ -16,7 +16,7 @@
 
         vm.person = profile.person;
         vm.functionRoles = profile.functionRoles;
-        vm.companies = profile.companies;
+        //vm.companies = profile.companies;
         vm.industries = profile.industries;
         vm.countries = profile.countries;
         vm.genders = [
@@ -39,6 +39,13 @@
         activate();
 
         function activate() {
+
+            var companiesPromise =  DataRetrievalService.findSet('Company', null).then(function(companyList) {
+                vm.companies = companyList;
+            }).catch(function (error) {
+                //error
+            });
+
             if(vm.person && vm.person.other) {
                 vm.person.hasOtherDesignation = true;
             }
@@ -54,7 +61,9 @@
         }
 
         function saveGeneralInformation() {
-            console.log('general information saved');
+            if(vm.generalInformationForm.$dirty && vm.generalInformationForm.$valid) {
+                console.log('general information saved');
+            }
         }
 
         function saveContactInformation() {
