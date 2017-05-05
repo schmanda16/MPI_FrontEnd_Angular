@@ -14,7 +14,7 @@
             <span>Email Address</span>
         </div>
         <div class="col-xs-9">
-            <input type="email" name="emailAddress" ng-model="vm.person.email1" ng-class="{'error': vm.contactInformationForm.$submitted && (vm.contactInformationForm.emailAddress.$error.required || vm.contactInformationForm.emailAddress.$error.email)}" placeholder="name@example.com" required>
+            <input type="email" name="emailAddress" ng-model="vm.person.Email1" ng-class="{'error': vm.contactInformationForm.$submitted && (vm.contactInformationForm.emailAddress.$error.required || vm.contactInformationForm.emailAddress.$error.email)}" placeholder="name@example.com" required>
             <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.emailAddress.$error.required">*Required</span>
             <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.$error.email">*Not a valid email</span>
         </div>

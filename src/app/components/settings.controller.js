@@ -49,15 +49,15 @@
             if(vm.person && vm.person.other) {
                 vm.person.hasOtherDesignation = true;
             }
-            if(vm.person && vm.person.gender) {
+            if(vm.person && vm.person.Gender) {
                 vm.person.genderObject = _.find(vm.genders, function(gender) {
-                    return gender.id === vm.person.gender;
+                    return gender.id === vm.person.Gender;
                 });
             }
         }
 
         function changeGender(item) {
-            vm.person.gender = item.id;
+            vm.person.Gender = item.id;
         }
 
         function saveGeneralInformation() {

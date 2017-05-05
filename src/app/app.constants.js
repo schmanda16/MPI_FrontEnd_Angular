@@ -3,7 +3,7 @@
     angular
         .module('app')
         .constant('config', {
-            apiUrl: 'http://localhost:55178',
+            apiUrl: 'http://localhost:5002',
             baseUrl: '/'
         })
 ;

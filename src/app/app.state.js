@@ -108,7 +108,7 @@
             url: '/membership',
             views: {
                 'main@': {
-                    templateUrl: 'app/pages/main/membership.html'
+                    templateUrl: 'app/pages/main/membership-layout.html'
                 },
                 'content@connect.membership': {
                     templateUrl: 'app/components/membership.html',
@@ -126,17 +126,30 @@
                 }
             },
             resolve: {
-                directory: ['$q', 'DirectoryService', function($q, DirectoryService) {
-                    var directoryObj ={};
+                directory: ['$q', 'DirectoryService', 'DataRetrievalService', function($q, DirectoryService, DataRetrievalService) {
+                    var directoryObj ={
+                        countries: []
+                    };
 
                     var promises = [];
                     
                     var directoryCountPromise = DirectoryService.getDirectoryCount();
                     promises.push(directoryCountPromise);
-                    directoryCountPromise = directoryCountPromise.then(function(memberCount){
-                        directoryObj.memberCount = memberCount;
+                    directoryCountPromise = directoryCountPromise.then(function(data){
+                        //directoryObj.memberCount = data;
+                        if(data && data.memberCount) {
+                            directoryObj.memberCount = data.memberCount;
+                        }
                     }).catch(function(error){
-                        directoryObj.memberCount = 0;
+                        directoryObj.memberCount = null;
+                    });
+
+                    var countriesPromise = DataRetrievalService.findAll('Country');
+                    promises.push(countriesPromise);
+                    countriesPromise = countriesPromise.then(function(countryList) {
+                        directoryObj.countries = countryList;
+                    }).catch(function (error) {
+                        //error
                     });
 
                     return $q.all(promises).then(function() {
@@ -166,7 +179,7 @@
             url: '/profile',
             views: {
                 'main@': {
-                    templateUrl: 'app/pages/main/dashboard.html'
+                    templateUrl: 'app/pages/main/dashboard-layout.html'
                 },
                 'content@user.profile': {
                     templateUrl: 'app/components/dashboard.html'
@@ -229,13 +242,13 @@
                         //error
                     });*/
 
-                    var industriesPromise =  DataRetrievalService.findAll('MpidemographicsPrimaryIndustry');
-                    promises.push(industriesPromise);
-                    industriesPromise = industriesPromise.then(function(industryList) {
-                        profileObj.industries = industryList;
-                    }).catch(function (error) {
-                        //error
-                    });
+                    // var industriesPromise =  DataRetrievalService.findAll('MpidemographicsPrimaryIndustry');
+                    // promises.push(industriesPromise);
+                    // industriesPromise = industriesPromise.then(function(industryList) {
+                    //     profileObj.industries = industryList;
+                    // }).catch(function (error) {
+                    //     error
+                    // });
 
                     var countriesPromise = DataRetrievalService.findAll('Country');
                     promises.push(countriesPromise);

@@ -9,7 +9,8 @@
             border-color: $brand-red;
         }
         .ui-select-container {
-            padding: none;
+            height: 32px;
+            padding: 0px;
             &btn, .btn-default, .form-control, .ui-select-toggle{
                 border: none;
                 background: transparent;
