@@ -9,9 +9,24 @@
 
 	function DirectoryService($resource, $q, config) {
 		var service = this;
+        service.getChapterList = getChapterList;
         service.getDirectoryCount = getDirectoryCount;
         service.genericDirectoryQuery= genericDirectoryQuery;
         service.advancedDirectoryQuery = advancedDirectoryQuery;
+
+        function getChapterList(queryString, pageSize, pageNumber) {
+            var url = config.apiUrl + '/api/Committee/FindAllChapters';
+            var resource = $resource(url, {}, {
+                'get': {
+                    method: 'GET',
+                    isArray: true,
+                    transformResponse: function (response) {
+                        return response?angular.fromJson(response):null;
+                    }
+                }
+            });
+            return resource.get().$promise;
+        }
 
         function getDirectoryCount() {
             // var url = config.apiUrl + '/api/Directory/GetDirectoryCount';
@@ -74,8 +89,8 @@
                         nameQuery: advancedQuery.name?advancedQuery.name:'',
                         companyQuery: advancedQuery.company?advancedQuery.company:'',
                         cityQuery: advancedQuery.city?advancedQuery.city:'',
-                        chapterIdQuery: null,
-                        countryQuery: '',
+                        chapterIdQuery: (advancedQuery.chapter && advancedQuery.chapter.Id)?advancedQuery.chapter.Id:'',
+                        countryQuery: (advancedQuery.country && advancedQuery.country.Country1)?advancedQuery.country.Country1:'',
                         isPlanner: advancedQuery.planner,
                         isSupplier: advancedQuery.supplier,
                         isFaculty: advancedQuery.faculty,

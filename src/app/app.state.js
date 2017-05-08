@@ -33,6 +33,11 @@
                 'renewal@home': {
                     templateUrl: 'app/components/renewal.html'
                 },
+                'pushdown@home': {
+                    templateUrl: 'app/components/pushdown-ad.html',
+                    controller: 'PushdownAdController',
+                    controllerAs: 'vm'
+                },
                 'hero@home': {
                     templateUrl: 'app/components/hero.html'
                 },
@@ -142,6 +147,14 @@
                         }
                     }).catch(function(error){
                         directoryObj.memberCount = null;
+                    });
+
+                    var chaptersPromise = DirectoryService.getChapterList();
+                    promises.push(chaptersPromise);
+                    chaptersPromise = chaptersPromise.then(function(chapterList) {
+                        directoryObj.chapters = chapterList;
+                    }).catch(function (error) {
+                        //error
                     });
 
                     var countriesPromise = DataRetrievalService.findAll('Country');

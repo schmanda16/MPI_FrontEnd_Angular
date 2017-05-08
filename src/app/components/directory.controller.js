@@ -10,10 +10,19 @@
     function DirectoryController($q, DirectoryService, directory, $uibModal) {
         var vm = this;
         vm.memberCount = directory.memberCount;
+        vm.chapters = directory.chapters;
         vm.countries = directory.countries;
         vm.advancedSearchOpen = false;
         vm.pageSize = 15;
         vm.pageNumber = 0;
+        vm.advancedSearch = {
+            planner: true,
+            supplier: true,
+            faculty: true,
+            student: true,
+            other: true
+        };
+        vm.currentSearchType = 'generic';
 
         vm.genericSearch = genericSearch;
         vm.advancedSearchFn = advancedSearchFn;
@@ -23,7 +32,14 @@
         function genericSearch(keyEvent) {
             if(keyEvent.which === 13) {
                 vm.pageNumber = 0;
-                vm.advancedSearch = {};
+                vm.advancedSearch = {
+                    planner: true,
+                    supplier: true,
+                    faculty: true,
+                    student: true,
+                    other: true
+                };
+                vm.currentSearchType = 'generic';
                 DirectoryService.genericDirectoryQuery(vm.genericSearchQuery, vm.pageSize, vm.pageNumber).then(function(memberList) {
                     vm.members = memberList;
                 }).catch(function(error) {
@@ -37,6 +53,7 @@
                 vm.noUserTypeSelected = false;
                 vm.pageNumber = 0;
                 vm.genericSearchQuery = null;
+                vm.currentSearchType = 'advanced';
                 DirectoryService.advancedDirectoryQuery(vm.advancedSearch, vm.pageSize, vm.pageNumber).then(function(memberList) {
                     vm.members = memberList;
                 }).catch(function(error) {
@@ -61,7 +78,7 @@
         function loadNextPage() {
             vm.pageNumber++;
             // need to know what query (generic vs advanced) to use
-            if(vm.genericSearchQuery) {
+            if(vm.currentSearchType == 'generic') {
                 DirectoryService.genericDirectoryQuery(vm.genericSearchQuery, vm.pageSize, vm.pageNumber).then(function(memberList) {
                     _.each(memberList, function(member) {
                         vm.members.push(member);
@@ -69,7 +86,7 @@
                 }).catch(function(error) {
                     console.log(error);
                 });
-            } else if(vm.advancedSearch) {
+            } else if(vm.currentSearchType == 'advanced') {
                 DirectoryService.advancedDirectoryQuery(vm.advancedSearch, vm.pageSize, vm.pageNumber).then(function(memberList) {
                     _.each(memberList, function(member) {
                         vm.members.push(member);

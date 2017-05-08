@@ -63,7 +63,7 @@
                                 <span>Chapter</span>
                             </div>
                             <div class="col-xs-9">
-                                <styled-ui-select value="vm.advancedSearch.chapter" menu-options="[{name: 'Dallas-Fort Worth'}, {name: 'Orange County'}, {name: 'New York City'}]" item-display-key="name" search-enabled="true"></styled-ui-select>
+                                <styled-ui-select value="vm.advancedSearch.chapter" menu-options="vm.chapters" item-display-key="Name" search-enabled="true"></styled-ui-select>
                             </div>
                         </div>
                         <div class="row margin-md-bottom">
@@ -126,7 +126,7 @@
         <div ng-if="!vm.members" class="preview-card text-center padding-md-top padding-lg-bottom margin-lg-bottom" ng-style="{'background-image': 'linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.95)),url(../images/MpiDirectoryPreview.png)'}">
             <div class="preview-contents">
                 <h1>Explore our directory of {{vm.memberCount}} members</h1>
-                <span class="text-md">Visitors will only be able to see search counts. <a>Join today</a> to see the full directory and get lots of other great benefits.</span>
+                <span class="text-lg">Visitors will only be able to see search counts. <a>Join today</a> to see the full directory and get lots of other great benefits.</span>
             </div>
         </div>
         <div ng-if="vm.members">
