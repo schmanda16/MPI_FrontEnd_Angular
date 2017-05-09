@@ -63,13 +63,72 @@
     }
 }
 
+.btn-facebook-sm {
+    background-color: #3b5998;
+    color: $white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        color: $white;
+        background-color: #26427E;
+    }
+    .center-icon {
+        margin-left: -5px;
+    }
+}
+
+.btn-linkedin-sm {
+    background-color: #007bb5;
+    color: $white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        color: $white;
+        background-color: #006DA0;
+    }
+    .center-icon {
+        margin-left: -5px;
+    }
+}
+
+.btn-twitter-sm {
+    background-color: #1DA1F2;
+    color: $white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        color: $white;
+        background-color: #1C8BCF;
+    }
+    .center-icon {
+        margin-left: -5px;
+    }
+}
+
+.btn-email-sm {
+    background-color: #949494;
+    color: $white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    &:hover {
+        color: $white;
+        background-color: #747474;
+    }
+    .center-icon {
+        margin-left: -5px;
+    }
+}
+
 .btn-facebook {
     background-color: #3b5998;
     font-family: 'MuseoSans-300';
     color: $white;
     border-radius: 2px;
     padding: 10px;
-    // width: 330px;
     width: 100%;
     &:hover {
         color: $white;

@@ -73,6 +73,9 @@
                 'content@learn.articles': {
                     templateUrl: 'app/components/general-content.html'
                 },
+                'author@learn.articles': {
+                    templateUrl: 'app/components/author.html'
+                },
                 'call-to-action@learn.articles': {
                     templateUrl: 'app/components/call-to-action.html'
                 }
