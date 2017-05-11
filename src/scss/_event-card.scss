@@ -4,6 +4,10 @@
     width: 100%;
     border: 1px solid $off-grey;
     background: $white;
+
+    max-height: 400px;
+    overflow-y: scroll;
+
     .date-box {
         font-family: 'MuseoSans-700';
         background-color: $off-grey;
