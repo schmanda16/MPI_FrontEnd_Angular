@@ -2,16 +2,14 @@
     <div class="container">
         <div class="row margin-md-top">
             <div class="col-sm-10 col-sm-offset-1 text-center">
-                <!--<h1>AD GOES HERE</h1>-->
                 <img src="../../images/MastheadAd.jpg">
             </div>
         </div>
     </div>
 </header>
 <div class="nav-wrapper">
-    <!--<nav id="nav" class="navbar navbar-default margin-none-bottom" data-spy="affix" data-offset-top="130">-->
-    <nav id="nav" class="navbar navbar-default margin-none-bottom" bs-affix data-offset-top="130">
-        <div class="container-fluid">
+    <nav id="nav" class="navbar navbar-default margin-none-bottom" bs-affix data-offset-top="115">
+        <div id="nav-container" class="container-fluid">
             <div class="navbar-header">
                 <button id="hamburger" type="button" class="navbar-toggle collapsed margin-sm-left" ng-click="isNavbarCollapsed = !isNavbarCollapsed">
                 <span class="sr-only">Toggle navigation</span>
@@ -20,10 +18,10 @@
                 <span class="icon-bar"></span>
                 </button>
                 <button id="search-btn" type="button" class="navbar-toggle collapsed" ng-click="isSearchCollapsed = !isSearchCollapsed">
-        <span class="sr-only">Toggle search</span>
-        <span class="glyphicon glyphicon-search light-grey"></span>
-        </button>
-                <a ui-sref="home" class="navbar-brand padding-sm-top"><img src="images/MPI-logo-small.png"></a>
+                    <span class="sr-only">Toggle search</span>
+                    <span class="glyphicon glyphicon-search light-grey"></span>
+                </button>
+                <a ui-sref="home" class="navbar-brand padding-sm-top"><img src="images/MPI-nav-logo.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" uib-collapse="!isNavbarCollapsed">
                 <ul class="nav navbar-nav margin-none-top margin-none-bottom">
@@ -109,5 +107,18 @@
                 </ul>
             </div>
         </div>
+        <!--<div id="subnav-container" class="container-fluid">
+            <nav id="subnav" class="navbar navbar-default margin-none-bottom">
+                <div class="navbar-header hidden-xs">
+                    <a ui-sref="home" class="navbar-brand padding-md-top">Dallas-Fort Worth</a>
+                </div>
+                <ul class="nav navbar-nav margin-none-top margin-none-bottom">
+                    <li><a ui-sref="#">Home</a></li>
+                    <li><a ui-sref="#">Articles</a></li>
+                    <li><a ui-sref="#">Events</a></li>
+                    <li><a ui-sref="#">About</a></li>
+                </ul>
+            </nav>
+        </div>-->
     </nav>
 </div>

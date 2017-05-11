@@ -1,15 +1,28 @@
 header {
-    height: 130px;
-    background-color: $light-grey;
+    height: 115px;
+    background-color: $white;
 }
 
 .nav-wrapper {
-    min-height: 52px;
+    min-height: 85px;
 }
 
 nav {
     font-family: 'MuseoSans-300';
     z-index: 10;
+}
+
+#nav {
+    height: 85px;
+    #nav-container {
+        height: 100%;
+        > .navbar-header {
+            height: 100%;
+        }
+    }
+    #navbar > ul {
+        font-size: $text-sm;
+    }
 }
 
 #nav.affix {
@@ -53,6 +66,21 @@ nav {
     box-shadow: none;
 }
 
+#subnav, #subnav-container {
+    background-color: $brand-blue;
+    a {
+        color: $white;
+    }
+}
+
+#subnav {
+    border: none;
+    li {
+        float: left;
+    }
+}
+//for subnav active highlighting => a .active {border-bottom: solid 3px $white;}
+
 footer {
     font-family: 'MuseoSans-300';
     padding-top: 19px;
@@ -68,11 +96,16 @@ footer {
 }
 
 @media (min-width: 1200px) {
-    #nav {
-        .container-fluid {
-            margin-left: 50px;
-            margin-right: 50px;
-        }
+    #navbar > ul {
+        padding-top: 15px;
+    }
+    #nav-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #subnav-container {
+        padding-left: 50px;
+        padding-right: 50px;
     }
     .navbar-nav > li {
         margin-left: 40px;
@@ -84,6 +117,9 @@ footer {
 
 // Medium Screen
 @media (max-width: 1200px) {
+    #navbar > ul {
+        padding-top: 15px;
+    }
     #profile-picture {
         margin-left: 15px;
     }
@@ -97,15 +133,28 @@ footer {
 
 // Small Screen
 @media (max-width: 992px) { 
+    #navbar > ul {
+        padding-top: 15px;
+        li a {
+            font-size: $text-xs;
+        }
+    }
     .navbar-right {
         input {
-            width: 100px;
+            width: 90px;
         }
     }
 }
 
 // Extra Small Screen
 @media (max-width: 768px) {
+    #navbar > ul {
+        padding-top: 0px;
+        background-color: $white;
+        li {
+            padding-left: 10px;
+        }
+    }
     #navbar hr {
         margin: 0px;
         border-top: solid 1px $border-grey;
@@ -117,10 +166,12 @@ footer {
          &#hamburger {
             border: none;
             float: left;
+            margin-top: 25px;
         }
         &#search-btn {
             border: none;
             float: right;
+            margin-top: 25px;
         }
     }
     .nav > li > input {
