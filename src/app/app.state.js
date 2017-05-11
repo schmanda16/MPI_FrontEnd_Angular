@@ -204,7 +204,16 @@
                     templateUrl: 'app/components/renewal.html'
                 }
             }
-        }).state('user.settings', {
+        })
+        .state('linklist', {
+            url: '/linklist',
+            views: {
+                'main@': {
+                    templateUrl: 'app/components/link-list.html'
+                }
+            }
+        })
+        .state('user.settings', {
             url: '/settings',
             views: {
                 'main@': {
