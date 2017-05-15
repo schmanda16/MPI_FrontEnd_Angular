@@ -1,34 +1,34 @@
 header {
-    height: 115px;
+    height: 110px;
+    padding: 10px 0px;
     background-color: $white;
 }
 
 .nav-wrapper {
-    min-height: 85px;
+    min-height: 110px;
 }
 
 nav {
     font-family: 'MuseoSans-300';
     z-index: 10;
-}
-
-#nav {
-    height: 85px;
-    #nav-container {
-        height: 100%;
-        > .navbar-header {
+    &#nav {
+        height: 110px;
+        #nav-container {
             height: 100%;
+            > .navbar-header {
+                height: 100%;
+            }
+        }
+        #navbar > ul {
+            font-size: $text-sm;
+            text-transform: uppercase;
+        }
+        &.affix {
+            position: fixed;
+            top: 0;
+            width: 100%;
         }
     }
-    #navbar > ul {
-        font-size: $text-sm;
-    }
-}
-
-#nav.affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
 .navbar-default {
@@ -66,38 +66,54 @@ nav {
     box-shadow: none;
 }
 
-#subnav, #subnav-container {
+#subnav-container {
     background-color: $brand-blue;
     a {
         color: $white;
+        font-size: $text-sm;
     }
 }
 
-#subnav {
+#subnav-container {
     border: none;
-    li {
-        float: left;
+    .center-subnav-list {
+        float: right;
+        position: relative;
+        left: -50%;
+        text-align: left;
+        ul {
+            list-style: none;
+            position: relative;
+            left: 50%;
+            li {
+                float: left;
+                position: relative;
+            }
+        }
     }
 }
-//for subnav active highlighting => a .active {border-bottom: solid 3px $white;}
+
+#subnav-container .navbar-nav > .active > a {
+    background: transparent;
+    border-bottom: solid 3px $white;
+}
 
 footer {
     font-family: 'MuseoSans-300';
     padding-top: 19px;
     border-top: solid 5px $brand-green;
+    .copyright {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .footer-category {
+        font-family: 'MuseoSans-700';
+    }
 }
 
-.copyright {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.footer-category {
-    font-family: 'MuseoSans-700';
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 1365px) {
     #navbar > ul {
-        padding-top: 15px;
+        padding-top: 25px;
     }
     #nav-container {
         padding-left: 50px;
@@ -108,7 +124,30 @@ footer {
         padding-right: 50px;
     }
     .navbar-nav > li {
-        margin-left: 40px;
+        margin-left: 30px;
+    }
+    .footer-logo {
+        text-align: left;
+    }
+}
+
+@media (max-width: 1365px) {
+    #navbar > ul {
+        padding-top: 25px;
+    }
+    #nav-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #subnav-container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .navbar-nav > li {
+        margin-left: 15px;
+    }
+    input {
+        width: 100px;
     }
     .footer-logo {
         text-align: left;
@@ -118,13 +157,24 @@ footer {
 // Medium Screen
 @media (max-width: 1200px) {
     #navbar > ul {
-        padding-top: 15px;
+        padding-top: 25px;
+    }
+    #nav-container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #subnav-container {
+        padding-left: 0px;
+        padding-right: 0px;
     }
     #profile-picture {
         margin-left: 15px;
     }
     nav > .container {
         width: 100%;
+    }
+    .navbar-nav > li {
+        margin-left: 2px;
     }
     .footer-logo {
         text-align: left;
@@ -134,20 +184,30 @@ footer {
 // Small Screen
 @media (max-width: 992px) { 
     #navbar > ul {
-        padding-top: 15px;
+        padding-top: 25px;
         li a {
             font-size: $text-xs;
         }
     }
     .navbar-right {
         input {
-            width: 90px;
+            width: 80px;
         }
+    }
+    #profile-picture {
+        margin-left: 3px;
+    }
+    #profile-caret {
+        padding-left: 3px;
+        padding-right: 3px;
     }
 }
 
 // Extra Small Screen
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    #navbar-logo {
+        margin-left: -30%;
+    }
     #navbar > ul {
         padding-top: 0px;
         background-color: $white;
@@ -166,12 +226,12 @@ footer {
          &#hamburger {
             border: none;
             float: left;
-            margin-top: 25px;
+            margin-top: 45px;
         }
         &#search-btn {
             border: none;
             float: right;
-            margin-top: 25px;
+            margin-top: 45px;
         }
     }
     .nav > li > input {

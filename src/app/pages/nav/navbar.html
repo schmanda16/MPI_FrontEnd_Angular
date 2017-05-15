@@ -1,14 +1,14 @@
 <header class="masthead">
     <div class="container">
-        <div class="row margin-md-top">
-            <div class="col-sm-10 col-sm-offset-1 text-center">
-                <img src="../../images/MastheadAd.jpg">
+        <div class="row">
+            <div class="col-sm-12">
+                <img class="img-responsive center-contents" src="../../images/MastheadAd.jpg">
             </div>
         </div>
     </div>
 </header>
 <div class="nav-wrapper">
-    <nav id="nav" class="navbar navbar-default margin-none-bottom" bs-affix data-offset-top="115">
+    <nav id="nav" class="navbar navbar-default margin-none-bottom" bs-affix data-offset-top="110">
         <div id="nav-container" class="container-fluid">
             <div class="navbar-header">
                 <button id="hamburger" type="button" class="navbar-toggle collapsed margin-sm-left" ng-click="isNavbarCollapsed = !isNavbarCollapsed">
@@ -21,7 +21,8 @@
                     <span class="sr-only">Toggle search</span>
                     <span class="glyphicon glyphicon-search light-grey"></span>
                 </button>
-                <a ui-sref="home" class="navbar-brand padding-sm-top"><img src="images/MPI-nav-logo.png"></a>
+                <a ui-sref="home" class="navbar-brand padding-ml-top hidden-sm"><img id="navbar-logo" src="images/MPI-nav-logo.png"></a>
+                <a ui-sref="home" class="navbar-brand padding-ml-top visible-sm"><img id="navbar-logo-sm" src="images/MPI-nav-logo2.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" uib-collapse="!isNavbarCollapsed">
                 <ul class="nav navbar-nav margin-none-top margin-none-bottom">
@@ -82,7 +83,7 @@
                         <img class="img-circle" src="http://placecage.com/g/100/100">
                     </li>
                     <li uib-dropdown class="margin-none-left" ng-if="vm.loggedIn">
-                        <a type="button" uib-dropdown-toggle><span class="hidden-sm">Amanda Dunham </span><span class="caret"></span></a>
+                        <a id="profile-caret" type="button" uib-dropdown-toggle><span class="hidden-md hidden-sm">Amanda Dunham </span><span class="caret"></span></a>
                         <ul class="dropdown-menu" uib-dropdown-menu role="menu">
                             <li><a ui-sref="user.profile">Profile</a></li>
                             <li role="separator" class="divider"></li>
@@ -107,18 +108,22 @@
                 </ul>
             </div>
         </div>
-        <!--<div id="subnav-container" class="container-fluid">
-            <nav id="subnav" class="navbar navbar-default margin-none-bottom">
-                <div class="navbar-header hidden-xs">
+        <div id="subnav-container" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 navbar-header hidden-xs">
                     <a ui-sref="home" class="navbar-brand padding-md-top">Dallas-Fort Worth</a>
                 </div>
-                <ul class="nav navbar-nav margin-none-top margin-none-bottom">
-                    <li><a ui-sref="#">Home</a></li>
-                    <li><a ui-sref="#">Articles</a></li>
-                    <li><a ui-sref="#">Events</a></li>
-                    <li><a ui-sref="#">About</a></li>
-                </ul>
-            </nav>
-        </div>-->
+                <div class="col-sm-6 col-xs-12 nav navbar-nav margin-none-top margin-none-bottom">
+                    <div class="center-subnav-list">
+                        <ul class="nav navbar-nav margin-none-top margin-none-bottom">
+                            <li ui-sref-active="active"><a ui-sref="#">Home</a></li>
+                            <li ui-sref-active="active"><a ui-sref="#">Articles</a></li>
+                            <li ui-sref-active="active"><a ui-sref="#">Events</a></li>
+                            <li ui-sref-active="active"><a ui-sref="#">About</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 </div>
