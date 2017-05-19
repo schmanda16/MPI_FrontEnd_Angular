@@ -16,7 +16,10 @@
         vm.saveDemographicInformation = saveDemographicInformation;
 
 
-        vm.isPlanner = true;
+        vm.isPlanner = false;
+        vm.isSupplier = false;
+        vm.isFaculty = false;
+        vm.isStudent = true;
 
         vm.person = profile.person;
         vm.functionRoles = profile.functionRoles;

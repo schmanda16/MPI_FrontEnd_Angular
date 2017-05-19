@@ -15,7 +15,7 @@
                         <span class="text-sm">What are the primary industries you plan events for?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-6 col-xs-12">
                         <p>
                             <input type="checkbox" id="planner-industry1" ng-model="vm.primaryIndustries.wholesale" class="regular-checkbox"/><label for="planner-industry1"></label>
@@ -94,7 +94,7 @@
                         <span class="text-sm">What locations within the United States do you plan to use for <i>your</i> meetings?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-4 col-xs-12">
                         <p>
                             <input type="checkbox" id="planner-location1" ng-model="vm.locations.inUS.alaska" class="regular-checkbox"/><label for="planner-location1"></label>
@@ -145,7 +145,7 @@
                         <span class="text-sm">What locations outside the United States do you plan to use for <i>your</i> meetings?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-6 col-xs-12">
                         <p>
                             <input type="checkbox" id="planner-location11" ng-model="vm.locations.outsideUS.africa" class="regular-checkbox"/><label for="planner-location11"></label>
@@ -291,7 +291,7 @@
                         <span class="text-sm">What size meetings do you plan?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-3 col-xs-6">
                         <p>
                             <input type="checkbox" id="planner-meetingSize1" ng-model="vm.meetingSizes.resort" class="regular-checkbox"/><label for="planner-meetingSize1"></label>
@@ -338,7 +338,7 @@
                         <span class="text-sm">What types of facilities do you utilize for your meetings?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-3 col-xs-12">
                         <p>
                             <input type="checkbox" id="planner-facility1" ng-model="vm.facilities.resort" class="regular-checkbox"/><label for="planner-facility1"></label>
@@ -393,7 +393,7 @@
                         <span class="text-sm">What types of meetings are you responsible for planning?</span>
                     </div>
                 </div>
-                <div class="row padding-md-top">
+                <div class="row padding-sm-top">
                     <div class="col-sm-3 col-xs-12">
                         <p>
                             <input type="checkbox" id="planner-meetingType1" ng-model="vm.meetingTypes.annual" class="regular-checkbox"/><label for="planner-meetingType1"></label>
@@ -470,7 +470,37 @@
                 </div>
                 <div class="row padding-md-top">
                     <div class="col-xs-12">
+                        <span class="text-sm">If so, what type of program(s) do you teach?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType1" ng-model="vm.programTypes.accredited" class="regular-checkbox"/><label for="planner-programType3"></label>
+                            <span>Accredited</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType2" ng-model="vm.programTypes.certificate" class="regular-checkbox"/><label for="planner-programType2"></label>
+                            <span>Certificate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType3" ng-model="vm.programTypes.other" class="regular-checkbox"/><label for="planner-programType3"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
                         <span class="text-sm">Do you manage employees that report directly to you?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.manageEmployees" menu-options="[{name: 'Yes'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -479,7 +509,7 @@
                     </div>
                 </div>
                 <div class="row padding-sm-top">
-                    <div class="col-xs-8">
+                    <div class="col-md-8 col-xs-12">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -547,16 +577,829 @@
         </uib-accordion>
     </div>
     <div ng-if="vm.isSupplier">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.supplierDemographicsIndustryIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Industry <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.supplierDemographicsIndustryIsOpen, 'glyphicon-chevron-down': !vm.supplierDemographicsIndustryIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is the primary industry of your organization?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.organizationIndustry" menu-options="[{name: 'Third Party / Reseach'},{name: 'Technology'},{name: 'Food and Beverage'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which department do you work?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.department" menu-options="[{name: 'HR'},{name: 'Marketing'},{name: 'IT'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Are you likely to buy services from other supplier members of MPI?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.buyFromOtherSupplier" menu-options="[{name: 'Yes'},{name: 'No'},{name: 'Not sure'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What are the primary locations of your company's services within the United States?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-4 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-location1" ng-model="vm.locations.inUS.alaska" class="regular-checkbox"/><label for="supplier-location1"></label>
+                            <span>Alaska</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location2" ng-model="vm.locations.inUS.hawaii" class="regular-checkbox"/><label for="supplier-location2"></label>
+                            <span>Hawaii</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location3" ng-model="vm.locations.inUS.midwest" class="regular-checkbox"/><label for="supplier-location3"></label>
+                            <span>Midwest</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location4" ng-model="vm.locations.inUS.mountain" class="regular-checkbox"/><label for="supplier-location4"></label>
+                            <span>Mountain</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location5" ng-model="vm.locations.inUS.northeast" class="regular-checkbox"/><label for="supplier-location5"></label>
+                            <span>Northeast</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-location6" ng-model="vm.locations.inUS.northwest" class="regular-checkbox"/><label for="supplier-location6"></label>
+                            <span>Northwest</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location7" ng-model="vm.locations.inUS.territories" class="regular-checkbox"/><label for="supplier-location7"></label>
+                            <span>Puerto Rico/Virgin Islands</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location8" ng-model="vm.locations.inUS.southeast" class="regular-checkbox"/><label for="supplier-location8"></label>
+                            <span>Southeast</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location9" ng-model="vm.locations.inUS.southwest" class="regular-checkbox"/><label for="supplier-location9"></label>
+                            <span>Southwest</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location10" ng-model="vm.locations.inUS.noneInUS" class="regular-checkbox"/><label for="supplier-location10"></label>
+                            <span>NONE within the United States</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What are the primary locations of your company's services outside the United States?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-6 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-location11" ng-model="vm.locations.outsideUS.africa" class="regular-checkbox"/><label for="supplier-location11"></label>
+                            <span>Africa</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location12" ng-model="vm.locations.outsideUS.asia" class="regular-checkbox"/><label for="supplier-location12"></label>
+                            <span>Asia (Incl. China, India, Japan, and Singapore)</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location13" ng-model="vm.locations.outsideUS.australia" class="regular-checkbox"/><label for="supplier-location13"></label>
+                            <span>Australia</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location14" ng-model="vm.locations.outsideUS.netherlands" class="regular-checkbox"/><label for="supplier-location14"></label>
+                            <span>Belgium / The Netherlands / Luxembourg</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location15" ng-model="vm.locations.outsideUS.caribbean" class="regular-checkbox"/><label for="supplier-location15"></label>
+                            <span>Bermuda / Caribbean / West Indies</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location16" ng-model="vm.locations.outsideUS.canada" class="regular-checkbox"/><label for="supplier-location16"></label>
+                            <span>Canada</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location17" ng-model="vm.locations.outsideUS.southAmerica" class="regular-checkbox"/><label for="supplier-location17"></label>
+                            <span>Central / South America</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location18" ng-model="vm.locations.outsideUS.easternEurope" class="regular-checkbox"/><label for="supplier-location18"></label>
+                            <span>Eastern European Countries</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location19" ng-model="vm.locations.outsideUS.france" class="regular-checkbox"/><label for="supplier-location19"></label>
+                            <span>France</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location20" ng-model="vm.locations.outsideUS.germany" class="regular-checkbox"/><label for="supplier-location20"></label>
+                            <span>Germany</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-location21" ng-model="vm.locations.outsideUS.italy" class="regular-checkbox"/><label for="supplier-location21"></label>
+                            <span>Italy</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location22" ng-model="vm.locations.outsideUS.mexico" class="regular-checkbox"/><label for="supplier-location22"></label>
+                            <span>Mexico</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location23" ng-model="vm.locations.outsideUS.middleEast" class="regular-checkbox"/><label for="supplier-location23"></label>
+                            <span>Middle East (Gulf Region)</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location24" ng-model="vm.locations.outsideUS.newZealand" class="regular-checkbox"/><label for="supplier-location24"></label>
+                            <span>New Zealand</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location25" ng-model="vm.locations.outsideUS.otherEurope" class="regular-checkbox"/><label for="supplier-location25"></label>
+                            <span>Other European Countries</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location26" ng-model="vm.locations.outsideUS.russia" class="regular-checkbox"/><label for="supplier-location26"></label>
+                            <span>Russia</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location27" ng-model="vm.locations.outsideUS.scandinavia" class="regular-checkbox"/><label for="supplier-location27"></label>
+                            <span>Scandinavia</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location28" ng-model="vm.locations.outsideUS.spain" class="regular-checkbox"/><label for="supplier-location28"></label>
+                            <span>Spain / Portugal</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location29" ng-model="vm.locations.outsideUS.uk" class="regular-checkbox"/><label for="supplier-location29"></label>
+                            <span>U.K. / Ireland</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-location30" ng-model="vm.locations.outsideUS.noneOutsideUS" class="regular-checkbox"/><label for="supplier-location30"></label>
+                            <span>NONE outside the United States</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">How much meeting services puchasing power do you influence annually?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6">
+                        <styled-ui-select value="vm.person.budgetCurrency" menu-options="[{name: 'U.S. Dollars'},{name: 'Euros'},{name: 'Canadian Dollars'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <styled-ui-select value="vm.person.budgetAmount" menu-options="[{name: '0-1,000'},{name: '1,001-10,000'},{name: '10,001-50,000'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">As a supplier, what types of services are you buying?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-4 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-services1" ng-model="vm.services.accomodations" class="regular-checkbox"/><label for="supplier-services1"></label>
+                            <span>Accomodations</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-services2" ng-model="vm.services.inUS.transportation" class="regular-checkbox"/><label for="supplier-services2"></label>
+                            <span>Ground Transportation</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-services3" ng-model="vm.services.inUS.food" class="regular-checkbox"/><label for="supplier-services3"></label>
+                            <span>Food & Beverage</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="supplier-services4" ng-model="vm.services.av" class="regular-checkbox"/><label for="supplier-services4"></label>
+                            <span>Audio / Visual</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-services5" ng-model="vm.services.production" class="regular-checkbox"/><label for="supplier-services5"></label>
+                            <span>Production Services</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="supplier-services6" ng-model="vm.services.other" class="regular-checkbox"/><label for="supplier-services6"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.supplierDemographicsAssociationsIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.supplierDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.supplierDemographicsAssociationsIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you teach in the hospitality field?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.teachInHospitality" menu-options="[{name: 'Yes, part time'},{name: 'Yes, full time'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If so, what type of program(s) do you teach?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="supplier-programType1" ng-model="vm.programTypes.accredited" class="regular-checkbox"/><label for="supplier-programType1"></label>
+                            <span>Accredited</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="supplier-programType2" ng-model="vm.programTypes.certificate" class="regular-checkbox"/><label for="supplier-programType2"></label>
+                            <span>Certificate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="supplier-programType3" ng-model="vm.programTypes.other" class="regular-checkbox"/><label for="supplier-programType3"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you manage employees that report directly to you?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.manageEmployees" menu-options="[{name: 'Yes'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which associations are you involved?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-md-8 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center bg-white">Association</th>
+                                    <th class="text-center bg-white">Member</th>
+                                    <th class="text-center bg-white">On Board</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ICCA</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-iccaMember" ng-model="vm.associations.iccaMember" class="regular-checkbox"/><label for="supplier-iccaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-iccaBoard" ng-model="vm.associations.iccaBoard" class="regular-checkbox"/><label for="supplier-iccaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>ASAE</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-asaeMember" ng-model="vm.associations.asaeMember" class="regular-checkbox"/><label for="supplier-asaeMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-asaeBoard" ng-model="vm.associations.asaeBoard" class="regular-checkbox"/><label for="supplier-asaeBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>RCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-rcmaMember" ng-model="vm.associations.rcmaMember" class="regular-checkbox"/><label for="supplier-rcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-rcmaBoard" ng-model="vm.associations.rcmaBoard" class="regular-checkbox"/><label for="supplier-rcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>PCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-pcmaMember" ng-model="vm.associations.pcmaMember" class="regular-checkbox"/><label for="supplier-pcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-pcmaBoard" ng-model="vm.associations.pcmaBoard" class="regular-checkbox"/><label for="supplier-pcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>HSMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-hsmaiMember" ng-model="vm.associations.hsmaiMember" class="regular-checkbox"/><label for="supplier-hsmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-hsmaiBoard" ng-model="vm.associations.hsmaiBoard" class="regular-checkbox"/><label for="supplier-hsmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>DMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-dmaiMember" ng-model="vm.associations.dmaiMember" class="regular-checkbox"/><label for="supplier-dmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-dmaiBoard" ng-model="vm.associations.dmaiBoard" class="regular-checkbox"/><label for="supplier-dmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>FICP</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-ficpMember" ng-model="vm.associations.ficpMember" class="regular-checkbox"/><label for="supplier-ficpMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-ficpBoard" ng-model="vm.associations.ficpBoard" class="regular-checkbox"/><label for="supplier-ficpBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>SITE</td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-siteMember" ng-model="vm.associations.siteMember" class="regular-checkbox"/><label for="supplier-siteMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-siteBoard" ng-model="vm.associations.siteBoard" class="regular-checkbox"/><label for="supplier-siteBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other1"></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-other1Member" ng-model="vm.associations.other1Member" class="regular-checkbox"/><label for="supplier-other1Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-other1Board" ng-model="vm.associations.other1Board" class="regular-checkbox"/><label for="supplier-other1Board"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other2"></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-other2Member" ng-model="vm.associations.other2Member" class="regular-checkbox"/><label for="supplier-other2Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="supplier-other2Board" ng-model="vm.associations.other2Board" class="regular-checkbox"/><label for="supplier-other2Board"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
     </div>
     <div ng-if="vm.isFaculty">
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.facultyDemographicsFacultyIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Faculty <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.facultyDemographicsFacultyIsOpen, 'glyphicon-chevron-down': !vm.facultyDemographicsFacultyIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which type of school are you a faculty member?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.schoolType" menu-options="[{name: 'University'},{name: 'Jr.College'},{name: 'College'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What degree level(s) do you instruct?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-4 col-xs-6">
+                        <p>
+                            <input type="checkbox" id="faculty-degree1" ng-model="vm.degreeLevels.nonDegree" class="regular-checkbox"/><label for="faculty-degree1"></label>
+                            <span>Non-degree / Certificate</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-degree2" ng-model="vm.degreeLevels.associate" class="regular-checkbox"/><label for="faculty-degree2"></label>
+                            <span>Associate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <p>
+                            <input type="checkbox" id="faculty-degree3" ng-model="vm.degreeLevels.undergrad" class="regular-checkbox"/><label for="faculty-degree3"></label>
+                            <span>Undergraduate</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-degree4" ng-model="vm.degreeLevels.grad" class="regular-checkbox"/><label for="faculty-degree4"></label>
+                            <span>Graduate</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is the highest degree you have earned?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.degree" menu-options="[{name: 'Associate of AAS'},{name: 'Bachelor of Arts'},{name: 'Bachelor of Science'},{name: 'Doctorate'},{name: 'Certificate'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is your title within the institution?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.title" menu-options="[{name: 'Executive (President/COO/CIO/CMO/Dean)'},{name: 'Chancellor/Vice-Chancellor'},{name: 'Vice-President/Assistant Vice-President'},{name: 'Dean'},{name: 'Director'},{name: 'Department or Program Chair'},{name: 'Associate Professor'},{name: 'Professor'},{name: 'Adjunct Professor'},{name: 'Assistant Professor'},{name: 'Instructor'},{name: 'Coordinator/Administrator/Advisor'},{name: 'Lecturer'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">How many years have you been employed in secondary education?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.employedInEd" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">How many years have you been employed as faculty in Post-Secondary Academic Programs related to the meetings industry, hospitality, events, or tourism?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.employedInPrograms" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">How many courses do you teach per year?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.employedInPrograms" menu-options="[{name: '0-2'},{name: '3-5'},{name: '6-8'},{name: '8-10'},{name: '11+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What are your areas of instruction?</span>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-sm-6 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="faculty-instruction1" ng-model="vm.instructionAreas.entrepreneurship" class="regular-checkbox"/><label for="faculty-instruction1"></label>
+                            <span>Entrepreneurship</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction2" ng-model="vm.instructionAreas.foodMgmt" class="regular-checkbox"/><label for="faculty-instruction2"></label>
+                            <span>Food and Beverage Management</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction3" ng-model="vm.instructionAreas.finance" class="regular-checkbox"/><label for="faculty-instruction3"></label>
+                            <span>Finance / Accounting / Purchasing</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction4" ng-model="vm.instructionAreas.gaming" class="regular-checkbox"/><label for="faculty-instruction4"></label>
+                            <span>Gaming Management</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction5" ng-model="vm.instructionAreas.hotelMgmt" class="regular-checkbox"/><label for="faculty-instruction5"></label>
+                            <span>Hotel / Lodging Management</span>
+                        </p>
+                            <input type="checkbox" id="faculty-instruction6" ng-model="vm.instructionAreas.hr" class="regular-checkbox"/><label for="faculty-instruction6"></label>
+                            <span>Human Resources / Leadership</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction7" ng-model="vm.instructionAreas.it" class="regular-checkbox"/><label for="faculty-instruction7"></label>
+                            <span>IT (Information Technology)</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-8 col-xs-12">
+                        <p>
+                            <input type="checkbox" id="faculty-instruction8" ng-model="vm.instructionAreas.ethics" class="regular-checkbox"/><label for="faculty-instruction8"></label>
+                            <span>Law / Ethics</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction9" ng-model="vm.instructionAreas.marketing" class="regular-checkbox"/><label for="faculty-instruction9"></label>
+                            <span>Marketing</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction10" ng-model="vm.instructionAreas.meetingMgmt" class="regular-checkbox"/><label for="faculty-instruction10"></label>
+                            <span>Meeting and Event Management</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction11" ng-model="vm.instructionArea.research" class="regular-checkbox"/><label for="faculty-instruction11"></label>
+                            <span>Research</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction12" ng-model="vm.instructionAreas.strategicMgmt" class="regular-checkbox"/><label for="faculty-instruction12"></label>
+                            <span>Strategic Management</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction13" ng-model="vm.instructionArea.tourism" class="regular-checkbox"/><label for="faculty-instruction13"></label>
+                            <span>Travel and Tourism Industry</span>
+                        </p>
+                        <p>
+                            <input type="checkbox" id="faculty-instruction14" ng-model="vm.instructionAreas.other" class="regular-checkbox"/><label for="faculty-instruction14"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.facultyDemographicsAssociationsIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.facultyDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.facultyDemographicsAssociationsIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you teach in the hospitality field?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.teachInHospitality" menu-options="[{name: 'Yes, part time'},{name: 'Yes, full time'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If so, what type of program(s) do you teach?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="faculty-programType1" ng-model="vm.programTypes.accredited" class="regular-checkbox"/><label for="faculty-programType1"></label>
+                            <span>Accredited</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="faculty-programType2" ng-model="vm.programTypes.certificate" class="regular-checkbox"/><label for="faculty-programType2"></label>
+                            <span>Certificate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="faculty-programType3" ng-model="vm.programTypes.other" class="regular-checkbox"/><label for="faculty-programType3"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you manage employees that report directly to you?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.manageEmployees" menu-options="[{name: 'Yes'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which associations are you involved?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-md-8 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center bg-white">Association</th>
+                                    <th class="text-center bg-white">Member</th>
+                                    <th class="text-center bg-white">On Board</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ICCA</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-iccaMember" ng-model="vm.associations.iccaMember" class="regular-checkbox"/><label for="faculty-iccaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-iccaBoard" ng-model="vm.associations.iccaBoard" class="regular-checkbox"/><label for="faculty-iccaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>ASAE</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-asaeMember" ng-model="vm.associations.asaeMember" class="regular-checkbox"/><label for="faculty-asaeMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-asaeBoard" ng-model="vm.associations.asaeBoard" class="regular-checkbox"/><label for="faculty-asaeBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>RCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-rcmaMember" ng-model="vm.associations.rcmaMember" class="regular-checkbox"/><label for="faculty-rcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-rcmaBoard" ng-model="vm.associations.rcmaBoard" class="regular-checkbox"/><label for="faculty-rcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>PCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-pcmaMember" ng-model="vm.associations.pcmaMember" class="regular-checkbox"/><label for="faculty-pcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-pcmaBoard" ng-model="vm.associations.pcmaBoard" class="regular-checkbox"/><label for="faculty-pcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>HSMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-hsmaiMember" ng-model="vm.associations.hsmaiMember" class="regular-checkbox"/><label for="faculty-hsmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-hsmaiBoard" ng-model="vm.associations.hsmaiBoard" class="regular-checkbox"/><label for="faculty-hsmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>DMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-dmaiMember" ng-model="vm.associations.dmaiMember" class="regular-checkbox"/><label for="faculty-dmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-dmaiBoard" ng-model="vm.associations.dmaiBoard" class="regular-checkbox"/><label for="faculty-dmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>FICP</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-ficpMember" ng-model="vm.associations.ficpMember" class="regular-checkbox"/><label for="faculty-ficpMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-ficpBoard" ng-model="vm.associations.ficpBoard" class="regular-checkbox"/><label for="faculty-ficpBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>SITE</td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-siteMember" ng-model="vm.associations.siteMember" class="regular-checkbox"/><label for="faculty-siteMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-siteBoard" ng-model="vm.associations.siteBoard" class="regular-checkbox"/><label for="faculty-siteBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other1"></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-other1Member" ng-model="vm.associations.other1Member" class="regular-checkbox"/><label for="faculty-other1Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-other1Board" ng-model="vm.associations.other1Board" class="regular-checkbox"/><label for="faculty-other1Board"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other2"></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-other2Member" ng-model="vm.associations.other2Member" class="regular-checkbox"/><label for="faculty-other2Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="faculty-other2Board" ng-model="vm.associations.other2Board" class="regular-checkbox"/><label for="faculty-other2Board"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
     </div>
     <div ng-if="vm.isStudent">
+                <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.studentDemographicsEducationIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Education <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.studentDemographicsEducationIsOpen, 'glyphicon-chevron-down': !vm.studentDemographicsEducationIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is your educational status?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <styled-ui-select value="vm.person.educationStatus" menu-options="[{name: 'Undergraduate student'},{name: 'Graduate student'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is the name of the school you attend?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-6 col-xs-12">
+                        <input type="text" ng-model="vm.degreeLevels.schoolName">
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What year are you in scool?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.schoolYear" menu-options="[{name: 'Freshman'},{name: 'Sophomore'},{name: 'Junior'},{name: 'Senior'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What is your projected graduation date?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-xs-6">
+                        <styled-ui-select value="vm.person.gradMonth" menu-options="[{name: 'Spring'},{name: 'Summer'},{name: 'Fall'},{name: 'Winter'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <styled-ui-select value="vm.person.gradYear" menu-options="[{name: '2017'},{name: '2018'},{name: '2019'},{name: '2020'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">What degree are you pursuing?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12">
+                        <styled-ui-select value="vm.person.degreePursuing" menu-options="[{name: 'Associates'},{name: 'Bachelors'},{name: 'Masters'},{name: 'Doctorate'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Proof of enrollment must be received at MPI before a student can be accepted into membership and upon renewal in order to retain their student membership, Documentation needs to be submitted within two weeks of application for membership or renewal. Please call our Member Care Center at +1 972-702-3053 for details.</span>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.studentDemographicsAssociationsIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.studentDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.studentDemographicsAssociationsIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you teach in the hospitality field?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.teachInHospitality" menu-options="[{name: 'Yes, part time'},{name: 'Yes, full time'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If so, what type of program(s) do you teach?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="student-programType1" ng-model="vm.programTypes.accredited" class="regular-checkbox"/><label for="student-programType1"></label>
+                            <span>Accredited</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="student-programType2" ng-model="vm.programTypes.certificate" class="regular-checkbox"/><label for="student-programType2"></label>
+                            <span>Certificate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="student-programType3" ng-model="vm.programTypes.other" class="regular-checkbox"/><label for="student-programType3"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you manage employees that report directly to you?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.manageEmployees" menu-options="[{name: 'Yes'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which associations are you involved?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-md-8 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center bg-white">Association</th>
+                                    <th class="text-center bg-white">Member</th>
+                                    <th class="text-center bg-white">On Board</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ICCA</td>
+                                    <td class="text-center"><input type="checkbox" id="student-iccaMember" ng-model="vm.associations.iccaMember" class="regular-checkbox"/><label for="student-iccaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-iccaBoard" ng-model="vm.associations.iccaBoard" class="regular-checkbox"/><label for="student-iccaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>ASAE</td>
+                                    <td class="text-center"><input type="checkbox" id="student-asaeMember" ng-model="vm.associations.asaeMember" class="regular-checkbox"/><label for="student-asaeMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-asaeBoard" ng-model="vm.associations.asaeBoard" class="regular-checkbox"/><label for="student-asaeBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>RCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="student-rcmaMember" ng-model="vm.associations.rcmaMember" class="regular-checkbox"/><label for="student-rcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-rcmaBoard" ng-model="vm.associations.rcmaBoard" class="regular-checkbox"/><label for="student-rcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>PCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="student-pcmaMember" ng-model="vm.associations.pcmaMember" class="regular-checkbox"/><label for="student-pcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-pcmaBoard" ng-model="vm.associations.pcmaBoard" class="regular-checkbox"/><label for="student-pcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>HSMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="student-hsmaiMember" ng-model="vm.associations.hsmaiMember" class="regular-checkbox"/><label for="student-hsmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-hsmaiBoard" ng-model="vm.associations.hsmaiBoard" class="regular-checkbox"/><label for="student-hsmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>DMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="student-dmaiMember" ng-model="vm.associations.dmaiMember" class="regular-checkbox"/><label for="student-dmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-dmaiBoard" ng-model="vm.associations.dmaiBoard" class="regular-checkbox"/><label for="student-dmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>FICP</td>
+                                    <td class="text-center"><input type="checkbox" id="student-ficpMember" ng-model="vm.associations.ficpMember" class="regular-checkbox"/><label for="student-ficpMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-ficpBoard" ng-model="vm.associations.ficpBoard" class="regular-checkbox"/><label for="student-ficpBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>SITE</td>
+                                    <td class="text-center"><input type="checkbox" id="student-siteMember" ng-model="vm.associations.siteMember" class="regular-checkbox"/><label for="student-siteMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-siteBoard" ng-model="vm.associations.siteBoard" class="regular-checkbox"/><label for="student-siteBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other1"></td>
+                                    <td class="text-center"><input type="checkbox" id="student-other1Member" ng-model="vm.associations.other1Member" class="regular-checkbox"/><label for="student-other1Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-other1Board" ng-model="vm.associations.other1Board" class="regular-checkbox"/><label for="student-other1Board"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.associations.other2"></td>
+                                    <td class="text-center"><input type="checkbox" id="student-other2Member" ng-model="vm.associations.other2Member" class="regular-checkbox"/><label for="student-other2Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="student-other2Board" ng-model="vm.associations.other2Board" class="regular-checkbox"/><label for="student-other2Board"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>
     </div>
-
-
-
-
-
     <div class="row padding-md-top">
         <div class="col-xs-12">
             <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.demographicInformationForm.$pristine}">Save changes</button>
