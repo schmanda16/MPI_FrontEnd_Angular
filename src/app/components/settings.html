@@ -8,8 +8,8 @@
     </div>
 </div>
 <div class="row profile-settings">
-    <div class="col-sm-10 col-sm-offset-1 padding-lg-left padding-lg-right margin-lg-bottom">
-        <div class="row margin-lg-top">
+    <div class="col-md-10 col-md-offset-1 col-xs-12 padding-lg-left padding-lg-right margin-lg-bottom">
+        <div class="row hidden-sm hidden-xs margin-lg-top">
             <div class="col-md-3">
                 <uib-tabset active="activePill" vertical="true" type="pills" class="off-grey-border">
                     <uib-tab index="0" select="vm.selectedTabIndex = 0">
@@ -24,7 +24,7 @@
                     </uib-tab>
                     <uib-tab index="2" select="vm.selectedTabIndex = 2">
                         <uib-tab-heading>
-                            <span class="icon icon-bubbles3">&nbsp;</span>Manage Email Preferences
+                            <span class="icon icon-envelop">&nbsp;</span>Manage Email Preferences
                         </uib-tab-heading>
                     </uib-tab>
                     <uib-tab index="3" select="vm.selectedTabIndex = 3">
@@ -34,32 +34,6 @@
                     </uib-tab>
                 </uib-tabset>
             </div>
-
-            <!--<div class="col-xs-12 visible-sm visible-xs padding-lg-bottom">
-                <uib-tabset>
-                    <uib-tab index="0" select="vm.selectedTabIndex = 0">
-                        <uib-tab-heading>
-                            General Information
-                        </uib-tab-heading>
-                    </uib-tab>
-                    <uib-tab index="1" select="vm.selectedTabIndex = 1">
-                        <uib-tab-heading>
-                            Contact
-                        </uib-tab-heading>
-                    </uib-tab>
-                    <uib-tab index="2" select="vm.selectedTabIndex = 2">
-                        <uib-tab-heading>
-                            Manage Email Preferences
-                        </uib-tab-heading>
-                    </uib-tab>
-                    <uib-tab index="3" select="vm.selectedTabIndex = 3">
-                        <uib-tab-heading>
-                            Demographic Information
-                        </uib-tab-heading>
-                    </uib-tab>
-                </uib-tabset>
-            </div>-->
-
             <div class="col-md-8 col-md-offset-1">
                 <div ng-show="vm.selectedTabIndex == 0">
                     <div ui-view="personal-info"></div>
@@ -75,55 +49,47 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-
-<!--<div class="row">
-    <div class="col-xs-12 white bg-blue-gradient">
-        <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 hidden-xs padding-lg-left padding-lg-right">
-                <h3>Manage Your Account</h3>
+        <div class="row margin-lg-top visible-sm visible-xs">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+                <uib-accordion>
+                    <div uib-accordion-group class="panel-default" is-open="vm.generalInformationIsOpen">
+                        <uib-accordion-heading>
+                            <span class="text-md brand-blue"><span class="icon icon-user">&nbsp;</span>General Information <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.generalInformationIsOpen, 'glyphicon-chevron-down': !vm.generalInformationIsOpen}"></i></span>
+                        </uib-accordion-heading>
+                        <div ui-view="personal-info"></div>
+                    </div>
+                </uib-accordion>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+                <uib-accordion>
+                    <div uib-accordion-group class="panel-default" is-open="vm.contactIsOpen">
+                        <uib-accordion-heading>
+                            <span class="text-md brand-blue"><span class="icon icon-address-book">&nbsp;</span>Contact <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.contactIsOpen, 'glyphicon-chevron-down': !vm.contactIsOpen}"></i></span>
+                        </uib-accordion-heading>
+                        <div ui-view="contact"></div>
+                    </div>
+                </uib-accordion>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+                <uib-accordion>
+                    <div uib-accordion-group class="panel-default" is-open="vm.emailPrefsIsOpen">
+                        <uib-accordion-heading>
+                            <span class="text-md brand-blue"><span class="icon icon-envelop">&nbsp;</span>Manage Email Preferences <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.emailPrefsIsOpen, 'glyphicon-chevron-down': !vm.emailPrefsIsOpen}"></i></span>
+                        </uib-accordion-heading>
+                        <div ui-view="email-preferences"></div>
+                    </div>
+                </uib-accordion>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12">
+                <uib-accordion>
+                    <div uib-accordion-group class="panel-default" is-open="vm.demographicsIsOpen">
+                        <uib-accordion-heading>
+                            <span class="text-md brand-blue"><span class="icon icon-pencil">&nbsp;</span>Demographic Information <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.demographicsIsOpen, 'glyphicon-chevron-down': !vm.demographicsIsOpen}"></i></span>
+                        </uib-accordion-heading>
+                        <div ui-view="demographic-info"></div>
+                    </div>
+                </uib-accordion>
             </div>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-10 col-sm-offset-1 hidden-xs padding-lg-left padding-lg-right margin-lg-bottom">
-        <div class="row">
-            <ul class="nav nav-pills nav-stacked col-md-3">
-                <li class="active"><a href="#tab_a" data-toggle="pill">General Information</a></li>
-                <li><a href="#tab_b" data-toggle="pill">Pill B</a></li>
-                <li><a href="#tab_c" data-toggle="pill">Pill C</a></li>
-                <li><a href="#tab_d" data-toggle="pill">Pill D</a></li>
-            </ul>
-            <div class="tab-content col-md-9">
-                <div class="tab-pane active" id="tab_a">
-                    <h4>Pane A</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                        ac turpis egestas.</p>
-                </div>
-                <div class="tab-pane" id="tab_b">
-                    <h4>Pane B</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                        ac turpis egestas.</p>
-                </div>
-                <div class="tab-pane" id="tab_c">
-                    <h4>Pane C</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                        ac turpis egestas.</p>
-                </div>
-                <div class="tab-pane" id="tab_d">
-                    <h4>Pane D</h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                        ac turpis egestas.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
-
-
-
-
