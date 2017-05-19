@@ -8,112 +8,216 @@
         <div class="col-xs-12">
             <span class="brand-red">Please correct errors below</span>
         </div>
-    </div>
+    </div>    
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Email Address</span>
         </div>
-        <div class="col-xs-9">
+    </div>    
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
             <input type="email" name="emailAddress" ng-model="vm.person.Email1" ng-class="{'error': vm.contactInformationForm.$submitted && (vm.contactInformationForm.emailAddress.$error.required || vm.contactInformationForm.emailAddress.$error.email)}" placeholder="name@example.com" required>
             <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.emailAddress.$error.required">*Required</span>
             <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.$error.email">*Not a valid email</span>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Cell Phone Number</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="cellCountryCd" ng-model="vm.person.cellPhone.countryCode" placeholder="Country Code">
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Country Code</span>
+        </div>
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Area Code</span>
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <span class="text-xxs brand-blue">Number</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="cellCountryCd" ng-model="vm.person.CellPhone.CountryCode">
             <!--<styled-ui-select value="vm.person.cellPhone.countryCode" menu-options="[{code:'Manager'},{code:'Executive'}, {code:'Staff'}]" item-display-key="code" search-enabled="false"></styled-ui-select>-->
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="cellAreaCd" ng-model="vm.person.cellPhone.areaCode" placeholder="Area Code" maxlength="3">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="cellAreaCd" ng-model="vm.person.CellPhone.AreaCode" maxlength="3">
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="cellNumber" ng-model="vm.person.cellPhone.phone">
+        <div class="col-md-4 col-xs-6">
+            <input type="text" name="cellNumber" ng-model="vm.person.CellPhone.Phone">
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Work Phone Number</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="workCountryCd" ng-model="vm.person.phone.countryCode" placeholder="Country Code">
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Country Code</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="workAreaCd" ng-model="vm.person.phone.areaCode" placeholder="Area Code" maxlength="3">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Area Code</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="workNumber" ng-model="vm.person.phone.phone">
+        <div class="col-md-4 col-xs-6">
+            <span class="text-xxs brand-blue">Number</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="workCountryCd" ng-model="vm.person.Phone.CountryCode">
+        </div>
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="workAreaCd" ng-model="vm.person.Phone.AreaCode" maxlength="3">
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <input type="text" name="workNumber" ng-model="vm.person.Phone.Phone">
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Home Phone Number</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="homeCountryCd" ng-model="vm.person.homePhone.countryCode" placeholder="Country Code">
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Country Code</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="homeAreaCd" ng-model="vm.person.homePhone.areaCode" placeholder="Area Code" maxlength="3">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <span class="text-xxs brand-blue">Area Code</span>
         </div>
-        <div class="col-xs-3">
-            <input type="text" name="homeNumber" ng-model="vm.person.homePhone.phone">
+        <div class="col-md-4 col-xs-6">
+            <span class="text-xxs brand-blue">Number</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="homeCountryCd" ng-model="vm.person.HomePhone.CountryCode">
+        </div>
+        <div class="col-md-2 col-xs-3 padding-none-right">
+            <input type="text" name="homeAreaCd" ng-model="vm.person.HomePhone.AreaCode" maxlength="3">
+        </div>
+        <div class="col-md-4 col-xs-6">
+            <input type="text" name="homeNumber" ng-model="vm.person.HomePhone.Phone">
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Home Address</span>
         </div>
-        <div class="col-xs-9">
-            <input type="text" name="homeAddressStreet" ng-model="vm.person.homeAddress.line1" placeholder="Street Address">
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <span class="text-xxs brand-blue">Street Address</span>
         </div>
     </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-5 col-xs-offset-3">
-            <input type="text" name="homeAddressCity" ng-model="vm.person.homeAddress.city" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCity.$error.required}" placeholder="City" ng-required="vm.person.homeAddress.line1">
-        </div>
-        <div class="col-xs-2">
-            <input type="text" name="homeAddressState" ng-model="vm.person.homeAddress.stateProvince" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressState.$error.required}" placeholder="State" ng-required="vm.person.homeAddress.line1">
-        </div>
-        <div class="col-xs-2">
-            <input type="text" name="homeAddressZip" ng-model="vm.person.homeAddress.postalCode" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressZip.$error.required}" placeholder="Zip" ng-required="vm.person.homeAddress.line1">
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <input type="text" name="homeAddressStreet" ng-model="vm.person.HomeAddress.Line1">
         </div>
     </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-9 col-xs-offset-3">
+    <div class="row padding-sm-top">
+        <div class="col-md-4 col-xs-6">
+            <span class="text-xxs brand-blue">City</span>
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <span class="text-xxs brand-blue">State/Province</span>
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <span class="text-xxs brand-blue">Postal Code</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-6">
+            <input type="text" name="homeAddressCity" ng-model="vm.person.HomeAddress.City" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCity.$error.required}" ng-required="vm.person.HomeAddress.Line1">
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <input type="text" name="homeAddressState" ng-model="vm.person.HomeAddress.StateProvince" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressState.$error.required}" ng-required="vm.person.HomeAddress.Line1">
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <input type="text" name="homeAddressZip" ng-model="vm.person.HomeAddress.PostalCode" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressZip.$error.required}" ng-required="vm.person.HomeAddress.Line1">
+        </div>
+    </div>
+    <div class="row padding-sm-top">
+        <div class="col-md-8 col-xs-12">
+            <span class="text-xxs brand-blue">Country</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
             <!--<input type="text" name="homeAddressCountry" ng-model="vm.contactInformationForm.homeAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.homeAddress.streetAddress">-->
-            <styled-ui-select value="vm.contactInformationForm.homeAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country" other-available="true"></styled-ui-select>
+            <styled-ui-select value="vm.contactInformationForm.HomeAddress.Country" menu-options="vm.countries" item-display-key="Country1" search-enabled="true" other-available="true"></styled-ui-select>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-md-8 col-xs-12">
             <span>Work Address</span>
         </div>
-        <div class="col-xs-9">
-            <input type="text" name="workAddressStreet" ng-model="vm.contactInformationForm.workAddress.streetAddress" placeholder="Street Address">
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <span class="text-xxs brand-blue">Street Address</span>
         </div>
     </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-5 col-xs-offset-3">
-            <input type="text" name="workAddressCity" ng-model="vm.contactInformationForm.workAddress.city" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCity.$error.required}" placeholder="City" ng-required="vm.contactInformationForm.workAddress.streetAddress">
-        </div>
-        <div class="col-xs-2">
-            <input type="text" name="workAddressState" ng-model="vm.contactInformationForm.workAddress.state" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressState.$error.required}" placeholder="State" ng-required="vm.contactInformationForm.workAddress.streetAddress">
-        </div>
-        <div class="col-xs-2">
-            <input type="text" name="workAddressZip" ng-model="vm.contactInformationForm.workAddress.zip" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressZip.$error.required}" placeholder="Zip" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <input type="text" name="workAddressStreet" ng-model="vm.contactInformationForm.WorkAddress.Line1">
         </div>
     </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-9 col-xs-offset-3">
+    <div class="row padding-sm-top">
+        <div class="col-md-4 col-xs-6">
+            <span class="text-xxs brand-blue">City</span>
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <span class="text-xxs brand-blue">State/Province</span>
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <span class="text-xxs brand-blue">Postal Code</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-xs-6">
+            <input type="text" name="workAddressCity" ng-model="vm.contactInformationForm.WorkAddress.City" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCity.$error.required}" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <input type="text" name="workAddressState" ng-model="vm.contactInformationForm.WorkAddress.StateProvince" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressState.$error.required}" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <input type="text" name="workAddressZip" ng-model="vm.contactInformationForm.WorkAddress.PostalCode" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressZip.$error.required}" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+    </div>
+    <div class="row padding-sm-top">
+        <div class="col-xs-8">
+            <span class="text-xxs brand-blue">Country</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
             <!--<input type="text" name="workAddressCountry" ng-model="vm.contactInformationForm.workAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.workAddress.streetAddress">-->
-            <styled-ui-select value="vm.contactInformationForm.workAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country" other-available="false"></styled-ui-select>
+            <styled-ui-select value="vm.contactInformationForm.WorkAddress.Country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" other-available="false"></styled-ui-select>
+        </div>
+    </div>    
+    <div class="row padding-md-top">
+        <div class="col-md-8 col-xs-12">
+            <span>Preferred Address</span>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-12">
+        <div class="row padding-md-bottom button-holder">
+            <div class="col-xs-3 margin-md-left">
+                <input type="radio" id="radio-home-address" name="radio-1-set" class="regular-radio" ng-model="vm.preferredAddress" value="Home"/><label for="radio-home-address"></label>
+                <span>Home</span>
+            </div>
+            <div class="col-xs-3">
+                <input type="radio" id="radio-work-address" name="radio-1-set" class="regular-radio" ng-model="vm.preferredAddress" value="Work"/><label for="radio-work-address"></label>
+                <span>Work</span>
+            </div>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-md-8 col-xs-12">
             <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.contactInformationForm.$pristine}">Save changes</button>
         </div>
     </div>

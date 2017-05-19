@@ -229,6 +229,9 @@
                 },
                 'email-preferences@user.settings': {
                     templateUrl: 'app/components/settings-email-preferences.html'
+                },
+                'demographic-info@user.settings': {
+                    templateUrl: 'app/components/settings-demographics.html'
                 }
             },
             resolve: {

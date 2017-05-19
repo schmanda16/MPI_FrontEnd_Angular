@@ -54,7 +54,6 @@
     .panel-category {
         font-size: $text-sm;
     }
-
     $line-height: 40px;
     $lines-to-show: 2;
     .panel-title {
@@ -62,6 +61,12 @@
         height: $line-height*$lines-to-show;
         line-height: $line-height;
         -webkit-line-clamp: $lines-to-show;
+    }
+    .panel-image {
+        background-size: cover;
+        width: 100%;
+        //height: 400px;
+        position: relative;
     }
     .panel-detail {
         font-size: $text-sm;
@@ -75,11 +80,20 @@
 
     $line-height: 28px;
     $lines-to-show: 2;
+
     .panel-title {
         font-size: $text-lg;
         height: $line-height*$lines-to-show;
         line-height: $line-height;
         -webkit-line-clamp: $lines-to-show;
+    }
+
+    .panel-image {
+        background-size: cover;
+        width: 100%;
+        //height: 275px;
+        margin: 0 auto;
+        position: relative;
     }
 
     .panel-detail {
@@ -94,6 +108,7 @@
 
     $line-height: 24px;
     $lines-to-show: 2;
+
     .panel-title {
         font-size: $text-md;
         height: $line-height*$lines-to-show;
@@ -101,8 +116,44 @@
         -webkit-line-clamp: $lines-to-show;
     }
 
+    .panel-image {
+        background-size: cover;
+        width: 100%;
+        //height: 200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
     .panel-detail {
         font-size: $text-sm;
+    }
+}
+
+@media (min-width: 992px) {
+    .news-card-lg .panel-image {
+        height: 400px;
+    }
+
+    .news-card-md .panel-image {
+        height: 250px;
+    }
+
+    .news-card-sm .panel-image {
+        height: 200px;
+    }
+}
+
+@media (max-width: 991px) {
+    .news-card-lg .panel-image {
+        height: 300px;
+    }
+
+    .news-card-md .panel-image {
+        height: 225px;
+    }
+
+    .news-card-sm .panel-image {
+        height: 170px;
     }
 }
 
@@ -111,6 +162,11 @@
         text-align: center;
         $line-height: 28px;
         $lines-to-show: 2;
+
+        .panel-image {
+            height: 200px;
+        }
+
         .panel-title {
             font-size: $text-lg;
             height: $line-height*$lines-to-show;
@@ -120,6 +176,10 @@
     }
     .news-card-md {
         text-align: center;
+
+        .panel-image {
+            height: 200px;
+        }
     }
     .news-card-sm {
         .panel {
@@ -127,10 +187,16 @@
             background: transparent;
             box-shadow: none;
         }
+
         .panel-category {
             padding-left: 0px;
             padding-right: 0px;
         }
+
+        .panel-image {
+            height: 140px;
+        }
+
         .panel-title {
             padding: 0 0 15px 0;
         }

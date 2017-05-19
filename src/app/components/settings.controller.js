@@ -13,6 +13,10 @@
         vm.changeGender = changeGender;
         vm.saveGeneralInformation = saveGeneralInformation;
         vm.saveContactInformation = saveContactInformation;
+        vm.saveDemographicInformation = saveDemographicInformation;
+
+
+        vm.isPlanner = true;
 
         vm.person = profile.person;
         vm.functionRoles = profile.functionRoles;
@@ -46,8 +50,8 @@
                 //error
             });
 
-            if(vm.person && vm.person.other) {
-                vm.person.hasOtherDesignation = true;
+            if(vm.person && vm.person.Other) {
+                vm.person.HasOtherDesignation = true;
             }
             if(vm.person && vm.person.Gender) {
                 vm.person.genderObject = _.find(vm.genders, function(gender) {
@@ -68,6 +72,10 @@
 
         function saveContactInformation() {
             console.log('contact information saved');
+        }
+
+        function saveDemographicInformation() {
+            console.log('demographic information saved');
         }
     }
 })();

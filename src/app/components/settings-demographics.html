@@ -1,0 +1,219 @@
+<form name="vm.demographicInformationForm" ng-submit="vm.saveDemographicInformation()" novalidate>
+    <div class="row">
+        <div class="col-xs-12">
+            <h4>Demographic Information</h4>
+        </div>
+    </div>
+    <div ng-if="vm.isPlanner">
+        <div class="row">
+            <div class="col-xs-12">
+                <h5 class="brand-blue">Industry</h5>
+                <hr class="margin-none-top">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <span class="text-sm">Primary industries you plan events for:</span>
+            </div>
+        </div>
+        <div class="row padding-md-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry1" ng-model="vm.primaryIndustries.wholesale" class="regular-checkbox"/><label for="planner-industry1"></label>
+                <span>Wholesale / Retail Trade</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry2" ng-model="vm.primaryIndustries.incentive" class="regular-checkbox"/><label for="planner-industry2"></label>
+                <span>Destination Management Services / Incentive Houses</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry3" ng-model="vm.primaryIndustries.communication" class="regular-checkbox"/><label for="planner-industry3"></label>
+                <span>IT / Telecommunications / Communications</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry4" ng-model="vm.primaryIndustries.thirdParty" class="regular-checkbox"/><label for="planner-industry4"></label>
+                <span>Third Party Research</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry5" ng-model="vm.primaryIndustries.financial" class="regular-checkbox"/><label for="planner-industry5"></label>
+                <span>Financial / Insurance / Legal / Real Estate</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry6" ng-model="vm.primaryIndustries.association" class="regular-checkbox"/><label for="planner-industry6"></label>
+                <span>Association Management Company</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry7" ng-model="vm.primaryIndustries.speakers" class="regular-checkbox"/><label for="planner-industry7"></label>
+                <span>Speakers / Education Services / Speaker Bureaus</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry8" ng-model="vm.primaryIndustries.production" class="regular-checkbox"/><label for="planner-industry8"></label>
+                <span>Event Design and Production</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry9" ng-model="vm.primaryIndustries.medical" class="regular-checkbox"/><label for="planner-industry9"></label>
+                <span>Medical / Pharmaceutical</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry10" ng-model="vm.primaryIndustries.government" class="regular-checkbox"/><label for="planner-industry10"></label>
+                <span>Government</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry11" ng-model="vm.primaryIndustries.hotels" class="regular-checkbox"/><label for="planner-industry11"></label>
+                <span>Accommodations / Hotels / Resorts / Cruise Lines</span>
+            </div>
+            <div class="col-xs-6">
+                <input type="checkbox" id="planner-industry12" ng-model="vm.primaryIndustries.other" class="regular-checkbox"/><label for="planner-industry12"></label>
+                <span>Other</span>
+            </div>
+        </div>
+        <div class="row padding-sm-top">
+            <div class="col-xs-12">
+                <h5 class="brand-blue">Planning</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h5 class="brand-blue">Associations</h5>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+    <div ng-if="vm.isSupplier">
+    </div>
+    <div ng-if="vm.isFaculty">
+    </div>
+    <div ng-if="vm.isStudent">
+    </div>
+
+
+
+
+
+
+
+    <div class="row" ng-if="vm.demographicInformationForm.$submitted && vm.demographicInformationForm.$invalid">
+        <div class="col-xs-12">
+            <span class="brand-red">Please correct errors below</span>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Email Address</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="email" name="emailAddress" ng-model="vm.person.Email1" ng-class="{'error': vm.contactInformationForm.$submitted && (vm.contactInformationForm.emailAddress.$error.required || vm.contactInformationForm.emailAddress.$error.email)}" placeholder="name@example.com" required>
+            <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.emailAddress.$error.required">*Required</span>
+            <span class="brand-red text-xxs" ng-if="vm.contactInformationForm.$submitted && vm.contactInformationForm.$error.email">*Not a valid email</span>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Cell Phone Number</span>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="cellCountryCd" ng-model="vm.person.cellPhone.countryCode" placeholder="Country Code">
+            <!--<styled-ui-select value="vm.person.cellPhone.countryCode" menu-options="[{code:'Manager'},{code:'Executive'}, {code:'Staff'}]" item-display-key="code" search-enabled="false"></styled-ui-select>-->
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="cellAreaCd" ng-model="vm.person.cellPhone.areaCode" placeholder="Area Code" maxlength="3">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="cellNumber" ng-model="vm.person.cellPhone.phone">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Work Phone Number</span>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="workCountryCd" ng-model="vm.person.phone.countryCode" placeholder="Country Code">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="workAreaCd" ng-model="vm.person.phone.areaCode" placeholder="Area Code" maxlength="3">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="workNumber" ng-model="vm.person.phone.phone">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Home Phone Number</span>
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="homeCountryCd" ng-model="vm.person.homePhone.countryCode" placeholder="Country Code">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="homeAreaCd" ng-model="vm.person.homePhone.areaCode" placeholder="Area Code" maxlength="3">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" name="homeNumber" ng-model="vm.person.homePhone.phone">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Home Address</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="text" name="homeAddressStreet" ng-model="vm.person.homeAddress.line1" placeholder="Street Address">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" name="homeAddressCity" ng-model="vm.person.homeAddress.city" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCity.$error.required}" placeholder="City" ng-required="vm.person.homeAddress.line1">
+        </div>
+        <div class="col-xs-2">
+            <input type="text" name="homeAddressState" ng-model="vm.person.homeAddress.stateProvince" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressState.$error.required}" placeholder="State" ng-required="vm.person.homeAddress.line1">
+        </div>
+        <div class="col-xs-2">
+            <input type="text" name="homeAddressZip" ng-model="vm.person.homeAddress.postalCode" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressZip.$error.required}" placeholder="Zip" ng-required="vm.person.homeAddress.line1">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-9 col-xs-offset-3">
+            <!--<input type="text" name="homeAddressCountry" ng-model="vm.contactInformationForm.homeAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.homeAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.homeAddress.streetAddress">-->
+            <styled-ui-select value="vm.contactInformationForm.homeAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country" other-available="true"></styled-ui-select>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-3">
+            <span>Work Address</span>
+        </div>
+        <div class="col-xs-9">
+            <input type="text" name="workAddressStreet" ng-model="vm.contactInformationForm.workAddress.streetAddress" placeholder="Street Address">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-5 col-xs-offset-3">
+            <input type="text" name="workAddressCity" ng-model="vm.contactInformationForm.workAddress.city" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCity.$error.required}" placeholder="City" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+        <div class="col-xs-2">
+            <input type="text" name="workAddressState" ng-model="vm.contactInformationForm.workAddress.state" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressState.$error.required}" placeholder="State" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+        <div class="col-xs-2">
+            <input type="text" name="workAddressZip" ng-model="vm.contactInformationForm.workAddress.zip" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressZip.$error.required}" placeholder="Zip" ng-required="vm.contactInformationForm.workAddress.streetAddress">
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-9 col-xs-offset-3">
+            <!--<input type="text" name="workAddressCountry" ng-model="vm.contactInformationForm.workAddress.country" ng-class="{'error': vm.contactInformationForm.$submitted && vm.contactInformationForm.workAddressCountry.$error.required}" placeholder="Country" ng-required="vm.contactInformationForm.workAddress.streetAddress">-->
+            <styled-ui-select value="vm.contactInformationForm.workAddress.country" menu-options="vm.countries" item-display-key="country1" search-enabled="true" placeholder-text="Country" other-available="false"></styled-ui-select>
+        </div>
+    </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.contactInformationForm.$pristine}">Save changes</button>
+        </div>
+    </div>
+</form>

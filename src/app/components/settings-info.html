@@ -6,54 +6,75 @@
     </div>
     <div class="row" ng-if="vm.generalInformationForm.$submitted && vm.generalInformationForm.$invalid">
         <div class="col-xs-12">
-            <span class="brand-red">Please fill out the required fields</span>
+            <span class="brand-red">Please correct errors</span>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
-            <span>Name</span>
+        <div class="col-xs-6">
+            <span>First Name</span>
         </div>
-        <div class="col-xs-4">
-            <input type="text" name="first" ng-model="vm.person.FirstName" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.first.$error.required}" placeholder="First" required>
+        <div class="col-xs-6">
+            <span>Last Name</span>
         </div>
-        <div class="col-xs-5">
-            <input type="text" name="last" ng-model="vm.person.LastName" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.last.$error.required}" placeholder="Last" required>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <input type="text" name="first" ng-model="vm.person.FirstName" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.first.$invalid}" required>
+            <div ng-show="vm.generalInformationForm.$submitted && vm.generalInformationForm.first.$invalid">
+                <span ng-show="vm.generalInformationForm.first.$error.required" class="text-xs brand-red">*Required</span>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <input type="text" name="last" ng-model="vm.person.LastName" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.last.$invalid}" required>
+            <div ng-show="vm.generalInformationForm.$submitted && vm.generalInformationForm.last.$invalid">
+                <span ng-show="vm.generalInformationForm.last.$error.required" class="text-xs brand-red">*Required</span>
+            </div>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <span>Gender</span>
         </div>
-        <div class="col-xs-9">
+        <div class="col-xs-6">
+            <span>Year You Joined Meetings Industry</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
             <styled-ui-select value="vm.person.genderObject" menu-options="vm.genders" item-display-key="name" search-enabled="false" change-callback="vm.changeGender(item)"></styled-ui-select>
+        </div>
+        <div class="col-xs-6">
+            <input type="number" name="years" ng-model="vm.person.YearJoinedIndustry" min="1900" maxlength="4" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.years.$invalid}">
+            <div ng-show="vm.generalInformationForm.$submitted && vm.generalInformationForm.years.$invalid">
+                <span ng-show="vm.generalInformationForm.years.$error.min || vm.generalInformationForm.years.$error.maxlength" class="text-xs brand-red">*Not a valid year</span>
+            </div>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <span>Designations</span>
         </div>
-        <div class="col-xs-9">
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <input type="checkbox" id="cmm-designation-checkbox" ng-model="vm.person.Cmm" class="regular-checkbox"/><label for="cmm-designation-checkbox"></label>
             <span>CMM</span>
             &nbsp;&nbsp;
             <input type="checkbox" id="cmp-designation-checkbox" ng-model="vm.person.Cmp" class="regular-checkbox"/><label for="cmp-designation-checkbox"></label>
             <span>CMP</span>
             &nbsp;&nbsp;
-            <input type="checkbox" id="other-designation-checkbox" ng-model="vm.person.hasOtherDesignation" class="regular-checkbox"/><label for="other-designation-checkbox"></label>
+            <input type="checkbox" id="other-designation-checkbox" ng-model="vm.person.HasOtherDesignation" class="regular-checkbox"/><label for="other-designation-checkbox"></label>
             <span>Other</span>
         </div>
     </div>
-    <div class="row padding-md-top" ng-if="vm.person.hasOtherDesignation">
-        <div class="col-xs-9 col-xs-offset-3">
-            <input type="text" name="designationOther" ng-model="vm.person.Other" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.designationOther.$error.required}" placeholder="Please specify" required>
+    <div class="row padding-md-top" ng-if="vm.person.HasOtherDesignation">
+        <div class="col-xs-6">
+            <span>Please Specify</span>
         </div>
     </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-3">
-            <span>Year You Joined Meetings Industry</span>
-        </div>
-        <div class="col-xs-9">
-            <input type="text" name="years" ng-model="vm.person.YearJoinedIndustry">
+    <div class="row" ng-if="vm.person.HasOtherDesignation">
+        <div class="col-xs-6">
+            <input type="text" name="designationOther" ng-model="vm.person.Other" ng-class="{'error': vm.generalInformationForm.$submitted && vm.generalInformationForm.designationOther.$error.required}" required>
         </div>
     </div>
     <div class="row margin-lg-top">
@@ -62,47 +83,54 @@
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <span>Job Title</span>
         </div>
-        <div class="col-xs-9">
-            <input type="text" name="jobTitle" ng-model="vm.person.Title">
-        </div>
-    </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-3">
-            <span>Job Classification</span>
-        </div>
-        <div class="col-xs-9">
-            <styled-ui-select value="vm.person.PrimaryFunction" menu-options="vm.functionRoles" item-display-key="name" search-enabled="false"></styled-ui-select>
-        </div>
-    </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <span>Company</span>
         </div>
-        <div class="col-xs-9">
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <input type="text" name="jobTitle" ng-model="vm.person.Title">
+        </div>
+        <div class="col-xs-6">
             <!--<styled-ui-select value="vm.person.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>-->
-            <styled-typeahead value="vm.person.Company" menu-options="vm.companies" item-display-key="name" enter-value="true"></styled-typeahead>
+            <styled-typeahead value="vm.person.Company" menu-options="vm.companies" item-display-key="Name" enter-value="true"></styled-typeahead>
             <span class="text-xxs">If your company is not listed in the dropdown, just type in the name.</span>
         </div>
     </div>
     <div class="row padding-md-top">
-        <div class="col-xs-3">
-            <span>Industry</span>
+        <div class="col-xs-6">
+            <span>Job Classification</span>
         </div>
-        <div class="col-xs-9">
-            <styled-ui-select value="vm.person.mpipersonDemographics.primaryIndustryNavigation" menu-options="vm.industries" item-display-key="description" search-enabled="false"></styled-ui-select>
-        </div>
-    </div>
-    <div class="row padding-md-top">
-        <div class="col-xs-3">
+        <div class="col-xs-6">
             <span>Company Website</span>
         </div>
-        <div class="col-xs-9">
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <styled-ui-select value="vm.person.PrimaryFunction" menu-options="vm.functionRoles" item-display-key="Name" search-enabled="false"></styled-ui-select>
+        </div>
+        <div class="col-xs-6">
             <input type="url" name="website" ng-model="vm.person.Company.Website">
         </div>
     </div>
+    <div class="row padding-md-top">
+        <div class="col-xs-6">
+            <span>Industry</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <styled-ui-select value="vm.person.MpipersonDemographics.PrimaryIndustryNavigation" menu-options="vm.industries" item-display-key="Description" search-enabled="false"></styled-ui-select>
+        </div>
+    </div>
+
+
+
+
+
     <div class="row padding-md-top">
         <div class="col-xs-12">
             <button type="submit" class="btn btn-primary pull-right" ng-class="{'disabled': vm.generalInformationForm.$pristine}">Save changes</button>

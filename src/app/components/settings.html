@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12 white bg-blue-gradient">
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 hidden-xs padding-lg-left padding-lg-right">
+            <div class="col-sm-10 col-sm-offset-1 padding-lg-left padding-lg-right">
                 <h3>Manage Your Account</h3>
             </div>
         </div>
@@ -10,7 +10,7 @@
 <div class="row profile-settings">
     <div class="col-sm-10 col-sm-offset-1 hidden-xs padding-lg-left padding-lg-right margin-lg-bottom">
         <div class="row margin-lg-top">
-            <div class="col-md-3">
+            <div class="col-md-3 hidden-sm hidden-xs">
                 <uib-tabset active="activePill" vertical="true" type="pills" class="off-grey-border">
                     <uib-tab index="0" select="vm.selectedTabIndex = 0">
                         <uib-tab-heading>
@@ -22,41 +22,56 @@
                             <span class="icon icon-address-book">&nbsp;</span>Contact
                         </uib-tab-heading>
                     </uib-tab>
-                    <!--<uib-tab index="2" select="vm.selectedTabIndex = 2">
-                        <uib-tab-heading>
-                            <span class="icon icon-credit-card">&nbsp;</span>Membership and Billing
-                        </uib-tab-heading>
-                    </uib-tab>-->
-                    <!--<uib-tab index="3" select="vm.selectedTabIndex = 3">
-                        <uib-tab-heading>
-                            <span class="icon icon-cog">&nbsp;</span>Settings
-                        </uib-tab-heading>
-                    </uib-tab>-->
-                    <uib-tab index="4" select="vm.selectedTabIndex = 4">
+                    <uib-tab index="2" select="vm.selectedTabIndex = 2">
                         <uib-tab-heading>
                             <span class="icon icon-bubbles3">&nbsp;</span>Manage Email Preferences
                         </uib-tab-heading>
                     </uib-tab>
+                    <uib-tab index="3" select="vm.selectedTabIndex = 3">
+                        <uib-tab-heading>
+                            <span class="icon icon-pencil">&nbsp;</span>Demographic Information
+                        </uib-tab-heading>
+                    </uib-tab>
                 </uib-tabset>
             </div>
+
+            <!--<div class="col-xs-12 visible-sm visible-xs padding-lg-bottom">
+                <uib-tabset>
+                    <uib-tab index="0" select="vm.selectedTabIndex = 0">
+                        <uib-tab-heading>
+                            General Information
+                        </uib-tab-heading>
+                    </uib-tab>
+                    <uib-tab index="1" select="vm.selectedTabIndex = 1">
+                        <uib-tab-heading>
+                            Contact
+                        </uib-tab-heading>
+                    </uib-tab>
+                    <uib-tab index="2" select="vm.selectedTabIndex = 2">
+                        <uib-tab-heading>
+                            Manage Email Preferences
+                        </uib-tab-heading>
+                    </uib-tab>
+                    <uib-tab index="3" select="vm.selectedTabIndex = 3">
+                        <uib-tab-heading>
+                            Demographic Information
+                        </uib-tab-heading>
+                    </uib-tab>
+                </uib-tabset>
+            </div>-->
+
             <div class="col-md-8 col-md-offset-1">
                 <div ng-show="vm.selectedTabIndex == 0">
-                    <!--<h4>Personal Information</h4>-->
                     <div ui-view="personal-info"></div>
                 </div>
                 <div ng-show="vm.selectedTabIndex == 1">
-                    <!--<h4>Contact Information</h4>-->
                     <div ui-view="contact"></div>
                 </div>
                 <div ng-show="vm.selectedTabIndex == 2">
-                    <h4>Membership and Billing</h4>
+                    <div ui-view="email-preferences"></div>
                 </div>
                 <div ng-show="vm.selectedTabIndex == 3">
-                    <h4>Settings</h4>
-                </div>
-                <div ng-show="vm.selectedTabIndex == 4">
-                    <!--<h4>Manage Email Preferences</h4>-->
-                    <div ui-view="email-preferences"></div>
+                    <div ui-view="demographic-info"></div>
                 </div>
             </div>
         </div>

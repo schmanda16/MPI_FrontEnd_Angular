@@ -21,8 +21,8 @@
                     <span class="sr-only">Toggle search</span>
                     <span class="glyphicon glyphicon-search light-grey"></span>
                 </button>
-                <a ui-sref="home" class="navbar-brand padding-ml-top hidden-sm"><img id="navbar-logo" src="images/MPI-nav-logo.png"></a>
-                <a ui-sref="home" class="navbar-brand padding-ml-top visible-sm"><img id="navbar-logo-sm" src="images/MPI-nav-logo2.png"></a>
+                <a ui-sref="home" class="navbar-brand hidden-sm"><img id="navbar-logo" src="images/MPI-nav-logo.png"></a>
+                <a ui-sref="home" class="navbar-brand visible-sm"><img id="navbar-logo-sm" src="images/MPI-nav-logo2.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse" uib-collapse="!isNavbarCollapsed">
                 <ul class="nav navbar-nav margin-none-top margin-none-bottom">
@@ -108,22 +108,28 @@
                 </ul>
             </div>
         </div>
-        <div id="subnav-container" class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 navbar-header hidden-xs">
-                    <a ui-sref="home" class="navbar-brand padding-md-top">Dallas-Fort Worth</a>
+        <!--<div id="subnav-container" class="container-fluid">
+            <div class="row margin-sm-left margin-sm-right">
+                <div class="col-sm-3 navbar-header hidden-xs padding-md-top">
+                    <a ui-sref="home" class="navbar-brand padding-md-top slab-500" style="float: none;">Dallas-Fort Worth</a>
                 </div>
+                <div class="arrow-up margin-md-left hidden-xs"></div>
                 <div class="col-sm-6 col-xs-12 nav navbar-nav margin-none-top margin-none-bottom">
                     <div class="center-subnav-list">
                         <ul class="nav navbar-nav margin-none-top margin-none-bottom">
                             <li ui-sref-active="active"><a ui-sref="#">Home</a></li>
                             <li ui-sref-active="active"><a ui-sref="#">Articles</a></li>
+                            <li>
+                                <div class="visible-xs" style="margin-right: -15px;">
+                                    <div class="arrow-up"></div>
+                                </div>
+                            </li>
                             <li ui-sref-active="active"><a ui-sref="#">Events</a></li>
                             <li ui-sref-active="active"><a ui-sref="#">About</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </nav>
 </div>
