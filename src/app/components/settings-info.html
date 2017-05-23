@@ -95,8 +95,8 @@
             <input type="text" name="jobTitle" ng-model="vm.person.Title">
         </div>
         <div class="col-xs-6">
-            <!--<styled-ui-select value="vm.person.company" menu-options="vm.companies" item-display-key="name" search-enabled="true"></styled-ui-select>-->
-            <styled-typeahead value="vm.person.Company" menu-options="vm.companies" item-display-key="Name" enter-value="true"></styled-typeahead>
+            <styled-ui-select value="vm.person.company" menu-options="vm.companies" item-display-key="name" search-enabled="true" refresh-callback="vm.refreshCompanies(value)"></styled-ui-select>
+            <!--<styled-typeahead value="vm.person.Company" menu-options="vm.companies" item-display-key="Name" enter-value="true"></styled-typeahead>-->
             <span class="text-xxs">If your company is not listed in the dropdown, just type in the name.</span>
         </div>
     </div>

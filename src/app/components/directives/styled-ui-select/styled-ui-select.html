@@ -2,7 +2,10 @@
     <div class="styled-ui-select" ng-class="{'has-error': vm.hasError}">
         <ui-select ng-model="vm.value" on-select="vm.selectOption($item)" reset-search-input="true" search-enabled="{{vm.searchEnabled}}" ui-select-custom>
             <ui-select-match placeholder="{{vm.placeholderText}}" ui-select-match-custom>{{$select.selected[vm.itemDisplayKey]}}</ui-select-match>
-            <ui-select-choices repeat="item in vm.menuOptions | orderBy: vm.itemDisplayKey | filter: $select.search track by $index" ui-select-choices-custom>
+            <ui-select-choices repeat="item in vm.menuOptions | orderBy: vm.itemDisplayKey | filter: $select.search track by $index" 
+                refresh="vm.parentRefreshCallback($select.search)"
+                refresh-delay="250" 
+                ui-select-choices-custom>
                 <span>{{item[vm.itemDisplayKey]}}</span>
             </ui-select-choices>
         </ui-select>

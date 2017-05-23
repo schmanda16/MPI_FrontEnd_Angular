@@ -9,7 +9,7 @@
         var directive = {
             templateUrl: 'app/components/directives/styled-ui-select/styled-ui-select.html',
             restrict: 'EA',
-            controller: 'styledUiSelectController',
+            controller: 'StyledUiSelectController',
             controllerAs: 'vm',
             bindToController: true,
             scope: {
@@ -22,7 +22,8 @@
                 hasError:"=",
                 required:"@",
                 searchEnabled:"@",
-                placeholderText:"@"
+                placeholderText:"@",
+                refreshCallback:"&"
             }
         };
         return directive;

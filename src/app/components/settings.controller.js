@@ -11,15 +11,16 @@
         var vm = this;
         vm.selectedTabIndex = 0;
         vm.changeGender = changeGender;
+        vm.refreshCompanies = refreshCompanies;
         vm.saveGeneralInformation = saveGeneralInformation;
         vm.saveContactInformation = saveContactInformation;
         vm.saveDemographicInformation = saveDemographicInformation;
 
 
-        vm.isPlanner = false;
+        vm.isPlanner = true;
         vm.isSupplier = false;
         vm.isFaculty = false;
-        vm.isStudent = true;
+        vm.isStudent = false;
 
         vm.person = profile.person;
         vm.functionRoles = profile.functionRoles;
@@ -47,7 +48,7 @@
 
         function activate() {
 
-            var companiesPromise =  DataRetrievalService.findSet('Company', null).then(function(companyList) {
+            var companiesPromise =  DataRetrievalService.search('Company', null, 20, 0).then(function(companyList) {
                 vm.companies = companyList;
             }).catch(function (error) {
                 //error
@@ -65,6 +66,12 @@
 
         function changeGender(item) {
             vm.person.Gender = item.id;
+        }
+
+        function refreshCompanies(value) {
+            DataRetrievalService.search('Company', value, 20, 0).then(function(companyList) {
+                vm.companies = companyList;
+            });
         }
 
         function saveGeneralInformation() {

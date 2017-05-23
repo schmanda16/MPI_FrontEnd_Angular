@@ -252,6 +252,11 @@
                         profileObj.person = person;
                     }).catch(function (error) {
                         //error
+                        profileObj.person = {
+                            FirstName: 'Jack',
+                            LastName: 'Donahey',
+                            Email1: 'jdon@nbc.com'
+                        };
                     });
 
                     var functionsPromise = DataRetrievalService.findAll('FunctionRole');

@@ -54,6 +54,34 @@
   font-style: normal;
 }
 
+.social-media-facebook {
+  content: url('images/Facebook30px.png');
+  &:hover {
+    content: url('images/Facebook-hover.png');
+  }
+}
+
+.social-media-twitter {
+  content: url('images/Twitter30px.png');
+  &:hover {
+    content: url('images/Twitter-hover.png');
+  }
+}
+
+.social-media-linkedin {
+  content: url('images/LinkedIn30px.png');
+  &:hover {
+    content: url('images/LinkedIn-hover.png');
+  }
+}
+
+.social-media-instagram {
+  content: url('images/Instagram30px.png');
+  &:hover {
+    content: url('images/Instagram-hover.png');
+  }
+}
+
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;

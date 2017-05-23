@@ -3,23 +3,22 @@
 
     angular
         .module('app')
-        .controller('styledUiSelectController', styledUiSelectController);
+        .controller('StyledUiSelectController', StyledUiSelectController);
 
-    function styledUiSelectController() {
+    function StyledUiSelectController() {
         var vm = this;
 
-        //vm.lastVal = vm.value;
+        vm.parentRefreshCallback = parentRefreshCallback;
         vm.selectOption = selectOption;
 
+        function parentRefreshCallback(value) {
+            vm.refreshCallback({value: value ? value : ""});
+        }
+
         function selectOption(item) {
-            /*if (vm.changeCallback && (!vm.lastVal || (vm.lastVal && !vm.value) || vm.lastVal[vm.itemDisplayKey] !== vm.value[vm.itemDisplayKey])) {
-                var lastVal = vm.lastVal;
-                vm.changeCallback({item: item, lastVal: vm.lastVal});
-            }*/
             if (vm.changeCallback) {
                 vm.changeCallback({item: item});
             }
-            //vm.lastVal = vm.value;
         }
     }
 
