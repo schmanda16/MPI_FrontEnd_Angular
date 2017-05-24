@@ -286,6 +286,20 @@
                         <span class="text-sm">How do you source/purchase your meetings?</span>
                     </div>
                 </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-4 col-xs-6">
+                        <p>
+                            <input type="checkbox" id="planner-sourcing1" ng-model="vm.person.MpipersonDemographics.InternalMeetingSourcing" class="regular-checkbox" /><label for="planner-sourcing1"></label>
+                            <span>Internal</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <p>
+                            <input type="checkbox" id="planner-sourcing2" ng-model="vm.person.MpipersonDemographics.OutsourcedMeetingSourcing" class="regular-checkbox" /><label for="planner-sourcing2"></label>
+                            <span>Outsource</span>
+                        </p>
+                    </div>
+                </div>
                 <div class="row padding-md-top">
                     <div class="col-xs-12">
                         <span class="text-sm">What size meetings do you plan?</span>
@@ -388,6 +402,16 @@
                         </p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.FacilityUseOtherDetail">
+                    </div>
+                </div>
                 <div class="row padding-md-top">
                     <div class="col-xs-12">
                         <span class="text-sm">What types of meetings are you responsible for planning?</span>
@@ -396,59 +420,69 @@
                 <div class="row padding-sm-top">
                     <div class="col-sm-3 col-xs-12">
                         <p>
-                            <input type="checkbox" id="planner-meetingType1" ng-model="vm.meetingTypes.annual" class="regular-checkbox" /><label for="planner-meetingType1"></label>
+                            <input type="checkbox" id="planner-meetingType1" ng-model="vm.person.MpipersonDemographics.WePlanAnnualConvention" class="regular-checkbox" /><label for="planner-meetingType1"></label>
                             <span>Annual Convention</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType2" ng-model="vm.meetingTypes.sales" class="regular-checkbox" /><label for="planner-meetingType2"></label>
+                            <input type="checkbox" id="planner-meetingType2" ng-model="vm.person.MpipersonDemographics.WePlanSales" class="regular-checkbox" /><label for="planner-meetingType2"></label>
                             <span>Sales</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType3" ng-model="vm.meetingTypes.management" class="regular-checkbox" /><label for="planner-meetingType3"></label>
+                            <input type="checkbox" id="planner-meetingType3" ng-model="vm.person.MpipersonDemographics.WePlanManagement" class="regular-checkbox" /><label for="planner-meetingType3"></label>
                             <span>Management</span>
                         </p>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <p>
-                            <input type="checkbox" id="planner-meetingType4" ng-model="vm.meetingTypes.board" class="regular-checkbox" /><label for="planner-meetingType4"></label>
+                            <input type="checkbox" id="planner-meetingType4" ng-model="vm.person.MpipersonDemographics.WePlanBoardOfDirectors" class="regular-checkbox" /><label for="planner-meetingType4"></label>
                             <span>Board of Directors</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType5" ng-model="vm.meetingTypes.training" class="regular-checkbox" /><label for="planner-meetingType5"></label>
+                            <input type="checkbox" id="planner-meetingType5" ng-model="vm.person.MpipersonDemographics.WePlanTraining" class="regular-checkbox" /><label for="planner-meetingType5"></label>
                             <span>Training</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType6" ng-model="vm.meetingTypes.incentive" class="regular-checkbox" /><label for="planner-meetingType6"></label>
+                            <input type="checkbox" id="planner-meetingType6" ng-model="vm.person.MpipersonDemographics.WePlanIncentive" class="regular-checkbox" /><label for="planner-meetingType6"></label>
                             <span>Incentive</span>
                         </p>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <p>
-                            <input type="checkbox" id="planner-meetingType7" ng-model="vm.meetingTypes.tradeShow" class="regular-checkbox" /><label for="planner-meetingType7"></label>
+                            <input type="checkbox" id="planner-meetingType7" ng-model="vm.person.MpipersonDemographics.WePlanTradeShow" class="regular-checkbox" /><label for="planner-meetingType7"></label>
                             <span>Trade Show</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType8" ng-model="vm.meetingTypes.seminar" class="regular-checkbox" /><label for="planner-meetingType8"></label>
+                            <input type="checkbox" id="planner-meetingType8" ng-model="vm.person.MpipersonDemographics.WePlanSymposium" class="regular-checkbox" /><label for="planner-meetingType8"></label>
                             <span>Symposium / Seminars</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType9" ng-model="vm.meetingTypes.education" class="regular-checkbox" /><label for="planner-meetingType9"></label>
+                            <input type="checkbox" id="planner-meetingType9" ng-model="vm.person.MpipersonDemographics.WePlanEducational" class="regular-checkbox" /><label for="planner-meetingType9"></label>
                             <span>Educational</span>
                         </p>
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <p>
-                            <input type="checkbox" id="planner-meetingType10" ng-model="vm.meetingTypes.special" class="regular-checkbox" /><label for="planner-meetingType10"></label>
+                            <input type="checkbox" id="planner-meetingType10" ng-model="vm.person.MpipersonDemographics.WePlanSpecialEvents" class="regular-checkbox" /><label for="planner-meetingType10"></label>
                             <span>Special Events</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType11" ng-model="vm.meetingTypes.vip" class="regular-checkbox" /><label for="planner-meetingType11"></label>
+                            <input type="checkbox" id="planner-meetingType11" ng-model="vm.person.MpipersonDemographics.WePlanVIPClient" class="regular-checkbox" /><label for="planner-meetingType11"></label>
                             <span>VIP Client Events</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="planner-meetingType12" ng-model="vm.meetingTypes.other" class="regular-checkbox" /><label for="planner-meetingType12"></label>
+                            <input type="checkbox" id="planner-meetingType12" ng-model="vm.person.MpipersonDemographics.WePlanOther" class="regular-checkbox" /><label for="planner-meetingType12"></label>
                             <span>Other</span>
                         </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.WePlanOtherDetail">
                     </div>
                 </div>
             </div>
@@ -1097,6 +1131,14 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-xs-12">
+                        <p>
+                            <input type="checkbox" id="all-noOtherAssociations" ng-model="vm.person.MpipersonDemographics.MemberNone" class="regular-checkbox" /><label for="all-noOtherAssociations"></label>
+                            <span>Not a member of any other associations</span>
+                        </p>
                     </div>
                 </div>
             </div>
