@@ -100,17 +100,50 @@
 .icon-home:before {
   content: "\e900";
 }
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-image:before {
+  content: "\e90d";
+}
+.icon-credit-card:before {
+  content: "\e93f";
+}
 .icon-phone-hang-up:before {
   content: "\e943";
+}
+.icon-address-book:before {
+  content: "\e944";
+}
+.icon-envelop:before {
+  content: "\e945";
 }
 .icon-location2:before {
   content: "\e948";
 }
+.icon-calendar:before {
+  content: "\e953";
+}
+.icon-floppy-disk:before {
+  content: "\e962";
+}
 .icon-bubbles3:before {
   content: "\e96f";
 }
+.icon-user:before {
+  content: "\e971";
+}
 .icon-search:before {
   content: "\e986";
+}
+.icon-lock:before {
+  content: "\e98f";
+}
+.icon-equalizer:before {
+  content: "\e992";
+}
+.icon-cog:before {
+  content: "\e994";
 }
 .icon-glass:before {
   content: "\e9a0";
@@ -120,6 +153,12 @@
 }
 .icon-menu:before {
   content: "\e9bd";
+}
+.icon-earth:before {
+  content: "\e9ca";
+}
+.icon-warning:before {
+  content: "\ea07";
 }
 .icon-info:before {
   content: "\ea0c";
@@ -136,59 +175,17 @@
 .icon-share2:before {
   content: "\ea82";
 }
-.icon-google-plus2:before {
-  content: "\ea8c";
-}
-.icon-facebook2:before {
-  content: "\ea91";
-}
-.icon-linkedin:before {
-  content: "\eac9";
-}
-.icon-pencil:before {
-  content: "\e905";
-}
-.icon-image:before {
-  content: "\e90d";
-}
-.icon-credit-card:before {
-  content: "\e93f";
-}
-.icon-address-book:before {
-  content: "\e944";
-}
-.icon-envelop:before {
-  content: "\e945";
-}
-.icon-calendar:before {
-  content: "\e953";
-}
-.icon-floppy-disk:before {
-  content: "\e962";
-}
-.icon-user:before {
-  content: "\e971";
-}
-.icon-lock:before {
-  content: "\e98f";
-}
-.icon-equalizer:before {
-  content: "\e992";
-}
-.icon-cog:before {
-  content: "\e994";
-}
-.icon-earth:before {
-  content: "\e9ca";
-}
-.icon-warning:before {
-  content: "\ea07";
-}
 .icon-google-plus:before {
   content: "\ea8b";
 }
+.icon-google-plus2:before {
+  content: "\ea8c";
+}
 .icon-facebook:before {
   content: "\ea90";
+}
+.icon-facebook2:before {
+  content: "\ea91";
 }
 .icon-instagram:before {
   content: "\ea92";
@@ -199,6 +196,15 @@
 .icon-wordpress:before {
   content: "\eab4";
 }
+.icon-linkedin:before {
+  content: "\eac9";
+}
 .icon-linkedin2:before {
   content: "\eaca";
+}
+.icon-images:before {
+  content: "\e90e";
+}
+.icon-pushpin:before {
+  content: "\e946";
 }
