@@ -453,7 +453,7 @@
                 </div>
             </div>
         </uib-accordion>
-        <uib-accordion>
+        <!--<uib-accordion>
             <div uib-accordion-group class="panel-default" is-open="vm.plannerDemographicsAssociationsIsOpen">
                 <uib-accordion-heading>
                     <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.plannerDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.plannerDemographicsAssociationsIsOpen}"></i></span>
@@ -574,7 +574,7 @@
                     </div>
                 </div>
             </div>
-        </uib-accordion>
+        </uib-accordion>-->
     </div>
     <div ng-if="vm.isSupplier">
         <uib-accordion>
@@ -804,7 +804,7 @@
                 </div>
             </div>
         </uib-accordion>
-        <uib-accordion>
+        <!--<uib-accordion>
             <div uib-accordion-group class="panel-default" is-open="vm.supplierDemographicsAssociationsIsOpen">
                 <uib-accordion-heading>
                     <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.supplierDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.supplierDemographicsAssociationsIsOpen}"></i></span>
@@ -925,7 +925,7 @@
                     </div>
                 </div>
             </div>
-        </uib-accordion>
+        </uib-accordion>-->
     </div>
     <div ng-if="vm.isFaculty">
         <uib-accordion>
@@ -1088,7 +1088,7 @@
                 </div>
             </div>
         </uib-accordion>
-        <uib-accordion>
+        <!--<uib-accordion>
             <div uib-accordion-group class="panel-default" is-open="vm.facultyDemographicsAssociationsIsOpen">
                 <uib-accordion-heading>
                     <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.facultyDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.facultyDemographicsAssociationsIsOpen}"></i></span>
@@ -1209,7 +1209,7 @@
                     </div>
                 </div>
             </div>
-        </uib-accordion>
+        </uib-accordion>-->
     </div>
     <div ng-if="vm.isStudent">
                 <uib-accordion>
@@ -1277,7 +1277,7 @@
                 </div>
             </div>
         </uib-accordion>
-        <uib-accordion>
+        <!--<uib-accordion>
             <div uib-accordion-group class="panel-default" is-open="vm.studentDemographicsAssociationsIsOpen">
                 <uib-accordion-heading>
                     <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.studentDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.studentDemographicsAssociationsIsOpen}"></i></span>
@@ -1392,6 +1392,138 @@
                                     <td><input type="text" ng-model="vm.associations.other2"></td>
                                     <td class="text-center"><input type="checkbox" id="student-other2Member" ng-model="vm.associations.other2Member" class="regular-checkbox"/><label for="student-other2Member"></label></td>
                                     <td class="text-center"><input type="checkbox" id="student-other2Board" ng-model="vm.associations.other2Board" class="regular-checkbox"/><label for="student-other2Board"></label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </uib-accordion>-->
+    </div>
+
+
+    
+    <div>
+        <uib-accordion>
+            <div uib-accordion-group class="panel-default" is-open="vm.plannerDemographicsAssociationsIsOpen">
+                <uib-accordion-heading>
+                    <span class="text-md brand-blue">Associations <i class="glyphicon pull-right padding-xxs-top text-xxs" ng-class="{'glyphicon-chevron-right': vm.plannerDemographicsAssociationsIsOpen, 'glyphicon-chevron-down': !vm.plannerDemographicsAssociationsIsOpen}"></i></span>
+                </uib-accordion-heading>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you teach in the hospitality field?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.teachInHospitality" menu-options="[{name: 'Yes, part time'},{name: 'Yes, full time'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If so, what type of program(s) do you teach?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType1" ng-model="vm.programTypes.accredited" class="regular-checkbox"/><label for="planner-programType3"></label>
+                            <span>Accredited</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType2" ng-model="vm.programTypes.certificate" class="regular-checkbox"/><label for="planner-programType2"></label>
+                            <span>Certificate</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-xs-4">
+                        <p>
+                            <input type="checkbox" id="planner-programType3" ng-model="vm.programTypes.other" class="regular-checkbox"/><label for="planner-programType3"></label>
+                            <span>Other</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">Do you manage employees that report directly to you?</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <styled-ui-select value="vm.person.manageEmployees" menu-options="[{name: 'Yes'},{name: 'No'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row padding-md-top">
+                    <div class="col-xs-12">
+                        <span class="text-sm">In which associations are you involved?</span>
+                    </div>
+                </div>
+                <div class="row padding-sm-top">
+                    <div class="col-md-8 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center bg-white">Association</th>
+                                    <th class="text-center bg-white">Member</th>
+                                    <th class="text-center bg-white">On Board</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ICCA</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-iccaMember" ng-model="vm.person.MpipersonDemographics.MemberIACC" class="regular-checkbox"/><label for="planner-iccaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-iccaBoard" ng-model="vm.person.MpipersonDemographics.BoardIACC" class="regular-checkbox"/><label for="planner-iccaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>ASAE</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-asaeMember" ng-model="vm.person.MpipersonDemographics.MemberASAE" class="regular-checkbox"/><label for="planner-asaeMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-asaeBoard" ng-model="vm.person.MpipersonDemographics.BoardASAE" class="regular-checkbox"/><label for="planner-asaeBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>RCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-rcmaMember" ng-model="vm.person.MpipersonDemographics.MemberRCMA" class="regular-checkbox"/><label for="planner-rcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-rcmaBoard" ng-model="vm.person.MpipersonDemographics.BoardRCMA" class="regular-checkbox"/><label for="planner-rcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>PCMA</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-pcmaMember" ng-model="vm.person.MpipersonDemographics.MemberPCMA" class="regular-checkbox"/><label for="planner-pcmaMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-pcmaBoard" ng-model="vm.person.MpipersonDemographics.BoardPCMA" class="regular-checkbox"/><label for="planner-pcmaBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>HSMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-hsmaiMember" ng-model="vm.person.MpipersonDemographics.MemberHSMAI" class="regular-checkbox"/><label for="planner-hsmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-hsmaiBoard" ng-model="vm.person.MpipersonDemographics.BoardHSMAI" class="regular-checkbox"/><label for="planner-hsmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>DMAI</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-dmaiMember" ng-model="vm.person.MpipersonDemographics.MemberDMAI" class="regular-checkbox"/><label for="planner-dmaiMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-dmaiBoard" ng-model="vm.person.MpipersonDemographics.BoardDMAI" class="regular-checkbox"/><label for="planner-dmaiBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>FICP</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-ficpMember" ng-model="vm.person.MpipersonDemographics.MemberFICP" class="regular-checkbox"/><label for="planner-ficpMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-ficpBoard" ng-model="vm.person.MpipersonDemographics.BoardFICP" class="regular-checkbox"/><label for="planner-ficpBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>SITE</td>
+                                    <td class="text-center"><input type="checkbox" id="planner-siteMember" ng-model="vm.person.MpipersonDemographics.MemberSITE" class="regular-checkbox"/><label for="planner-siteMember"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-siteBoard" ng-model="vm.person.MpipersonDemographics.BoardSITE" class="regular-checkbox"/><label for="planner-siteBoard"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.person.MpipersonDemographics.AssociationOther1"></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other1Member" ng-model="vm.person.MpipersonDemographics.MemberOther1" class="regular-checkbox"/><label for="planner-other1Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other1Board" ng-model="vm.person.MpipersonDemographics.BoardOther1" class="regular-checkbox"/><label for="planner-other1Board"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.person.MpipersonDemographics.AssociationOther2"></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other2Member" ng-model="vm.person.MpipersonDemographics.MemberOther2" class="regular-checkbox"/><label for="planner-other2Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other2Board" ng-model="vm.person.MpipersonDemographics.BoardOther2" class="regular-checkbox"/><label for="planner-other2Board"></label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" ng-model="vm.person.MpipersonDemographics.AssociationOther3"></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other3Member" ng-model="vm.person.MpipersonDemographics.MemberOther3" class="regular-checkbox"/><label for="planner-other3Member"></label></td>
+                                    <td class="text-center"><input type="checkbox" id="planner-other3Board" ng-model="vm.person.MpipersonDemographics.BoardOther3" class="regular-checkbox"/><label for="planner-other3Board"></label></td>
                                 </tr>
                             </tbody>
                         </table>
