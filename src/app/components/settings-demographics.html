@@ -76,7 +76,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.department" menu-options="[{name: 'HR'},{name: 'Marketing'},{name: 'IT'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.DepartmentWorked" menu-options="[{name: 'HR'},{name: 'Marketing'},{name: 'IT'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.DepartmentWorkedOtherDetail">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -86,7 +96,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-8">
-                        <styled-ui-select value="vm.person.buyFromSupplier" menu-options="[{name: 'Yes'},{name: 'No'},{name: 'Not sure'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BuyFromMPISuppliers" menu-options="[{name: 'Yes'},{name: 'No'},{name: 'Not sure'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -238,10 +248,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-xs-6">
-                        <styled-ui-select value="vm.person.budgetCurrency" menu-options="[{name: 'U.S. Dollars'},{name: 'Euros'},{name: 'Canadian Dollars'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BudgetCurrency" menu-options="[{name: 'U.S. Dollars'},{name: 'Euros'},{name: 'Canadian Dollars'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                     <div class="col-sm-4 col-xs-6">
-                        <styled-ui-select value="vm.person.budgetAmount" menu-options="[{name: '0-1,000'},{name: '1,001-10,000'},{name: '10,001-50,000'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BudgetRange" menu-options="[{name: '0-1,000'},{name: '1,001-10,000'},{name: '10,001-50,000'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -251,7 +261,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.purchasingRole" menu-options="[{name: 'Role 1'},{name: 'Role 2'},{name: 'Role 3'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.PurchasingRoleID" menu-options="[{name: 'Role 1'},{name: 'Role 2'},{name: 'Role 3'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
             </div>
@@ -268,7 +278,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-8">
-                        <styled-ui-select value="vm.person.plannersInOrg" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '15+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.PlannerNumPlanners" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '15+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -278,7 +288,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-8">
-                        <styled-ui-select value="vm.person.meetingsPerYear" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '15+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.PlannerNumMeetings" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '15+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -943,7 +953,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
-                        <styled-ui-select value="vm.person.educationStatus" menu-options="[{name: 'Undergraduate student'},{name: 'Graduate student'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.StudentEducationalStatus" menu-options="[{name: 'Undergraduate student'},{name: 'Graduate student'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -953,7 +963,7 @@
                 </div>
                 <div class="row padding-sm-top">
                     <div class="col-sm-6 col-xs-12">
-                        <input type="text" ng-model="vm.degreeLevels.schoolName">
+                        <input type="text" ng-model="vm.person.MpipersonDemographics.StudentNameOfSchool">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -963,7 +973,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.schoolYear" menu-options="[{name: 'Freshman'},{name: 'Sophomore'},{name: 'Junior'},{name: 'Senior'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.StudentYearInSchool" menu-options="[{name: 'Freshman'},{name: 'Sophomore'},{name: 'Junior'},{name: 'Senior'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -986,7 +996,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.degreePursuing" menu-options="[{name: 'Associates'},{name: 'Bachelors'},{name: 'Masters'},{name: 'Doctorate'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.StudentDegree" menu-options="[{name: 'Associates'},{name: 'Bachelors'},{name: 'Masters'},{name: 'Doctorate'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
