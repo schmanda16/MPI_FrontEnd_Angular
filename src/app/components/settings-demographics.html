@@ -467,7 +467,8 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.organizationIndustry" menu-options="[{name: 'Third Party / Reseach'},{name: 'Technology'},{name: 'Food and Beverage'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <!--<styled-ui-select value="vm.person.organizationIndustry" menu-options="[{name: 'Third Party / Reseach'},{name: 'Technology'},{name: 'Food and Beverage'}]" item-display-key="name" search-enabled="false"></styled-ui-select>-->
+                        <styled-ui-select value="vm.person.MpipersonDemographics.PrimaryIndustryNavigation" menu-options="vm.industries" item-display-key="Description" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -477,7 +478,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.department" menu-options="[{name: 'HR'},{name: 'Marketing'},{name: 'IT'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.DepartmentWorked" menu-options="[{name: 'HR'},{name: 'Marketing'},{name: 'IT'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.DepartmentWorkedOtherDetail">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -487,7 +498,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 col-xs-8">
-                        <styled-ui-select value="vm.person.buyFromOtherSupplier" menu-options="[{name: 'Yes'},{name: 'No'},{name: 'Not sure'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BuyFromMPISuppliers" menu-options="[{name: 'Yes'},{name: 'No'},{name: 'Not sure'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -498,45 +509,45 @@
                 <div class="row padding-sm-top">
                     <div class="col-sm-4 col-xs-12">
                         <p>
-                            <input type="checkbox" id="supplier-location1" ng-model="vm.locations.inUS.alaska" class="regular-checkbox" /><label for="supplier-location1"></label>
+                            <input type="checkbox" id="supplier-location1" ng-model="vm.person.MpipersonDemographics.PlanLocAlaska" class="regular-checkbox" /><label for="supplier-location1"></label>
                             <span>Alaska</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location2" ng-model="vm.locations.inUS.hawaii" class="regular-checkbox" /><label for="supplier-location2"></label>
+                            <input type="checkbox" id="supplier-location2" ng-model="vm.person.MpipersonDemographics.PlanLocHawaii" class="regular-checkbox" /><label for="supplier-location2"></label>
                             <span>Hawaii</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location3" ng-model="vm.locations.inUS.midwest" class="regular-checkbox" /><label for="supplier-location3"></label>
+                            <input type="checkbox" id="supplier-location3" ng-model="vm.person.MpipersonDemographics.PlanLocMidwest" class="regular-checkbox" /><label for="supplier-location3"></label>
                             <span>Midwest</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location4" ng-model="vm.locations.inUS.mountain" class="regular-checkbox" /><label for="supplier-location4"></label>
+                            <input type="checkbox" id="supplier-location4" ng-model="vm.person.MpipersonDemographics.PlanLocMountain" class="regular-checkbox" /><label for="supplier-location4"></label>
                             <span>Mountain</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location5" ng-model="vm.locations.inUS.northeast" class="regular-checkbox" /><label for="supplier-location5"></label>
+                            <input type="checkbox" id="supplier-location5" ng-model="vm.person.MpipersonDemographics.PlanLocNortheast" class="regular-checkbox" /><label for="supplier-location5"></label>
                             <span>Northeast</span>
                         </p>
                     </div>
                     <div class="col-sm-8 col-xs-12">
                         <p>
-                            <input type="checkbox" id="supplier-location6" ng-model="vm.locations.inUS.northwest" class="regular-checkbox" /><label for="supplier-location6"></label>
+                            <input type="checkbox" id="supplier-location6" ng-model="vm.person.MpipersonDemographics.PlanLocNorthwest" class="regular-checkbox" /><label for="supplier-location6"></label>
                             <span>Northwest</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location7" ng-model="vm.locations.inUS.territories" class="regular-checkbox" /><label for="supplier-location7"></label>
+                            <input type="checkbox" id="supplier-location7" ng-model="vm.person.MpipersonDemographics.PlanLocPRVI" class="regular-checkbox" /><label for="supplier-location7"></label>
                             <span>Puerto Rico/Virgin Islands</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location8" ng-model="vm.locations.inUS.southeast" class="regular-checkbox" /><label for="supplier-location8"></label>
+                            <input type="checkbox" id="supplier-location8" ng-model="vm.person.MpipersonDemographics.PlanLocSoutheast" class="regular-checkbox" /><label for="supplier-location8"></label>
                             <span>Southeast</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location9" ng-model="vm.locations.inUS.southwest" class="regular-checkbox" /><label for="supplier-location9"></label>
+                            <input type="checkbox" id="supplier-location9" ng-model="vm.person.MpipersonDemographics.PlanLocSouthwest" class="regular-checkbox" /><label for="supplier-location9"></label>
                             <span>Southwest</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location10" ng-model="vm.locations.inUS.noneInUS" class="regular-checkbox" /><label for="supplier-location10"></label>
+                            <input type="checkbox" id="supplier-location10" ng-model="vm.person.MpipersonDemographics.PlanLocNoUS" class="regular-checkbox" /><label for="supplier-location10"></label>
                             <span>NONE within the United States</span>
                         </p>
                     </div>
@@ -549,85 +560,85 @@
                 <div class="row padding-sm-top">
                     <div class="col-sm-6 col-xs-12">
                         <p>
-                            <input type="checkbox" id="supplier-location11" ng-model="vm.locations.outsideUS.africa" class="regular-checkbox" /><label for="supplier-location11"></label>
+                            <input type="checkbox" id="supplier-location11" ng-model="vm.person.MpipersonDemographics.PlanLocAfrica" class="regular-checkbox" /><label for="supplier-location11"></label>
                             <span>Africa</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location12" ng-model="vm.locations.outsideUS.asia" class="regular-checkbox" /><label for="supplier-location12"></label>
+                            <input type="checkbox" id="supplier-location12" ng-model="vm.person.MpipersonDemographics.PlanLocAsia" class="regular-checkbox" /><label for="supplier-location12"></label>
                             <span>Asia (Incl. China, India, Japan, and Singapore)</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location13" ng-model="vm.locations.outsideUS.australia" class="regular-checkbox" /><label for="supplier-location13"></label>
+                            <input type="checkbox" id="supplier-location13" ng-model="vm.person.MpipersonDemographics.PlanLocAustralia" class="regular-checkbox" /><label for="supplier-location13"></label>
                             <span>Australia</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location14" ng-model="vm.locations.outsideUS.netherlands" class="regular-checkbox" /><label for="supplier-location14"></label>
+                            <input type="checkbox" id="supplier-location14" ng-model="vm.person.MpipersonDemographics.PlanLocBelgium" class="regular-checkbox" /><label for="supplier-location14"></label>
                             <span>Belgium / The Netherlands / Luxembourg</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location15" ng-model="vm.locations.outsideUS.caribbean" class="regular-checkbox" /><label for="supplier-location15"></label>
+                            <input type="checkbox" id="supplier-location15" ng-model="vm.person.MpipersonDemographics.PlanLocBermuda" class="regular-checkbox" /><label for="supplier-location15"></label>
                             <span>Bermuda / Caribbean / West Indies</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location16" ng-model="vm.locations.outsideUS.canada" class="regular-checkbox" /><label for="supplier-location16"></label>
+                            <input type="checkbox" id="supplier-location16" ng-model="vm.person.MpipersonDemographics.PlanLocCanada" class="regular-checkbox" /><label for="supplier-location16"></label>
                             <span>Canada</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location17" ng-model="vm.locations.outsideUS.southAmerica" class="regular-checkbox" /><label for="supplier-location17"></label>
+                            <input type="checkbox" id="supplier-location17" ng-model="vm.person.MpipersonDemographics.PlanLocSouthAmerica" class="regular-checkbox" /><label for="supplier-location17"></label>
                             <span>Central / South America</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location18" ng-model="vm.locations.outsideUS.easternEurope" class="regular-checkbox" /><label for="supplier-location18"></label>
+                            <input type="checkbox" id="supplier-location18" ng-model="vm.person.MpipersonDemographics.PlanLocEasternEurope" class="regular-checkbox" /><label for="supplier-location18"></label>
                             <span>Eastern European Countries</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location19" ng-model="vm.locations.outsideUS.france" class="regular-checkbox" /><label for="supplier-location19"></label>
+                            <input type="checkbox" id="supplier-location19" ng-model="vm.person.MpipersonDemographics.PlanLocFrance" class="regular-checkbox" /><label for="supplier-location19"></label>
                             <span>France</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location20" ng-model="vm.locations.outsideUS.germany" class="regular-checkbox" /><label for="supplier-location20"></label>
+                            <input type="checkbox" id="supplier-location20" ng-model="vm.person.MpipersonDemographics.PlanLocGermany" class="regular-checkbox" /><label for="supplier-location20"></label>
                             <span>Germany</span>
                         </p>
                     </div>
                     <div class="col-sm-6 col-xs-12">
                         <p>
-                            <input type="checkbox" id="supplier-location21" ng-model="vm.locations.outsideUS.italy" class="regular-checkbox" /><label for="supplier-location21"></label>
+                            <input type="checkbox" id="supplier-location21" ng-model="vm.person.MpipersonDemographics.PlanLocItaly" class="regular-checkbox" /><label for="supplier-location21"></label>
                             <span>Italy</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location22" ng-model="vm.locations.outsideUS.mexico" class="regular-checkbox" /><label for="supplier-location22"></label>
+                            <input type="checkbox" id="supplier-location22" ng-model="vm.person.MpipersonDemographics.PlanLocMexico" class="regular-checkbox" /><label for="supplier-location22"></label>
                             <span>Mexico</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location23" ng-model="vm.locations.outsideUS.middleEast" class="regular-checkbox" /><label for="supplier-location23"></label>
+                            <input type="checkbox" id="supplier-location23" ng-model="vm.person.MpipersonDemographics.PlanLocMiddleEast" class="regular-checkbox" /><label for="supplier-location23"></label>
                             <span>Middle East (Gulf Region)</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location24" ng-model="vm.locations.outsideUS.newZealand" class="regular-checkbox" /><label for="supplier-location24"></label>
+                            <input type="checkbox" id="supplier-location24" ng-model="vm.person.MpipersonDemographics.PlanLocNewZealand" class="regular-checkbox" /><label for="supplier-location24"></label>
                             <span>New Zealand</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location25" ng-model="vm.locations.outsideUS.otherEurope" class="regular-checkbox" /><label for="supplier-location25"></label>
+                            <input type="checkbox" id="supplier-location25" ng-model="vm.person.MpipersonDemographics.PlanLocOtherEurope" class="regular-checkbox" /><label for="supplier-location25"></label>
                             <span>Other European Countries</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location26" ng-model="vm.locations.outsideUS.russia" class="regular-checkbox" /><label for="supplier-location26"></label>
+                            <input type="checkbox" id="supplier-location26" ng-model="vm.person.MpipersonDemographics.PlanLocRussia" class="regular-checkbox" /><label for="supplier-location26"></label>
                             <span>Russia</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location27" ng-model="vm.locations.outsideUS.scandinavia" class="regular-checkbox" /><label for="supplier-location27"></label>
+                            <input type="checkbox" id="supplier-location27" ng-model="vm.person.MpipersonDemographics.PlanLocScandinavia" class="regular-checkbox" /><label for="supplier-location27"></label>
                             <span>Scandinavia</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location28" ng-model="vm.locations.outsideUS.spain" class="regular-checkbox" /><label for="supplier-location28"></label>
+                            <input type="checkbox" id="supplier-location28" ng-model="vm.person.MpipersonDemographics.PlanLocSpain" class="regular-checkbox" /><label for="supplier-location28"></label>
                             <span>Spain / Portugal</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location29" ng-model="vm.locations.outsideUS.uk" class="regular-checkbox" /><label for="supplier-location29"></label>
+                            <input type="checkbox" id="supplier-location29" ng-model="vm.person.MpipersonDemographics.PlanLocUK" class="regular-checkbox" /><label for="supplier-location29"></label>
                             <span>U.K. / Ireland</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="supplier-location30" ng-model="vm.locations.outsideUS.noneOutsideUS" class="regular-checkbox" /><label for="supplier-location30"></label>
+                            <input type="checkbox" id="supplier-location30" ng-model="vm.person.MpipersonDemographics.PlanLocNoNonUS" class="regular-checkbox" /><label for="supplier-location30"></label>
                             <span>NONE outside the United States</span>
                         </p>
                     </div>
@@ -639,10 +650,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4 col-xs-6">
-                        <styled-ui-select value="vm.person.budgetCurrency" menu-options="[{name: 'U.S. Dollars'},{name: 'Euros'},{name: 'Canadian Dollars'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BudgetCurrency" menu-options="[{name: 'U.S. Dollars'},{name: 'Euros'},{name: 'Canadian Dollars'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                     <div class="col-sm-4 col-xs-6">
-                        <styled-ui-select value="vm.person.budgetAmount" menu-options="[{name: '0-1,000'},{name: '1,001-10,000'},{name: '10,001-50,000'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.BudgetRange" menu-options="[{name: '0-1,000'},{name: '1,001-10,000'},{name: '10,001-50,000'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -696,7 +707,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.schoolType" menu-options="[{name: 'University'},{name: 'Jr.College'},{name: 'College'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultySchoolType" menu-options="[{name: 'University'},{name: 'Jr.College'},{name: 'College'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.FacultySchoolTypeOther">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -707,21 +728,21 @@
                 <div class="row padding-sm-top">
                     <div class="col-sm-4 col-xs-6">
                         <p>
-                            <input type="checkbox" id="faculty-degree1" ng-model="vm.degreeLevels.nonDegree" class="regular-checkbox" /><label for="faculty-degree1"></label>
+                            <input type="checkbox" id="faculty-degree1" ng-model="vm.person.MpipersonDemographics.InstructNonDegree" class="regular-checkbox" /><label for="faculty-degree1"></label>
                             <span>Non-degree / Certificate</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-degree2" ng-model="vm.degreeLevels.associate" class="regular-checkbox" /><label for="faculty-degree2"></label>
+                            <input type="checkbox" id="faculty-degree2" ng-model="vm.person.MpipersonDemographics.InstructAssociate" class="regular-checkbox" /><label for="faculty-degree2"></label>
                             <span>Associate</span>
                         </p>
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <p>
-                            <input type="checkbox" id="faculty-degree3" ng-model="vm.degreeLevels.undergrad" class="regular-checkbox" /><label for="faculty-degree3"></label>
+                            <input type="checkbox" id="faculty-degree3" ng-model="vm.person.MpipersonDemographics.InstructUndergrad" class="regular-checkbox" /><label for="faculty-degree3"></label>
                             <span>Undergraduate</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-degree4" ng-model="vm.degreeLevels.grad" class="regular-checkbox" /><label for="faculty-degree4"></label>
+                            <input type="checkbox" id="faculty-degree4" ng-model="vm.person.MpipersonDemographics.InstructGraduate" class="regular-checkbox" /><label for="faculty-degree4"></label>
                             <span>Graduate</span>
                         </p>
                     </div>
@@ -733,7 +754,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.degree" menu-options="[{name: 'Associate of AAS'},{name: 'Bachelor of Arts'},{name: 'Bachelor of Science'},{name: 'Doctorate'},{name: 'Certificate'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultyDegree" menu-options="[{name: 'Associate of AAS'},{name: 'Bachelor of Arts'},{name: 'Bachelor of Science'},{name: 'Doctorate'},{name: 'Certificate'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.FacultyDegreeOther">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -743,7 +774,17 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.title" menu-options="[{name: 'Executive (President/COO/CIO/CMO/Dean)'},{name: 'Chancellor/Vice-Chancellor'},{name: 'Vice-President/Assistant Vice-President'},{name: 'Dean'},{name: 'Director'},{name: 'Department or Program Chair'},{name: 'Associate Professor'},{name: 'Professor'},{name: 'Adjunct Professor'},{name: 'Assistant Professor'},{name: 'Instructor'},{name: 'Coordinator/Administrator/Advisor'},{name: 'Lecturer'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultyTitle" menu-options="[{name: 'Executive (President/COO/CIO/CMO/Dean)'},{name: 'Chancellor/Vice-Chancellor'},{name: 'Vice-President/Assistant Vice-President'},{name: 'Dean'},{name: 'Director'},{name: 'Department or Program Chair'},{name: 'Associate Professor'},{name: 'Professor'},{name: 'Adjunct Professor'},{name: 'Assistant Professor'},{name: 'Instructor'},{name: 'Coordinator/Administrator/Advisor'},{name: 'Lecturer'},{name: 'Other'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.FacultyTitleOther">
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -753,7 +794,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.employedInEd" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultyYearsEmployed" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -763,7 +804,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.employedInPrograms" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultyYearsMeetingFaculty" menu-options="[{name: '0-5'},{name: '6-10'},{name: '11-15'},{name: '16-20'},{name: '21-25'},{name: '26-30'},{name: '30+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -773,7 +814,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-8 col-xs-12">
-                        <styled-ui-select value="vm.person.employedInPrograms" menu-options="[{name: '0-2'},{name: '3-5'},{name: '6-8'},{name: '8-10'},{name: '11+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
+                        <styled-ui-select value="vm.person.MpipersonDemographics.FacultyCourseLoad" menu-options="[{name: '0-2'},{name: '3-5'},{name: '6-8'},{name: '8-10'},{name: '11+'}]" item-display-key="name" search-enabled="false"></styled-ui-select>
                     </div>
                 </div>
                 <div class="row padding-md-top">
@@ -784,62 +825,72 @@
                 <div class="row padding-md-top">
                     <div class="col-sm-6 col-xs-12">
                         <p>
-                            <input type="checkbox" id="faculty-instruction1" ng-model="vm.instructionAreas.entrepreneurship" class="regular-checkbox" /><label for="faculty-instruction1"></label>
+                            <input type="checkbox" id="faculty-instruction1" ng-model="vm.person.MpipersonDemographics.InstructionAreaEntrepreneurship" class="regular-checkbox" /><label for="faculty-instruction1"></label>
                             <span>Entrepreneurship</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction2" ng-model="vm.instructionAreas.foodMgmt" class="regular-checkbox" /><label for="faculty-instruction2"></label>
+                            <input type="checkbox" id="faculty-instruction2" ng-model="vm.person.MpipersonDemographics.InstructionAreaFoodBeverage" class="regular-checkbox" /><label for="faculty-instruction2"></label>
                             <span>Food and Beverage Management</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction3" ng-model="vm.instructionAreas.finance" class="regular-checkbox" /><label for="faculty-instruction3"></label>
+                            <input type="checkbox" id="faculty-instruction3" ng-model="vm.person.MpipersonDemographics.InstructionAreaFinance" class="regular-checkbox" /><label for="faculty-instruction3"></label>
                             <span>Finance / Accounting / Purchasing</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction4" ng-model="vm.instructionAreas.gaming" class="regular-checkbox" /><label for="faculty-instruction4"></label>
+                            <input type="checkbox" id="faculty-instruction4" ng-model="vm.person.MpipersonDemographics.InstructionAreaGamingManagement" class="regular-checkbox" /><label for="faculty-instruction4"></label>
                             <span>Gaming Management</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction5" ng-model="vm.instructionAreas.hotelMgmt" class="regular-checkbox" /><label for="faculty-instruction5"></label>
+                            <input type="checkbox" id="faculty-instruction5" ng-model="vm.person.MpipersonDemographics.InstructionAreaHotelManagement" class="regular-checkbox" /><label for="faculty-instruction5"></label>
                             <span>Hotel / Lodging Management</span>
                         </p>
-                        <input type="checkbox" id="faculty-instruction6" ng-model="vm.instructionAreas.hr" class="regular-checkbox" /><label for="faculty-instruction6"></label>
+                        <input type="checkbox" id="faculty-instruction6" ng-model="vm.person.MpipersonDemographics.InstructionAreaHR" class="regular-checkbox" /><label for="faculty-instruction6"></label>
                         <span>Human Resources / Leadership</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction7" ng-model="vm.instructionAreas.it" class="regular-checkbox" /><label for="faculty-instruction7"></label>
+                            <input type="checkbox" id="faculty-instruction7" ng-model="vm.person.MpipersonDemographics.InstructionAreaIT" class="regular-checkbox" /><label for="faculty-instruction7"></label>
                             <span>IT (Information Technology)</span>
                         </p>
                     </div>
                     <div class="col-sm-8 col-xs-12">
                         <p>
-                            <input type="checkbox" id="faculty-instruction8" ng-model="vm.instructionAreas.ethics" class="regular-checkbox" /><label for="faculty-instruction8"></label>
+                            <input type="checkbox" id="faculty-instruction8" ng-model="vm.person.MpipersonDemographics.InstructionAreaLaw" class="regular-checkbox" /><label for="faculty-instruction8"></label>
                             <span>Law / Ethics</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction9" ng-model="vm.instructionAreas.marketing" class="regular-checkbox" /><label for="faculty-instruction9"></label>
+                            <input type="checkbox" id="faculty-instruction9" ng-model="vm.person.MpipersonDemographics.InstructionAreaMarketing" class="regular-checkbox" /><label for="faculty-instruction9"></label>
                             <span>Marketing</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction10" ng-model="vm.instructionAreas.meetingMgmt" class="regular-checkbox" /><label for="faculty-instruction10"></label>
+                            <input type="checkbox" id="faculty-instruction10" ng-model="vm.person.MpipersonDemographics.InstructionAreaEventManagement" class="regular-checkbox" /><label for="faculty-instruction10"></label>
                             <span>Meeting and Event Management</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction11" ng-model="vm.instructionArea.research" class="regular-checkbox" /><label for="faculty-instruction11"></label>
+                            <input type="checkbox" id="faculty-instruction11" ng-model="vm.person.MpipersonDemographics.InstructionAreaResearch" class="regular-checkbox" /><label for="faculty-instruction11"></label>
                             <span>Research</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction12" ng-model="vm.instructionAreas.strategicMgmt" class="regular-checkbox" /><label for="faculty-instruction12"></label>
+                            <input type="checkbox" id="faculty-instruction12" ng-model="vm.person.MpipersonDemographics.InstructionAreaStrategicManagement" class="regular-checkbox" /><label for="faculty-instruction12"></label>
                             <span>Strategic Management</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction13" ng-model="vm.instructionArea.tourism" class="regular-checkbox" /><label for="faculty-instruction13"></label>
+                            <input type="checkbox" id="faculty-instruction13" ng-model="vm.person.MpipersonDemographics.InstructionAreaTravelIndustry" class="regular-checkbox" /><label for="faculty-instruction13"></label>
                             <span>Travel and Tourism Industry</span>
                         </p>
                         <p>
-                            <input type="checkbox" id="faculty-instruction14" ng-model="vm.instructionAreas.other" class="regular-checkbox" /><label for="faculty-instruction14"></label>
+                            <input type="checkbox" id="faculty-instruction14" ng-model="vm.person.MpipersonDemographics.InstructionAreaOther" class="regular-checkbox" /><label for="faculty-instruction14"></label>
                             <span>Other</span>
                         </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="text-sm">If other, please specify:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8">
+                        <input type=text ng-model="vm.person.MpipersonDemographics.InstructionAreaOtherDetail">
                     </div>
                 </div>
             </div>
