@@ -1,0 +1,47 @@
+.leadership {
+    .leader-card {
+        border: 1px solid $off-grey;
+        padding: 20px 0px;
+        border-bottom: solid 5px $brand-green;
+    }
+    .leader-photo {
+        border-radius: 50%;
+        width: 130px;
+        border: 2px solid $off-grey;
+    }
+
+    $line-height: 28px;
+    $lines-to-show: 2;
+    .leader-name {
+        font-family: 'MuseoSlab-500';
+        font-size: $text-lg;
+        display: block; 
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: $line-height*$lines-to-show;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        
+        margin-top: 15px;
+        margin-bottom: 5px;
+        a {
+            color: $dark-grey;
+        }
+    }
+    .leader-role {
+        font-family: 'MuseoSans-300';
+        font-size: $text-md;
+        display: block; 
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: $line-height*$lines-to-show;
+        line-height: $line-height;
+        -webkit-line-clamp: $lines-to-show;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}

@@ -144,7 +144,6 @@
                     var directoryCountPromise = DirectoryService.getDirectoryCount();
                     promises.push(directoryCountPromise);
                     directoryCountPromise = directoryCountPromise.then(function(data){
-                        //directoryObj.memberCount = data;
                         if(data && data.memberCount) {
                             directoryObj.memberCount = data.memberCount;
                         }
