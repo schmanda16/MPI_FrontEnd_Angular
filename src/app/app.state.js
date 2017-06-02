@@ -173,10 +173,10 @@
                 }]
             }
         }).state('connect.events', {
-            url: '/certifications',
+            url: '/events',
             views: {
-                'content@': {
-                    templateUrl: 'app/components/academy.html'
+                'main@': {
+                    templateUrl: 'app/components/event.html'
                 }
             }
         }).state('connect.my-mpi', {
