@@ -96,7 +96,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .icon-home:before {
   content: "\e900";
 }
@@ -105,6 +104,9 @@
 }
 .icon-image:before {
   content: "\e90d";
+}
+.icon-images:before {
+  content: "\e90e";
 }
 .icon-credit-card:before {
   content: "\e93f";
@@ -117,6 +119,9 @@
 }
 .icon-envelop:before {
   content: "\e945";
+}
+.icon-pushpin:before {
+  content: "\e946";
 }
 .icon-location2:before {
   content: "\e948";
@@ -202,9 +207,15 @@
 .icon-linkedin2:before {
   content: "\eaca";
 }
-.icon-images:before {
-  content: "\e90e";
+.icon-camera:before {
+  content: "\e90f";
 }
-.icon-pushpin:before {
-  content: "\e946";
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-minus:before {
+  content: "\ea0b";
+}
+.icon-arrow-up:before {
+  content: "\ea32";
 }

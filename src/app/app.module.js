@@ -8,6 +8,8 @@
 			'mgcrea.bootstrap.affix',
 			'ngSanitize',
 			'ui.select',
-			'ngResource'
+			'ngResource',
+			'ngFileUpload',
+			'ngImgCrop'
 	]);
 })();

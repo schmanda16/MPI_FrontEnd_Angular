@@ -5,9 +5,9 @@
         .module('app')
         .controller('SignUpController', SignUpController);
 
-    SignUpController.$inject = ['membershipParams', '$uibModal'];
+    SignUpController.$inject = ['membershipParams', '$uibModal', 'Upload', '$timeout'];
 
-    function SignUpController(membershipParams, $uibModal) {
+    function SignUpController(membershipParams, $uibModal, Upload, $timeout) {
         var vm = this;
 
         // Variables
@@ -22,6 +22,7 @@
         vm.signUp = signUp;
         vm.continueCheckout = continueCheckout;
         vm.confirmCheckout = confirmCheckout;
+        vm.submitProfilePhoto = submitProfilePhoto;
 
         activate();
         function activate() {
@@ -59,6 +60,27 @@
 
         function confirmCheckout() {
             console.log('confirming checkout');
+        }
+
+
+        function submitProfilePhoto() {
+            if(vm.profilePhotoForm.file.$valid && vm.file){
+                upload(vm.file);
+            }
+        }
+        
+        function upload(file){
+            Upload.upload({
+                url: 'upload/url',
+                date: {file: file}
+            }).then(function(response){
+                console.log('success ' + response.config.data.file.name + ' uploaded. response: ' + response.data);
+            }, function(error){
+                console.log('error status: ' + error.status);
+            }, function(evt){
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name); 
+            });
         }
     }
 })();
