@@ -1,20 +1,32 @@
 .class-card {
   background-size: cover;
-  width: 262px;
+  background-position: center;
   height: 150px;
   margin: 0 auto;
   position: relative;
   border-top: solid 5px $brand-blue; 
-}
 
-.class-contents {
-    padding-top: 50px;
+  .block {
+      text-align: center;
+      height: 150px;
+  }
+  .block:before {
+      content: '\200B';
+      display: inline-block;
+      height: 100%; 
+      vertical-align: middle;
+  }
+  .centered {
+      display: inline-block;
+      vertical-align: middle;
+  }
 }
 
 .mid h2 {
   a {
     font-family: 'MuseoSlab-500';
     color: $white;
+    overflow-wrap: break-word;
   }
   margin: 0;
   padding-left: 10px;
@@ -35,21 +47,63 @@
   margin: 0;
 }
 
+@media(min-width: 1231px) {
+  .class-card {
+    width: 255px;
+  }.centered {
+      width: 235px;;
+  }
+}
+
 @media (max-width: 1230px) {
   .class-card {
+    width: 240px;
+  }.centered {
+      width: 220px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .class-card {
     width: 220px;
+  }.centered {
+      width: 200px;
   }
 }
 
 @media (max-width: 1050px) {
   .class-card {
+    width: 200px;
+  }
+  .centered {
+      width: 180px;
+  }
+}
+
+@media (max-width: 960px) {
+  .class-card {
     width: 170px;
+  }
+  .centered {
+      width: 150px;
+  }
+}
+
+@media (max-width: 815px) {
+  .class-card {
+    width: 150px;
+  }
+  .centered {
+      width: 140px;
   }
 }
 
 @media (max-width: 767px) {
   .class-card {
     width: 230px;
+  }
+  .centered {
+      width: 210px;
   }
   .mid h2 {
     font-size: $text-sm;
@@ -59,6 +113,9 @@
 @media (max-width: 600px) {
   .class-card {
     width: 175px;
+  }
+  .centered {
+      width: 155px;
   }
   .mid h2 {
     font-size: $text-sm;

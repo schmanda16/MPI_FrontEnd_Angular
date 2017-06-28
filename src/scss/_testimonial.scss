@@ -1,48 +1,114 @@
 .testimonial {
-    position: relative;
-    z-index: 1;
-    .vertical-center {
-        vertical-align: middle;
-        padding: 0;
+    border: solid 1px $grey;
+    background: $white;
+
+    .testimonial-text {
+        .block {
+            text-align: center;
+        }
+        .block:before {
+            content: '\200B';
+            display: inline-block;
+            height: 100%; 
+            vertical-align: middle;
+        }
+        .centered {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .quote {
+            font-family: 'MuseoSlab-300';
+        }
+        .name {
+            padding-top: 10px;
+            font-family: 'MuseoSans-700';
+            font-size: $text-sm;
+            color: $lightest-grey;
+        }
+        .title {
+            padding-top: 10px;
+            font-family: 'MuseoSlab-300Italic';
+            font-size: $text-sm;
+            color: $lightest-grey;
+        }
     }
-    .table {
-        table-layout: fixed;
-        margin-bottom: 0px;
+
+    .testimonial-image {
+        background-size: cover;
+        width: 100%;
+        background-position: center;
     }
 }
 
-.testimonial-quote {
-    background: $white;
-}
 
 @media (min-width: 1372px) {
     .testimonial {
-        h2 {
-            font-size: $text-title-md;
+        .testimonial-image {
+            min-height: 500px;
+        }
+        .block {
+            height: 500px;
+        }
+        .centered {
+            width: 400px;
+        }
+        .quote {
+            font-size: $text-title-sm;
+            line-height: 36px;
         }
     }
 }
 
 @media (max-width: 1371px) {
     .testimonial {
-        h2 {
+        .testimonial-image {
+            min-height: 450px;
+        }
+        .block {
+            height: 450px;
+        }
+        .centered {
+            width: 365px;
+        }
+        .quote {
             font-size: $text-title-sm;
+            line-height: 36px;
         }
     }
 }
 
 @media (max-width: 1154px) {
     .testimonial {
-        h2 {
+        .testimonial-image {
+            min-height: 410px;
+        }
+        .block {
+            height: 410px;
+        }
+        .centered {
+            width: 330px;
+        }
+        .quote {
             font-size: $text-xl;
+            line-height: 36px;
         }
     }
 }
 
 @media (max-width: 1077px) {
     .testimonial {
-        h2 {
+        .testimonial-image {
+            min-height: 380px;
+        }
+        .block {
+            height: 380px;
+        }
+        .centered {
+            width: 315px;
+        }
+        .quote {
             font-size: $text-lg;
+            line-height: 36px;
         }
     }
 }
@@ -53,8 +119,9 @@
             width: 90px;
             height: 90px;
         }
-        h2 {
+        .quote {
             font-size: $text-xl;
+            line-height: 36px;
         }
     }
 }
@@ -65,8 +132,12 @@
             width: 80px;
             height: 80px;
         }
-        h2 {
+        .quote {
             font-size: $text-lg;
+            line-height: 36px;
         }
     }
 }
+
+
+
